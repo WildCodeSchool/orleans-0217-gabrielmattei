@@ -1,0 +1,27 @@
+.hi{
+    top: 0;
+}
+.hi, .lo{
+    position: fixed;
+    height: 5px;
+    z-index: 5;
+    left: 2em;
+    right: 2em;
+    background-color: black;
+}
+.lo{
+    bottom: 0;
+}
+.navbar-fixed-top{
+    top:20px;
+}
+.fa{
+    padding: 10px;
+    font-size: 30px;
+}
+.filtre{
+    top: 75px;
+}
+#bs-example-navbar-collapse-1{
+    text-align: center;
+}
