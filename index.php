@@ -1,61 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Gabriel Mattei</title>
+<?php
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="stylesheet.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+include 'header.php';
 
-    <![endif]-->
-</head>
-<body>
-<header>
+?>
 
-    <div class="hi"></div>
-    <div class="lo"></div>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Gabriel Mattei</a>
+<div class="hi"></div>
+<div class="lo"></div>
+
+
+
+<div class="container-fluid content">
+    <div class="row">
+<!--        <div class="partition col-md-offset-3 col-md-6 symphonic">-->
+<!--                    <div data-aos="fade-right">-->
+<!--                        --><?php
+//
+//                        include 'content.php';
+//
+//                        ?>
+<!--                    </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <div class="row">
+        <div class="partition col-md-offset-3 col-md-6 performing">
+                    <div data-aos="fade-left">Beethoven Symphony #7 part I, new!  Beethoven Symphony #7 part II, Orgao de casa, Conception et construction d'un orgue à eau, new!
+                        Le carnaval des Animaux, Saint Saëns  On social metamorphosis de Luigi Coppola, composition et direction musicale de la vidéo d'artiste
+                        Mozart's requiem The disoriented cabaret
+                    </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="partition col-md-offset-3 col-md-6">
+            <div data-aos="fade-right">Beethoven Symphony #7 part I, new!  Beethoven Symphony #7 part II, Orgao de casa, Conception et construction d'un orgue à eau, new!
+                Le carnaval des Animaux, Saint Saëns  On social metamorphosis de Luigi Coppola, composition et direction musicale de la vidéo d'artiste
+                Mozart's requiem The disoriented cabaret
             </div>
+        </div>
+    </div>
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Symphonic</a></li>
-                    <li><a href="#">Performing art</a></li>
-                </ul>
+    <div class="row">
+        <div class="partition col-md-offset-3 col-md-6">
+            <div data-aos="fade-left">Beethoven Symphony #7 part I, new!  Beethoven Symphony #7 part II, Orgao de casa, Conception et construction d'un orgue à eau, new!
+                Le carnaval des Animaux, Saint Saëns  On social metamorphosis de Luigi Coppola, composition et direction musicale de la vidéo d'artiste
+                Mozart's requiem The disoriented cabaret
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="partition col-md-offset-3 col-md-6">
+            <div data-aos="fade-right">Beethoven Symphony #7 part I, new!  Beethoven Symphony #7 part II, Orgao de casa, Conception et construction d'un orgue à eau, new!
+                Le carnaval des Animaux, Saint Saëns  On social metamorphosis de Luigi Coppola, composition et direction musicale de la vidéo d'artiste
+                Mozart's requiem The disoriented cabaret
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="partition col-md-offset-3 col-md-6">
+            <div data-aos="fade-left">Beethoven Symphony #7 part I, new!  Beethoven Symphony #7 part II, Orgao de casa, Conception et construction d'un orgue à eau, new!
+                Le carnaval des Animaux, Saint Saëns  On social metamorphosis de Luigi Coppola, composition et direction musicale de la vidéo d'artiste
+                Mozart's requiem The disoriented cabaret
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="partition col-md-offset-3 col-md-6">
+            <div data-aos="fade-right">Beethoven Symphony #7 part I, new!  Beethoven Symphony #7 part II, Orgao de casa, Conception et construction d'un orgue à eau, new!
+                Le carnaval des Animaux, Saint Saëns  On social metamorphosis de Luigi Coppola, composition et direction musicale de la vidéo d'artiste
+                Mozart's requiem The disoriented cabaret
+            </div>
+        </div>
+    </div>
+</div>
 
-            </div><!-- /.navbar-collapse -->
-
-            <ul class="nav navbar-nav navbar-right">
-                <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-                <li><i class="fa fa-envelope-open" aria-hidden="true"></i></li>
-                <li><i class="fa fa-youtube" aria-hidden="true"></i></li>
-
-            </ul>
-        </div><!-- /.container-fluid -->
-    </nav>
-
-</header>
-
-
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
