@@ -20,12 +20,6 @@ $res = $pdo->query($query);
 $resAll = $res->fetchAll(PDO::FETCH_CLASS);
 
 
-
-
-
-
-
-
 echo $twig->render('index.html.twig',
     array(
         'contents' => $resAll

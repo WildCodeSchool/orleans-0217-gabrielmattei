@@ -5,5 +5,18 @@ html body{
     font-size: 45px;
 }
 .container-fluid{
-    font-size: 35px;
+    font-size: 30px;
+}
+.container-fluid{
+    padding: 36px 36px 135px 36px;
+}
+.content{
+    padding-left: 36px;
+    padding-right: 36px;
+}
+span[class^="content"] {
+    display:none;
+}
+.container-fluid a{
+    text-decoration: none !important;
 }
