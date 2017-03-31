@@ -20,16 +20,16 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-2">
             <a href="index.php">Gabriel Mattei</a>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-offset-2 col-lg-2">
             <a href="#">Symphonic Music</a>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-2">
             <a href="#">Performing Art</a>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-offset-3 col-lg-1">
             <a href="#">About</a>
         </div>
     </div>
@@ -47,7 +47,7 @@
 
             {% endif %}
 
-            <span class="content{{ content.year }}"><i>{{ content.title}}</i>{{  content.subtitle }}</span>
+            <span class="content{{ content.year }}"><span class="title"> {{ content.title}}</span><span class="subtitle"> {{  content.subtitle }}</span></span>
         {% endfor %}
 
     </p>

@@ -20,3 +20,10 @@ span[class^="content"] {
 .container-fluid a{
     text-decoration: none !important;
 }
+body a{
+    text-decoration: none;
+    color: black;
+}
+body a:hover{
+    color: black;
+}
