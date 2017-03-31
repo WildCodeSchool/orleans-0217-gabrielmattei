@@ -41,6 +41,7 @@
 
 html body{
     background-color: rgb(245,245,245);
+    cursor: pointer;
 }
 
 body a{
