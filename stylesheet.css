@@ -1,7 +1,3 @@
-
-/******************** FONTS FACE DOCUMENTS *****************/
-
-
 @font-face {
     font-family: 'freighttext_promedium';
     src: url('fonts/freigText/freigtexpromed-webfont.woff2') format('woff2'),
@@ -11,20 +7,13 @@
 
 }
 
-
-
-
 @font-face {
     font-family: 'freighttext_promedium_italic';
     src: url('fonts/freigText/freigtexpromedit-webfont.woff2') format('woff2'),
     url('fonts/freigText/freigtexpromedit-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'freighttext_prosemibold';
@@ -32,10 +21,7 @@
     url('fonts/freigText/freigtexprosem-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
 
 /********************  STYLES GENERAUX ********************/
 
@@ -43,7 +29,6 @@ html body{
     background-color: rgb(245,245,245);
     cursor: pointer;
 }
-
 body a{
     text-decoration: none;
     color: black;
@@ -51,7 +36,6 @@ body a{
 body a:hover{
     color: black;
 }
-
 .container-fluid{
     font-size: 30px;
     padding: 36px 36px 135px 36px !important;
@@ -82,6 +66,12 @@ span[class^="content"] {
 
 span.title{
     font-family: 'freighttext_promedium_italic';
+}
+.container-fluid .performing:checked .SymphonicMusic{
+    visibility: hidden;
+}
+.container-fluid .musique:checked .PerformingArt{
+    visibility: hidden;
 }
 
 span.subtitle{
