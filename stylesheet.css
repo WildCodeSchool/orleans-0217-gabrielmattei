@@ -1,19 +1,18 @@
 html body{
     background-color: rgb(245,245,245);
 }
-.content{
-    font-size: 45px;
-}
 .container-fluid{
     font-size: 30px;
 }
 .container-fluid{
-    padding: 36px 36px 135px 36px;
+    padding: 36px 36px 135px 36px !important;
 }
 .content{
+    font-size: 45px;
     padding-left: 36px;
     padding-right: 36px;
 }
+
 span[class^="content"] {
     display:none;
 }
@@ -26,4 +25,10 @@ body a{
 }
 body a:hover{
     color: black;
+}
+.container-fluid .performing:checked .SymphonicMusic{
+    visibility: hidden;
+}
+.container-fluid .musique:checked .PerformingArt{
+    visibility: hidden;
 }
