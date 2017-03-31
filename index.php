@@ -29,7 +29,7 @@ $query = "SELECT * FROM content ORDER BY year desc";
 $res = $pdo->query($query);
 $resAll = $res->fetchAll(PDO::FETCH_CLASS);
 
-echo $twig->render('test.html.twig',
+echo $twig->render('index.html.twig',
     array(
         'contents' => $resAll
     ));

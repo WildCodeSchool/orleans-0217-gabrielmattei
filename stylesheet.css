@@ -1,29 +1,94 @@
+
+/******************** FONTS FACE DOCUMENTS *****************/
+
+
+@font-face {
+    font-family: 'freighttext_promedium';
+    src: url('fonts/freigText/freigtexpromed-webfont.woff2') format('woff2'),
+    url('fonts/freigText/freigtexpromed-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'freighttext_promedium_italic';
+    src: url('fonts/freigText/freigtexpromedit-webfont.woff2') format('woff2'),
+    url('fonts/freigText/freigtexpromedit-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'freighttext_prosemibold';
+    src: url('fonts/freigText/freigtexprosem-webfont.woff2') format('woff2'),
+    url('fonts/freigText/freigtexprosem-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+/********************  STYLES GENERAUX ********************/
+
 html body{
     background-color: rgb(245,245,245);
 }
-.content{
-    font-size: 45px;
-}
-.container-fluid{
-    font-size: 30px;
-}
-.container-fluid{
-    padding: 36px 36px 135px 36px;
-}
-.content{
-    padding-left: 36px;
-    padding-right: 36px;
-}
-span[class^="content"] {
-    display:none;
-}
-.container-fluid a{
-    text-decoration: none !important;
-}
+
 body a{
     text-decoration: none;
     color: black;
 }
 body a:hover{
     color: black;
+}
+
+.container-fluid{
+    font-size: 30px;
+    padding: 36px 36px 135px 36px !important;
+}
+
+.container-fluid a{
+    text-decoration: none !important;
+}
+
+.content{
+    font-size: 45px;
+    padding-left: 36px;
+    padding-right: 36px;
+}
+
+.content p{
+    line-height: 58px;
+}
+span[class^="content"] {
+    display:none;
+}
+
+.nav{
+    font-family: 'freighttext_promedium';
+    font-size: 26px;
+    line-height: 29px;
+}
+
+span.title{
+    font-family: 'freighttext_promedium_italic';
+}
+
+span.subtitle{
+    font-family: 'freighttext_promedium';
+}
+
+span.labelyear{
+    font-family: 'freighttext_prosemibold';
+    margin-left: 54px;
+    margin-right: 54px;
 }
