@@ -39,7 +39,11 @@
 </div>
 
 <div class="content"><p>
-
+        {% for content in contents %}
+            {% if content.best == 1 %}
+                <span class="{{ content.category }}"><span class="title bests"> {{ content.title}}</span><span class="subtitle"> {{ content.subtitle }}</span></span>
+            {% endif %}
+        {% endfor %}
         {% set lastyear = '' %}
         {% for   content in contents %}
             {% if lastyear !=  content.year %}
