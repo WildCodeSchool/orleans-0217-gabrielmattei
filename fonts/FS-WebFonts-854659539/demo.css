@@ -1,0 +1,10 @@
+    @font-face{
+        font-family:"FreightText W01 Medium1197044";
+        src:url("Fonts/1197044/6d2a63e3-ba62-426f-aae8-dba2afad54d6.eot?#iefix");
+        src:url("Fonts/1197044/6d2a63e3-ba62-426f-aae8-dba2afad54d6.eot?#iefix") format("eot"),url("Fonts/1197044/58be4ae0-d23d-4d8a-91cf-a04d9f1a3e56.woff2") format("woff2"),url("Fonts/1197044/1372e5cd-aaf7-45ac-b9f9-33b2c4dc8d92.woff") format("woff"),url("Fonts/1197044/02b9d8eb-f856-460e-9315-a8c06063aa6d.ttf") format("truetype");
+    }
+    @font-face{
+        font-family:"FreightText W01 Medium Italic";
+        src:url("Fonts/1197047/eebcc615-75db-47cf-85e0-d3cd56c0bb85.eot?#iefix");
+        src:url("Fonts/1197047/eebcc615-75db-47cf-85e0-d3cd56c0bb85.eot?#iefix") format("eot"),url("Fonts/1197047/07ae88bf-ecea-4028-8ecd-45f70d0268cc.woff2") format("woff2"),url("Fonts/1197047/1203dbf4-b0f8-40a0-bd9e-157ea478fcd3.woff") format("woff"),url("Fonts/1197047/ebd7990a-2613-4188-ace7-1130fc640e7b.ttf") format("truetype");
+    }

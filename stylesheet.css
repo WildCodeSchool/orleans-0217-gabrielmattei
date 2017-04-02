@@ -67,10 +67,10 @@ span[class^="content"] {
 span.title{
     font-family: 'freighttext_promedium_italic';
 }
-.container-fluid .performing:checked .SymphonicMusic{
+#perfo:checked ~ .content .SymphonicMusic{
     visibility: hidden;
 }
-.container-fluid .musique:checked .PerformingArt{
+#symf:checked ~ .content .PerformingArt{
     visibility: hidden;
 }
 
@@ -79,7 +79,12 @@ span.subtitle{
 }
 
 span.labelyear{
+    font-weight: bold;
     font-family: 'freighttext_prosemibold';
     margin-left: 54px;
     margin-right: 54px;
+}
+.new{
+    font-family: 'freighttext_prosemibold';
+    color: darkorange;
 }
