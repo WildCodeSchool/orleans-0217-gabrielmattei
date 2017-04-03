@@ -10,10 +10,10 @@
     <!-- FAVICON -->
     <link rel="icon" type="image/png" href="img/favico.png" sizes="32x32" />
     <!-- CSS STYLE LINKS -->
-    <link rel="stylesheet" href="stylesheet.css">
+
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="stylesheet.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -22,55 +22,90 @@
 </head>
 <body>
 
-<div class="container-fluid">
-    <div class="row nav">
+    <div class="container-fluid">
+        <div class="row nav">
 
-        <div class="col-lg-2">
-            <a href="index.php">Gabriel Mattei</a>
-        </div>
-        <div class="col-lg-offset-2 col-lg-2">
-            <label for="symf">Symphonic Music</label>
-            <input class="musique" type="checkbox" id="symf">
-        </div>
-        <div class="col-lg-2">
-            <label for="perfo">Performing Art</label>
-            <input class="performing" type="checkbox" id="perfo">
-        </div>
-        <div class="col-lg-offset-3 col-lg-1">
-            <a href="#">About</a>
+            <div class="col-lg-2">
+                <a href="index.php">Gabriel Mattei</a>
+            </div>
+            <div class="col-lg-offset-2 col-lg-2">
+                <label for="symf">Symphonic Music</label>
+                <input class="musique" type="checkbox" id="symf"/>
+            </div>
+            <div class="col-lg-2">
+                <label for="perfo">Performing Art</label>
+                <input class="performing" type="checkbox" id="perfo"/>
+            </div>
+            <div class="col-lg-offset-3 col-lg-1">
+                <a href="#">About</a>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="content"><p>
+    <div class="content" >
+        <p>
 
-        {% for content in contents %}
-            {% if content.best == 1 %}
-                <span class="{{ content.category }}"><span class="title bests"> {{ content.title}}</span><span class="subtitle"> {{ content.subtitle }}</span></span>
-            {% endif %}
-        {% endfor %}
+            {% for content in contents %}
 
-        {% set lastyear = '' %}
-        {% for   content in contents %}
-
-                {% if lastyear !=  content.year %}
-
-                    <span id="year{{ content.year }}" class="labelyear"> <strong>{{ content.year }}</strong> </span>
-                {% set lastyear = content.year%}
-
+                {% if content.best == 1 %}
+                    <span class="{{ content.category }}">
+                        <span class="title bests"> {{ content.title}}</span>
+                        <span class="subtitle"> {{ content.subtitle }}</span>
+                            {% if content.new == 1 %}
+                                <span class="new"> new! </span>
+                            {% endif %}
+                        <img src="img/silence.png" alt="silence">
+                    </span>
                 {% endif %}
 
-                    <span class="content{{ content.year }} {{ content.category }}"><span class="title"> {{ content.title}}</span><span class="subtitle"> {{  content.subtitle }}</span></span>
+            {% endfor %}
+
+            {% set lastyear = '' %}
+
+            {% for content in contents %}
+
+                {% if lastyear !=  content.year %}
+                    <span class="labelyear">.</span>
+                    <span id="year{{ content.year }}" class="labelyear">{{ content.year }}</span>
+                    {% set lastyear = content.year%}
+                {% endif %}
+
+                        <span class="content{{ content.year }} {{ content.category }}" type="text" data-toggle="modal" data-target="#myModal">
+
+                            <span class="title"> {{ content.title}}</span>
+                            <span class="subtitle"> {{  content.subtitle }}</span>
+                                {% if content.new == 1 %}
+                                    <span class="new"> new! </span>
+                                {% endif %}
+                            <img src="img/silence.png" alt="silence">
+                        </span>
 
         {% endfor %}
-
-    </p>
-</div>
+            <span class="labelyear">.</span>
+        <div class="modal fade modal-fullscreen" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">{{ content.title}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/RIii9I8UhT4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
 
 <!-- script -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
