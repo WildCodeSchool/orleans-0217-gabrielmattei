@@ -22,25 +22,25 @@
 </head>
 <body>
 
-    <div class="container-fluid">
-        <div class="row nav">
+<div class="container-fluid">
+    <div class="row nav">
 
-            <div class="col-lg-2">
-                <a href="index.php">Gabriel Mattei</a>
-            </div>
-            <div class="col-lg-offset-2 col-lg-2">
-                <label for="symf">Symphonic Music</label>
-                <input class="musique" type="checkbox" id="symf"/>
-            </div>
-            <div class="col-lg-2">
-                <label for="perfo">Performing Art</label>
-                <input class="performing" type="checkbox" id="perfo"/>
-            </div>
-            <div class="col-lg-offset-3 col-lg-1">
-                <a href="#">About</a>
-            </div>
+        <div class="col-lg-2">
+            <a href="index.php">Gabriel Mattei</a>
         </div>
+        <div class="col-lg-offset-2 col-lg-2">
+            <a class="musique" id="symf">Symphonic Music</a>
+            {#<input class="musique" type="checkbox" id="symf"/>#}
+        </div>
+        <div class="col-lg-2">
+            <a class="performing" id="perfo">Performing Art</a>
+        </div>
+        <div class="col-lg-offset-3 col-lg-1">
+            <a href="#">About</a>
+        </div>
+
     </div>
+</div>
 
     <div class="content" >
         <p>
@@ -116,6 +116,24 @@
             annee = $(this).attr('id').replace('year','');
 
             $(".content"+annee).fadeToggle();
+        });
+    });
+
+    $(document).ready(function() {
+        $("#symf").click(function () {
+            $(".SymphonicMusic").css("visibility", 'visible');
+            $(".PerformingArt").css("visibility", 'hidden');
+            $(".performing").css("opacity", '0.05')
+            $(".musique").css("opacity", '1')
+
+
+        });
+
+        $("#perfo").click(function () {
+            $(".PerformingArt").css("visibility", 'visible');
+            $(".SymphonicMusic").css("visibility", 'hidden');
+            $(".musique").css("opacity", '0.05')
+            $(".performing").css("opacity", '1')
         });
     });
 </script>
