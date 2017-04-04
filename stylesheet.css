@@ -82,9 +82,6 @@ span.labelyear{
     font-family: 'freighttext_prosemibold';
     color: darkorange;
 }
-#perfo:checked ~ .content p .SymphonicMusic{
-    visibility: hidden;
-}
-#symf:checked ~ .content p .PerformingArt{
-    visibility: hidden;
+a:hover{
+    opacity: 1 !important;
 }
