@@ -31,7 +31,7 @@ if(!empty($result)){
     $_SESSION['logged'] = true;
     $_SESSION['login'] = $login;
 
-    header('Location: ../index.php');
+    header('Location: adminindex.php');
 }
 
 else{
