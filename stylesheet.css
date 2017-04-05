@@ -111,3 +111,28 @@ a:hover{
 .about{
     text-align: right;
 }
+
+
+
+
+/********************  STYLES ABOUT ********************/
+
+.about{
+    padding-top: 100px !important;
+}
+.content p{
+    font-family: 'freighttext_promedium';
+    font-size: 45px;
+}
+
+.aboutcontact p{
+    font-family: 'freighttext_promedium';
+    font-size: 24px;
+}
+
+.aboutparagraphe {
+    font-family: 'freighttext_promedium';
+    font-size: 20px;
+}
+
+

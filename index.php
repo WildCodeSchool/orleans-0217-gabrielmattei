@@ -9,9 +9,9 @@ require_once 'twigloader.php';
 
 //include 'connect.php';
 
-define("DSN", "mysql:host=localhost;dbname=gabrielDB");
+define("DSN", "mysql:host=localhost;dbname=GabrielBD");
 define("USER", "root");
-define("PASS", "Wld");
+define("PASS", "april");
 
 $options = array(
     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
@@ -33,3 +33,5 @@ echo $twig->render('index.html.twig',
     array(
         'contents' => $resAll
     ));
+
+
