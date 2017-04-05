@@ -1,47 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Gabriel Mattei | Conductor</title>
-
-        <!-- FAVICON -->
-        <link rel="icon" type="image/png" href="img/favico.png" sizes="32x32" />
-        <!-- CSS STYLE LINKS -->
-
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="stylesheet.css">
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-<![endif]-->
-    </head>
-    <body>
-
-        <div class="container-fluid top">
-            <div class="row nav">
-
-                <div class="col-lg-2">
-                    <a href="index.php">Gabriel Mattei</a>
-                </div>
-                <div class="col-lg-offset-2 col-lg-2">
-                    <a class="musique" id="symf">Symphonic Music</a>
-                    {#<input class="musique" type="checkbox" id="symf"/>#}
-                </div>
-                <div class="col-lg-2">
-                    <a class="performing" id="perfo">Performing Art</a>
-                </div>
-
-                <div class="col-lg-offset-3 col-lg-1">
-                    <a href="about.php">About</a>
-                </div>
-
-            </div>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,7 +22,6 @@
 </head>
 <body>
 
-
 <div class="container-fluid top">
     <div class="row nav">
         <div class="col-lg-2">
@@ -76,71 +33,64 @@
         </div>
         <div class="col-lg-2">
             <a class="performing" id="perfo">Performing Art</a>
-
         </div>
 
-        <div class="container-fluid topphone">
-            <div class="row nav">
+        <div class="col-lg-offset-3 col-lg-1">
+            <a href="about.php">About</a>
+        </div>
+    </div>
+</div>
 
-                <div class="col-xs-6">
-                    <a href="index.php">Gabriel Mattei</a>
-                </div>
+<div class="container-fluid topphone">
+    <div class="row nav">
 
-                <div class="col-xs-offset-4 col-xs-2">
-                    <a href="#">About</a>
-                </div>
-                <div class="col-xs-offset-1 col-xs-5">
-                    <a class="musique" id="symf">Symphonic Music</a>
-                    {#<input class="musique" type="checkbox" id="symf"/>#}
-                </div>
-                <div class="col-xs-5">
-                    <a class="performing" id="perfo">Performing Art</a>
-                </div>
-            </div>
+        <div class="col-xs-6">
+            <a href="index.php">Gabriel Mattei</a>
         </div>
 
+        <div class="col-xs-offset-4 col-xs-2">
+            <a href="#">About</a>
+        </div>
+        <div class="col-xs-offset-1 col-xs-5">
+            <a class="musique" id="symf">Symphonic Music</a>
+            {#<input class="musique" type="checkbox" id="symf"/>#}
+        </div>
+        <div class="col-xs-5">
+            <a class="performing" id="perfo">Performing Art</a>
+        </div>
+    </div>
+</div>
 
-        <div class="content">
-            <p>
+    <div class="content" >
+        <p>
 
+            {% for content in contents %}
 
-                {% for content in contents %}
-
-                {% if content.best == 1 %}
-                <span class="{{ content.category }}">
-                    <span class="title bests"> {{ content.title}}</span>
-                    <span class="subtitle"> {{ content.subtitle }}</span>
-                    {% if content.new == 1 %}
-                    <span class="new"> new! </span>
-                    {% endif %}
-                    <img src="img/silence.png" alt="silence">
-                </span>
+                 {% if content.best == 1 %}
+                    <span class="{{ content.category }}">
+                        <span class="title bests"> {{ content.title}}</span>
+                        <span class="subtitle"> {{ content.subtitle }}</span>
+                            {% if content.new == 1 %}
+                                <span class="new"> new! </span>
+                            {% endif %}
+                        <img src="img/silence.png" alt="silence">
+                    </span>
                 {% endif %}
 
-                {% endfor %}
+            {% endfor %}
 
-                {% set lastyear = '' %}
+            {% set lastyear = '' %}
 
-                {% for content in contents %}
+            {% for content in contents %}
+
 
 
                 {% if lastyear !=  content.year %}
-                <span class="labelyear">.</span>
-                <span id="year{{ content.year }}" class="labelyear">{{ content.year }}</span>
-                {% set lastyear = content.year%}
+                    <span class="labelyear">.</span>
+                    <span id="year{{ content.year }}" class="labelyear">{{ content.year }}</span>
+                    {% set lastyear = content.year%}
                 {% endif %}
 
-<<<<<<< HEAD
-                <span class="content{{ content.year }} {{ content.category }}">
-
-                    <span class="title"> {{ content.title}}</span>
-                    <span class="subtitle"> {{  content.subtitle }}</span>
-                    {% if content.new == 1 %}
-                    <span class="new"> new! </span>
-                    {% endif %}
-                    <img src="img/silence.png" alt="silence">
-                </span>
-=======
         <span class="content{{ content.year }} {{ content.category }}" data-toggle="modal" data-target="#myModalFullscreen" contenteditable="false">
 
                             <span class="title"> {{ content.title}}</span>
@@ -152,8 +102,17 @@
                         </span>
 
 
+                <span class="content{{ content.year }}">
+                    <span class="{{ content.category }}">
+                        <span class="title"> {{ content.title}}</span>
+                        <span class="subtitle"> {{  content.subtitle }}</span>
+                    </span>
+                </span>
         {% endfor %}
 
+    </p>
+</div>
+</div>
 
         <div class="modal fade modal-fullscreen  footer-to-bottom" id="myModalFullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog animated zoomInLeft">
@@ -222,57 +181,13 @@
         </div>
     </div>
 </div>
->>>>>>> ac517f80d0316c709f2d95e85bbbe90f1f7d18d3
 
-                {% endfor %}
-                <span class="labelyear">.</span>
+<!-- script -->
 
-<<<<<<< HEAD
-            </p>
-        </div>
-        
-        <!-- script -->
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-
-        <script>
-            $(document).ready(function () {
-                $("[id^=year]").click(function () {
-                    annee = $(this).attr('id').replace('year','');
-
-                    $(".content"+annee).fadeToggle();
-                });
-            });
-
-            $(document).ready(function() {
-                $("#symf").click(function () {
-                    $(".SymphonicMusic").css("visibility", 'visible');
-                    $(".PerformingArt").css("visibility", 'hidden');
-                    $(".performing").css("opacity", '0.05')
-                    $(".musique").css("opacity", '1')
-
-
-                });
-
-                $("#perfo").click(function () {
-                    $(".PerformingArt").css("visibility", 'visible');
-                    $(".SymphonicMusic").css("visibility", 'hidden');
-                    $(".musique").css("opacity", '0')
-                    $(".performing").css("opacity", '1')
-                });
-            });
-        </script>
-
-    </body>
-=======
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
 
 <script>
     $(document).ready(function () {
@@ -303,5 +218,4 @@
 </script>
 
 </body>
->>>>>>> ac517f80d0316c709f2d95e85bbbe90f1f7d18d3
 </html>

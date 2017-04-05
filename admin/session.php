@@ -2,7 +2,7 @@
 
 session_start(); // Activation de la session
 
-define("DSN", "mysql:host=localhost;dbname=GabrielDB");
+define("DSN", "mysql:host=localhost;dbname=gabrielDB");
 define("USER", "root");
 define("PASS", "root");
 
