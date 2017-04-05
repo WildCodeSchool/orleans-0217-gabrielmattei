@@ -120,19 +120,23 @@ a:hover{
 .about{
     padding-top: 100px !important;
 }
-.content p{
+.contentabout p{
     font-family: 'freighttext_promedium';
     font-size: 45px;
+    padding-left: 36px;
+    padding-right: 36px;
 }
 
 .aboutcontact p{
     font-family: 'freighttext_promedium';
     font-size: 24px;
+    text-align: left;
 }
 
 .aboutparagraphe {
     font-family: 'freighttext_promedium';
     font-size: 20px;
+    text-align: left;
 }
 
 
