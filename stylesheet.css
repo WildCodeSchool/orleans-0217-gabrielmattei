@@ -140,7 +140,6 @@ a:hover{
 }
 
 
-
 /********************  STYLES ADMIN ********************/
 
 .form-signin
@@ -226,3 +225,81 @@ a:hover{
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
+
+/********************    STYLE MODALE    ***********************/
+
+hr{
+    border: 1px solid black;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 0;
+}
+
+.modal.modal-fullscreen .modal-dialog,
+.modal.modal-fullscreen .modal-content {
+    bottom: 0%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 60px;
+}
+.modal.modal-fullscreen .modal-dialog {
+    margin: 0;
+    width: 100%;
+
+
+}
+.modal.modal-fullscreen .modal-content {
+    border: none;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: inherit;
+    -moz-box-shadow: inherit;
+    -o-box-shadow: inherit;
+    box-shadow: inherit;
+    background-color: rgb(245,245,245);
+
+    /* change bg color below */
+    /* background:#1abc9c; */
+}
+.modal.modal-fullscreen.force-fullscreen {
+    /* Remove the padding inside the body */
+}
+.modal.modal-fullscreen.force-fullscreen .modal-body {
+    padding: 0;
+}
+
+
+
+/**************************    FOOTER    **********/
+.footer{
+    width: 100%;
+    font-size: 15px;
+}
+.footer div .row{
+    padding: 5px 0;
+    margin: 0;
+}
+
+.footer img {
+    max-height: 100%;
+    max-width: 100%;
+}
+.footer{
+    font-family: 'freighttext_promedium';
+}
+.footer span, .footer p{
+    padding: 2px;
+    margin: 0px;
+}
+.footer .row{
+    padding: 10px;
+}
+.col-lg-*{
+    padding: 0;
+    margin: 0;
+}
+.italic-font{
+    font-family: 'freighttext_promedium_italic';
+}
+

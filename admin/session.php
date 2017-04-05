@@ -2,9 +2,9 @@
 
 session_start(); // Activation de la session
 
-define("DSN", "mysql:host=localhost;dbname=GabrielDB");
+define("DSN", "mysql:host=localhost;dbname=gabrielDB");
 define("USER", "root");
-define("PASS", "root");
+define("PASS", "Wld");
 
 $options = array(
     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
