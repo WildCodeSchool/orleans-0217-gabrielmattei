@@ -140,6 +140,17 @@ a:hover{
     text-align: left;
 }
 
+.imgAbout{
+    margin-top: 30px;
+}
+.imgAbout img{
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 1800px;
+    height:1300px;
+}
+
 /********************    STYLE MODALE    ***********************/
 
 hr{
