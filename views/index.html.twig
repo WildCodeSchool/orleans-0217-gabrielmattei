@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid top">
     <div class="row nav">
 
         <div class="col-lg-2">
@@ -35,10 +35,30 @@
         <div class="col-lg-2">
             <a class="performing" id="perfo">Performing Art</a>
         </div>
-        <div class="col-lg-offset-3 col-lg-1">
+        <div class="col-lg-offset-2 col-lg-2 about">
             <a href="#">About</a>
         </div>
 
+    </div>
+</div>
+
+<div class="container-fluid topphone">
+    <div class="row nav">
+
+        <div class="col-xs-6">
+            <a href="index.php">Gabriel Mattei</a>
+        </div>
+
+        <div class="col-xs-offset-4 col-xs-2">
+            <a href="#">About</a>
+        </div>
+        <div class="col-xs-offset-1 col-xs-5">
+            <a class="musique" id="symf">Symphonic Music</a>
+            {#<input class="musique" type="checkbox" id="symf"/>#}
+        </div>
+        <div class="col-xs-5">
+            <a class="performing" id="perfo">Performing Art</a>
+        </div>
     </div>
 </div>
 
@@ -47,7 +67,7 @@
 
             {% for content in contents %}
 
-                {% if content.best == 1 %}
+                 {% if content.best == 1 %}
                     <span class="{{ content.category }}">
                         <span class="title bests"> {{ content.title}}</span>
                         <span class="subtitle"> {{ content.subtitle }}</span>
@@ -64,13 +84,14 @@
 
             {% for content in contents %}
 
+
                 {% if lastyear !=  content.year %}
                     <span class="labelyear">.</span>
                     <span id="year{{ content.year }}" class="labelyear">{{ content.year }}</span>
                     {% set lastyear = content.year%}
                 {% endif %}
 
-                        <span class="content{{ content.year }} {{ content.category }}" type="text" data-toggle="modal" data-target="#myModal">
+        <span class="content{{ content.year }} {{ content.category }}">
 
                             <span class="title"> {{ content.title}}</span>
                             <span class="subtitle"> {{  content.subtitle }}</span>
@@ -82,24 +103,7 @@
 
         {% endfor %}
             <span class="labelyear">.</span>
-                <div class="modal fade modal-fullscreen" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <h4 class="modal-title" id="myModalLabel">{{content.title}}</h4>
-                            </div>
-                            <div class="modal-body">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/RIii9I8UhT4" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
         </p>
     </div>
 
@@ -132,7 +136,7 @@
         $("#perfo").click(function () {
             $(".PerformingArt").css("visibility", 'visible');
             $(".SymphonicMusic").css("visibility", 'hidden');
-            $(".musique").css("opacity", '0.05')
+            $(".musique").css("opacity", '0')
             $(".performing").css("opacity", '1')
         });
     });
