@@ -153,6 +153,7 @@ a:hover{
 
 
 
+
 /********************    STYLE MODALE    ***********************/
 
 hr{
@@ -210,7 +211,7 @@ hr{
 }
 .modalHr {
     border: 1px solid black;
-    margin-left: 28px;
+    margin-left: 5px;
     margin-right: 28px;
     margin-top: 0;
     bottom: -50px;
@@ -220,13 +221,39 @@ hr{
     padding-right: 40px !important;
 }
 
+.multimedia{
+    padding-top: 100px;
+}
+/*.modalTitle{*/
+    /*position: fixed;*/
+/*}*/
+.imagefooter img {
+    max-height: 50%;
+    max-width: 50%;
+}
+
+.description{
+    font-family: 'freighttext_promedium';
+    font-size: 18px;
+    text-align: left;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-bottom:100px;
+}
+
+.paragraphemodale{
+    padding-left: 36px;
+    padding-right: 0;
+
+}
+
 
 /**************************    FOOTER    **********/
 .footer{
     width: 100%;
     font-size: 15px;
     position: relative;
-    bottom :-100px;
+    bottom :-150px;
 }
 .footer div .row{
     padding: 5px 0;
