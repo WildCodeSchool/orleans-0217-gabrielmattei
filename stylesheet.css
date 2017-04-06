@@ -151,22 +151,27 @@ a:hover{
     height:1300px;
 }
 
+
+
 /********************    STYLE MODALE    ***********************/
 
 hr{
     border: 1px solid black;
-    margin-left: 35px;
-    margin-right: 35px;
+    margin-left: 28px;
+    margin-right: 28px;
     margin-top: 0;
+    bottom: -50px;
 }
 
 .modal.modal-fullscreen .modal-dialog,
 .modal.modal-fullscreen .modal-content {
-    bottom: none;
+    bottom: 0;
     left: 0;
     position: absolute;
     right: 0;
-    top: 60px;
+    top: 100px;
+    opacity: 0.98;
+    position: fixed;
 }
 .modal.modal-fullscreen .modal-dialog {
     margin: 0;
@@ -196,13 +201,32 @@ hr{
 }
 
 
+.modal-body{
+    padding-top: 0;
+    font-size: 45px;
+    padding-left: 36px;
+    padding-right: 36px;
+
+}
+.modalHr {
+    border: 1px solid black;
+    margin-left: 28px;
+    margin-right: 28px;
+    margin-top: 0;
+    bottom: -50px;
+}
+.close{
+    font-size: 60px;
+    padding-right: 40px !important;
+}
+
 
 /**************************    FOOTER    **********/
 .footer{
     width: 100%;
     font-size: 15px;
     position: relative;
-    bottom :0;
+    bottom :-100px;
 }
 .footer div .row{
     padding: 5px 0;

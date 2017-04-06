@@ -91,7 +91,8 @@
                     {% set lastyear = content.year%}
                 {% endif %}
 
-        <span class="content{{ content.year }} {{ content.category }}" data-toggle="modal" data-target="#myModalFullscreen" contenteditable="false">
+                         <span class="content{{ content.year }} {{ content.category }}" data-toggle="modal" data-target="#{{ content.idcontent }}" contenteditable="false">
+
 
                             <span class="title"> {{ content.title}}</span>
                             <span class="subtitle"> {{  content.subtitle }}</span>
@@ -99,40 +100,51 @@
                                     <span class="new"> new! </span>
                                 {% endif %}
                             <img src="img/silence.png" alt="silence">
-        </span>
+                     </span>
 
 
-        {% endfor %}
+              {% endfor %}
 
 
-        <div class="modal fade modal-fullscreen  footer-to-bottom" id="myModalFullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog animated zoomInLeft">
-                <div class="modal-content">
-                    <hr>
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            {% for content in contents %}
 
-                        {% for content in contents %}
-
-                            <span class="title"> {{ content.title}}</span>
-
-                            {% endfor %}
+                <div class="modal fade modal-fullscreen  footer-to-bottom" id="{{ content.idcontent }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog animated zoomInLeft">
+                        <div class="modal-content">
+                            <hr>
+                            <div class="modal-body">
 
 
+                                <div class="row">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <span class="title"> {{ content.title }}</span>
+                                <span class="subtitle"> {{ content.subtitle }}</span>
+                                </div>
+
+                                <div class="row">
+                                    {#<object type="application/x-shockwave-flash" width="425" height="355" data="{{ content.link }}">#}
+
+                                        {#<param name="movie" value="{{ content.link }}" />#}
+                                    {#</object>#}
+                                    <embed width="420" height="315" src="{{ content.link }}"></embed>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
                     </div>
-
+                    <!-- /.modal-dialog -->
                 </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
+            {% endfor %}
+
             <span class="labelyear">.</span>
 
         </p>
     </div>
-<hr>
+
 <div class="container footer">
     <div class="row">
+        <hr>
         <div class="col-lg-6 col-xs-12">
             <div class="row">
                 <div class="col-lg-4 col-xs-4">
