@@ -105,10 +105,10 @@ Tip 1: You can change the color of the sidebar using: data-color="purple | blue 
                                     $title = $_POST['title'];
                                     $subtitle = $_POST['subtitle'];
                                     $year = $_POST['year'];
-//                                    $category = $_POST['category'];
+                                    $category = $_POST['category'];
                                     $description = $_POST['description'];
 // initialisation de la requete et execution de la requete
-                                    $bdd->exec("INSERT INTO content(title, subtitle, year, description) VALUES('$title', '$subtitle', '$year', '$description')");
+                                    $bdd->exec("INSERT INTO content(title, subtitle, year, description, category) VALUES('$title', '$subtitle', '$year', '$description', '$category')");
 
                                     header('location:index.php');
                                 }
@@ -137,16 +137,16 @@ Tip 1: You can change the color of the sidebar using: data-color="purple | blue 
                                                 <input type="text" class="form-control" name="year" id="year">
                                             </div>
                                         </div>
-<!--                                        <div class="col-md-offset-1 col-md-2">-->
-<!--                                            <div class="form-group label-floating">-->
-<!--                                               <input type="radio" name="category" id="category" value="symphonicMusic" checked />Symphonic Music-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="col-md-2">-->
-<!--                                            <div class="form-group label-floating">-->
-<!--                                                <input type="radio" name="category" id="category" value="performingArt" />Performing Art-->
-<!--                                            </div>-->
-<!--                                        </div>-->
+                                        <div class="col-md-offset-1 col-md-2">
+                                            <div class="form-group label-floating">
+                                               <input type="radio" name="category" id="category" value="symphonicMusic" checked />Symphonic Music
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group label-floating">
+                                                <input type="radio" name="category" id="category" value="performingArt" />Performing Art
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
