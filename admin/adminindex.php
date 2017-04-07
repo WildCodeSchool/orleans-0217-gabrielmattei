@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,76 +21,43 @@
     <![endif]-->
 </head>
 <body>
-<header>
-<div class="panel panel-default" id="panel">
-    <div class="panel-body">
-       <h1> Bonjour Gabriel </h1>
-    </div>
-</div>
-</header>
-
-<div class="btn-group btn-group-justified" role="group" aria-label="...">
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" data-target="#carousel-example-generic" data-slide-to="0" class="active">Ajout Projet</button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" data-target="#carousel-example-generic" data-slide-to="1">Update Projet</button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" data-target="#carousel-example-generic" data-slide-to="2">Delete Projet</button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" data-target="#carousel-example-generic" data-slide-to="3">About</button>
-    </div>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <img class="profile-img" src="http://68.media.tumblr.com/69287be6c7794c977ddce79c06901503/tumblr_inline_n5scrxSfJA1rb4scn.jpg"
+         alt="">
+    <a href="create.php">Ajouter un projet</a>
+    <a href="read.php">Supprimer un projet</a>
+    <a href="read.php">Modifier un projet</a>
+    <a href="#">Modifier la page About</a>
 </div>
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()" class="menu">Menu</span>
 
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-
-
-            <form action="create.php" method="post">
-                <input type="text" name="nom">
-                <input type="text" name="prenom">
-                <input type="text" name="age">
-                <input type="hidden" name="id" value="">
-                <button type="submit" name="insert" value="go">envoyer</button>
-
-            </form>
-
-
-        </div>
-        <div class="item">
-            <img src="../img/1.jpg" alt="...">
-            <div class="carousel-caption">
-                ...
-            </div>
-        </div>
-        <div class="item">
-            <img src="../img/1.jpg" alt="...">
-            <div class="carousel-caption">
-                ...
-            </div>
-        </div>
-        <div class="item">
-            <img src="../img/1.jpg" alt="...">
-            <div class="carousel-caption">
-                ...
-            </div>
-        </div>
-    </div>
-
-    <!-- Controls -->
-
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+    ...
 </div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+
+    /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "350px";
+        document.getElementById("main").style.marginLeft = "350px";
+    }
+
+    /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+</script>
+
 
 </body>
 </html>
