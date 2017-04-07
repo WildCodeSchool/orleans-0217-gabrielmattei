@@ -63,6 +63,12 @@ Tip 1: You can change the color of the sidebar using: data-color="purple | blue 
                         <p>Mon profil | About</p>
                     </a>
                 </li>
+                <li>
+                    <a href="../logout.php">
+                        <i class="material-icons">power_settings_new</i>
+                        <p>Déconnexion</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

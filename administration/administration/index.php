@@ -36,6 +36,7 @@ Tip 1: You can change the color of the sidebar using: data-color="purple | blue 
 		        Tip 2: you can also add an image using data-image tag
 -->
 
+
 			<div class="logo">
 				<a href="index.php" class="simple-text">
 Gabriel Mattei
@@ -111,11 +112,7 @@ Gabriel Mattei
 
                                         include '../../connect.php';
 
-
                                         $res = $bdd->query("SELECT * FROM content ORDER BY year DESC ");
-                                        //$res->bindValue(':table','');
-                                        //$res->execute();
-
 
                                         while ($resultat = $res->fetch()) {
                                             ?>
