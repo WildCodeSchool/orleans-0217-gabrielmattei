@@ -42,6 +42,7 @@
     </div>
 </div>
 
+
 <div class="container-fluid topphone">
     <div class="row nav">
 
@@ -63,6 +64,7 @@
 </div>
 
 <div class="content">
+
 
     {% for content in contents %}
 
@@ -127,6 +129,9 @@
                             {% if content.linktype == 'video' %}
                                 <iframe width="900" height="700" src="{{ content.link }}" frameborder="0"
                                         allowfullscreen="true"></iframe>
+                                        {#{% ifelse content.link == 'image' %}#}
+
+                                        {#{% else content.link == 'audio' %}#}
                             {% endif %}
                         </div>
                     </div>
@@ -230,7 +235,9 @@
 
                     {#</div>#}
 
+
                 </div>
+
 
             </div>
             <!-- /.modal-content -->
@@ -242,10 +249,10 @@
 
 {% endfor %}
 
+
 <span class="labelyear">.</span>
 
 </p>
-
 
 
 <div class="container footer">
@@ -323,7 +330,7 @@
         $("#perfo").click(function () {
             $(".PerformingArt").css("visibility", 'visible');
             $(".SymphonicMusic").css("visibility", 'hidden');
-            $(".musique").css("opacity", '0')
+            $(".musique").css("opacity", '0.05')
             $(".performing").css("opacity", '1')
         });
     });
