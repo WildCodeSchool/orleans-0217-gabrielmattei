@@ -3,6 +3,7 @@
 <?php
 include '../connect.php';
 
+
 if(isset($_POST['insert'])) {
     $title = $_POST['title'];
     $subtitle = $_POST['subtitle'];

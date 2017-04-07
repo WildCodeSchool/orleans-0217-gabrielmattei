@@ -27,6 +27,7 @@
 
 include '../connect.php';
 
+
 $res = $bdd->query("SELECT * FROM content");
 //$res->bindValue(':table','');
 //$res->execute();

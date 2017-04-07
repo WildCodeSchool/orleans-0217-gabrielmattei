@@ -3,6 +3,7 @@
 
 include '../connect.php';
 
+
 $id= $_POST['id'];
 
 $res = $bdd->prepare("DELETE FROM content WHERE idcontent = :id");

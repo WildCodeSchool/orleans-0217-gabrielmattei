@@ -2,7 +2,9 @@
 
 session_start(); // Activation de la session
 
-include '../connect.php';
+define("DSN", "mysql:host=localhost;dbname=gabrielDB");
+define("USER", "root");
+define("PASS", "Wld");
 
 $options = array(
     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
@@ -29,7 +31,7 @@ if(!empty($result)){
     $_SESSION['logged'] = true;
     $_SESSION['login'] = $login;
 
-    header('Location: adminindex.php');
+    header('Location: administration/index.php');
 }
 
 else{
