@@ -141,7 +141,6 @@ a:hover{
     text-align: left;
 }
 
-<<<<<<< HEAD
 
 /********************  STYLES ADMIN ********************/
 
@@ -228,7 +227,7 @@ a:hover{
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
-=======
+
 .imgAbout{
     margin-top: 30px;
     padding-bottom: 30px;
@@ -251,9 +250,6 @@ li {
 }
 
 
-
-
->>>>>>> c3263120b24d67d3c05f0bcb044effae1f37967c
 
 /********************    STYLE MODALE    ***********************/
 
@@ -351,10 +347,6 @@ hr{
 
 }
 
-
-
-
-
 /**************************    FOOTER    **********/
 .footer{
     width: 100%;
@@ -389,8 +381,4 @@ hr{
     font-family: 'freighttext_promedium_italic';
 }
 
-<<<<<<< HEAD
-/************************  ADMIN   *******************/
-=======
->>>>>>> 5e11c328c17db8d81068f0bbf83c944b7ad28907
 
