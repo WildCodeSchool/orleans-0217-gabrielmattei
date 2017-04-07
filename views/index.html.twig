@@ -8,7 +8,7 @@
     <title>Gabriel Mattei | Conductor</title>
 
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="img/favico.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="img/favico.png" sizes="32x32"/>
     <!-- CSS STYLE LINKS -->
 
     <!-- Bootstrap -->
@@ -62,171 +62,190 @@
     </div>
 </div>
 
-    <div class="content" >
-        <p>
+<div class="content">
 
-            {% for content in contents %}
+    {% for content in contents %}
 
-                 {% if content.best == 1 %}
-                    <span class="{{ content.category }}">
-                        <span class="title bests"> {{ content.title}}</span>
+        {% if content.best == 1 %}
+            <span class="{{ content.category }}" data-toggle="modal" data-target="#{{ content.idcontent }}"
+                  contenteditable="false">
+                        <span class="title bests"> {{ content.title }}</span>
                         <span class="subtitle"> {{ content.subtitle }}</span>
-                            {% if content.new == 1 %}
-                                <span class="new"> new! </span>
-                            {% endif %}
-                        <img src="img/silence.png" alt="silence">
+                {% if content.new == 1 %}
+                    <span class="new"> new! </span>
+                {% endif %}
+                <img src="img/silence.png" alt="silence">
                     </span>
-                {% endif %}
+        {% endif %}
 
-            {% endfor %}
+    {% endfor %}
 
-            {% set lastyear = '' %}
+    {% set lastyear = '' %}
 
-            {% for content in contents %}
-
-
-                {% if lastyear !=  content.year %}
-                    <span class="labelyear">.</span>
-                    <span id="year{{ content.year }}" class="labelyear">{{ content.year }}</span>
-                    {% set lastyear = content.year%}
-                {% endif %}
-
-                         <span class="content{{ content.year }} {{ content.category }}" data-toggle="modal" data-target="#{{ content.idcontent }}" contenteditable="false">
+    {% for content in contents %}
 
 
-                            <span class="title"> {{ content.title}}</span>
-                            <span class="subtitle"> {{  content.subtitle }}</span>
-                                {% if content.new == 1 %}
-                                    <span class="new"> new! </span>
-                                {% endif %}
-                            <img src="img/silence.png" alt="silence">
+        {% if lastyear !=  content.year %}
+            <span class="labelyear">.</span>
+            <span id="year{{ content.year }}" class="labelyear">{{ content.year }}</span>
+            {% set lastyear = content.year %}
+        {% endif %}
+
+        <span class="content{{ content.year }} {{ content.category }}" data-toggle="modal"
+              data-target="#{{ content.idcontent }}" contenteditable="false">
+
+
+                            <span class="title"> {{ content.title }}</span>
+                            <span class="subtitle"> {{ content.subtitle }}</span>
+            {% if content.new == 1 %}
+                <span class="new"> new! </span>
+            {% endif %}
+            <img src="img/silence.png" alt="silence">
                      </span>
 
 
-              {% endfor %}
+    {% endfor %}
+</div>
 
 
-            {% for content in contents %}
-
-                <div class="modal fade modal-fullscreen  footer-to-bottom" id="{{ content.idcontent }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog animated zoomInLeft">
-                        <div class="modal-content">
-                            <hr>
-                            <div class="modal-body">
-
-
-                                <div class="row">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                <span class="title"> {{ content.title }}</span>
-                                <span class="subtitle"> {{ content.subtitle }}</span>
-                                </div>
-
-                                <div class="row multimedia">
-                                    <div class="col-lg-offset-3 col-lg-6 ">
-
-                                    <iframe width="900" height="700" src="{{ content.link }}" frameborder="0"allowfullscreen></iframe>
-
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="row">
-
-                                    <div class="col-lg-4">
-                                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquet nulla sed erat pulvinar,
-                                        nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac ante ipsum primis
-                                        in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros accumsan pharetra.
-                                        Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et bibendum orci. Maecenas
-                                        fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
-                                        </p>
-                                    </div>
-
-
-                                    <div class="col-lg-4">
-                                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquet nulla sed erat pulvinar,
-                                            nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac ante ipsum primis
-                                            in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros accumsan pharetra.
-                                            Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et bibendum orci. Maecenas
-                                            fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
-                                        </p>
-                                    </div>
-
-                                    <div class="col-lg-4">
-                                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquet nulla sed erat pulvinar,
-                                            nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac ante ipsum primis
-                                            in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros accumsan pharetra.
-                                            Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et bibendum orci. Maecenas
-                                            fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
-                                        </p>
-                                    </div>
-
-                                </div>
-                                            <hr>
-                                <div class="row paragraphemodale">
-
-                                    <div class="col-lg-2">
-                                        <p>Gabriel Mattei <br/>
-                                            conductor and compositor
-                                        </p>
-                                    </div>
-
-
-                                    <div class="col-lg-2">
-                                        <p>Représenté par: <br/>
-                                            Agence Meti-jori<br/>
-                                            Info@meti-jori-agency.com<br/>
-                                            Tel: 1(514)241-7226
-                                        </p>
-                                    </div>
-
-                                    <div class="col-lg-2">
-                                        <p>Contact direct: <br/>
-                                            Agence Meti-jori<br/>
-                                            Port.+33(0)6 02 37 89<br/>
-                                            contact@gabrielmattei.eu<br/>
-                                            facebook
-                                        </p>
-                                    </div>
-
-
-                                    <div class="col-lg-offset-3 col-lg-1 ">
-                                        <p class="design">Graphic design <br/>
-                                            Sophie Cure
-                                        </p>
-                                    </div>
-
-
-
-                                    <div class="col-lg-1">
-                                        <p >Web development <br/>
-                                            Hagera, Maxime,<br/>
-                                            David and Tanguy,<br/>
-                                            students at the<br/>
-                                            Wild Code School
-                                        </p>
-                                    </div>
-
-
-
-                                    <div class="col-lg-1 imagefooter">
-                                        <img src="img/logo_small_nb.png" alt="logoWCS">
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- /.modal-content -->
+{% for content in contents %}
+    <div class="modal fade modal-fullscreen  footer-to-bottom" id="{{ content.idcontent }}" tabindex="-1"
+         role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog animated zoomInLeft">
+            <div class="modal-content">
+                <hr>
+                <div class="modal-body">
+                    <div class="row">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <span class="title"> {{ content.title }}</span>
+                        <span class="subtitle"> {{ content.subtitle }}</span>
                     </div>
-                    <!-- /.modal-dialog -->
+
+
+                    <div class="row multimedia">
+                        <div class="col-lg-12">
+                            {% if content.linktype == 'video' %}
+                                <iframe width="900" height="700" src="{{ content.link }}" frameborder="0"
+                                        allowfullscreen="true"></iframe>
+                            {% endif %}
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-lg-4">
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                                aliquet nulla sed erat
+                                pulvinar,
+                                nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac ante
+                                ipsum primis
+                                in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros accumsan
+                                pharetra.
+                                Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et bibendum
+                                orci. Maecenas
+                                fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
+                            </p>
+                        </div>
+
+
+                        <div class="col-lg-4">
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                                aliquet nulla sed erat
+                                pulvinar,
+                                nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac ante
+                                ipsum primis
+                                in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros accumsan
+                                pharetra.
+                                Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et bibendum
+                                orci. Maecenas
+                                fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                                aliquet nulla sed erat
+                                pulvinar,
+                                nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac ante
+                                ipsum primis
+                                in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros accumsan
+                                pharetra.
+                                Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et bibendum
+                                orci. Maecenas
+                                fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
+                            </p>
+                        </div>
+
+                    </div>
+                    <hr>
+                    {#<div class="row paragraphemodale">#}
+
+                        {#<div class="col-lg-2">#}
+                            {#<p class="description">Gabriel Mattei <br/>#}
+                                {#conductor and compositor#}
+                            {#</p>#}
+                        {#</div>#}
+
+
+                        {#<div class="col-lg-2">#}
+                            {#<p class="description">Représenté par: <br/>#}
+                                {#Agence Meti-jori<br/>#}
+                                {#Info@meti-jori-agency.com<br/>#}
+                                {#Tel: 1(514)241-7226#}
+                            {#</p>#}
+                        {#</div>#}
+
+                        {#<div class="col-lg-2">#}
+                            {#<p class="description">Contact direct: <br/>#}
+                                {#Agence Meti-jori<br/>#}
+                                {#Port.+33(0)6 02 37 89<br/>#}
+                                {#contact@gabrielmattei.eu<br/>#}
+                                {#facebook#}
+                            {#</p>#}
+                        {#</div>#}
+
+
+                        {#<div class="col-lg-offset-1 col-lg-2 design">#}
+                            {#<p class="description">Graphic design <br/>#}
+                                {#Sophie Cure#}
+                            {#</p>#}
+                        {#</div>#}
+
+
+                        {#<div class="col-lg-2">#}
+                            {#<p class="description">Web development <br/>#}
+                                {#Hagera, Maxime,<br/>#}
+                                {#David and Tanguy,<br/>#}
+                                {#students at the<br/>#}
+                                {#Wild Code School#}
+                            {#</p>#}
+                        {#</div>#}
+
+
+                        {#<div class="col-lg-1 imagefooter">#}
+                            {#<img src="img/logo_small_nb.png" alt="logoWCS">#}
+                        {#</div>#}
+
+
+                    {#</div>#}
+
                 </div>
-            {% endfor %}
 
-            <span class="labelyear">.</span>
-
-        </p>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
     </div>
+
+
+
+{% endfor %}
+
+<span class="labelyear">.</span>
+
+</p>
+
 
 
 <div class="container footer">
@@ -285,13 +304,13 @@
 <script>
     $(document).ready(function () {
         $("[id^=year]").click(function () {
-            annee = $(this).attr('id').replace('year','');
+            annee = $(this).attr('id').replace('year', '');
 
-            $(".content"+annee).fadeToggle();
+            $(".content" + annee).fadeToggle();
         });
     });
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#symf").click(function () {
             $(".SymphonicMusic").css("visibility", 'visible');
             $(".PerformingArt").css("visibility", 'hidden');
