@@ -85,21 +85,12 @@
 
     {% for content in contents %}
 
-
-<<<<<<< HEAD
-
                 {% if lastyear !=  content.year %}
                     <span class="labelyear">.</span>
                     <span id="year{{ content.year }}" class="labelyear">{{ content.year }}</span>
                     {% set lastyear = content.year%}
                 {% endif %}
-=======
-        {% if lastyear !=  content.year %}
-            <span class="labelyear">.</span>
-            <span id="year{{ content.year }}" class="labelyear">{{ content.year }}</span>
-            {% set lastyear = content.year %}
-        {% endif %}
->>>>>>> c3263120b24d67d3c05f0bcb044effae1f37967c
+
 
         <span class="content{{ content.year }} {{ content.category }}" data-toggle="modal"
               data-target="#{{ content.idcontent }}" contenteditable="false">
@@ -113,7 +104,6 @@
             <img src="img/silence.png" alt="silence">
                      </span>
 
-<<<<<<< HEAD
                 <span class="content{{ content.year }}">
                     <span class="{{ content.category }}">
                         <span class="title"> {{ content.title}}</span>
@@ -121,10 +111,7 @@
                     </span>
                 </span>
         {% endfor %}
-=======
->>>>>>> c3263120b24d67d3c05f0bcb044effae1f37967c
 
-    {% endfor %}
 </div>
 
 
@@ -345,15 +332,10 @@
         });
 
         $("#perfo").click(function () {
-<<<<<<< HEAD
+
             $(".performingArt").css("visibility", 'visible');
             $(".symphonicMusic").css("visibility", 'hidden');
             $(".musique").css("opacity", '0')
-=======
-            $(".PerformingArt").css("visibility", 'visible');
-            $(".SymphonicMusic").css("visibility", 'hidden');
-            $(".musique").css("opacity", '0.05')
->>>>>>> c3263120b24d67d3c05f0bcb044effae1f37967c
             $(".performing").css("opacity", '1')
         });
     });
