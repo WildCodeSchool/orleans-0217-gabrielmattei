@@ -63,6 +63,12 @@ Tip 1: You can change the color of the sidebar using: data-color="purple | blue 
                         <p>Mon profil | About</p>
                     </a>
                 </li>
+                <li>
+                    <a href="../logout.php">
+                        <i class="material-icons">power_settings_new</i>
+                        <p>Déconnexion</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -99,13 +105,14 @@ Tip 1: You can change the color of the sidebar using: data-color="purple | blue 
                                     $title = $_POST['title'];
                                     $subtitle = $_POST['subtitle'];
                                     $year = $_POST['year'];
+//                                    $category = $_POST['category'];
+                                    $description = $_POST['description'];
 // initialisation de la requete et execution de la requete
-                                    $bdd->exec("INSERT INTO content(title, subtitle, year) VALUES('$title', '$subtitle', '$year')");
+                                    $bdd->exec("INSERT INTO content(title, subtitle, year, description) VALUES('$title', '$subtitle', '$year', '$description')");
 
                                     header('location:index.php');
                                 }
                                 ?>
-
 
                                 <form action="create.php" method="post">
 
@@ -122,10 +129,33 @@ Tip 1: You can change the color of the sidebar using: data-color="purple | blue 
                                                 <input type="text" class="form-control" name="subtitle" id="subtitle">
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group label-floating">
                                                 <label class="control-label"for="year">Année du projet :</label>
                                                 <input type="text" class="form-control" name="year" id="year">
+                                            </div>
+                                        </div>
+<!--                                        <div class="col-md-offset-1 col-md-2">-->
+<!--                                            <div class="form-group label-floating">-->
+<!--                                               <input type="radio" name="category" id="category" value="symphonicMusic" checked />Symphonic Music-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-2">-->
+<!--                                            <div class="form-group label-floating">-->
+<!--                                                <input type="radio" name="category" id="category" value="performingArt" />Performing Art-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Description du projet :</label>
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label" for="description"> </label>
+                                                    <textarea class="form-control" rows="5" name="description" id="description"></textarea>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

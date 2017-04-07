@@ -50,6 +50,7 @@ body a:hover{
     font-size: 45px;
     padding-left: 36px;
     padding-right: 36px;
+    padding-bottom: 120px;
 }
 
 .content p{
@@ -127,10 +128,11 @@ a:hover{
     padding-right: 36px;
 }
 
-.aboutcontact p{
+.aboutcontact li{
     font-family: 'freighttext_promedium';
     font-size: 24px;
     text-align: left;
+
 }
 
 .aboutparagraphe {
@@ -139,6 +141,7 @@ a:hover{
     text-align: left;
 }
 
+<<<<<<< HEAD
 
 /********************  STYLES ADMIN ********************/
 
@@ -225,27 +228,56 @@ a:hover{
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
+=======
+.imgAbout{
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+.imgAbout img{
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 1800px;
+    height:1300px;
+}
+ul {
+    list-style:none;
+    margin-left:0;
+    padding-left:0;
+    margin-bottom:40px;
+}
+li {
+    margin-bottom: 0;
+}
+
+
+
+
+>>>>>>> c3263120b24d67d3c05f0bcb044effae1f37967c
 
 /********************    STYLE MODALE    ***********************/
 
 hr{
     border: 1px solid black;
-    margin-left: 35px;
-    margin-right: 35px;
+    margin-left: 28px;
+    margin-right: 28px;
     margin-top: 0;
+    bottom: -50px;
 }
 
 .modal.modal-fullscreen .modal-dialog,
 .modal.modal-fullscreen .modal-content {
-    bottom: 0%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 60px;
+    bottom: 0;
+    position: relative;
+    right: auto;
+    top: 100px;
+    opacity: 0.98;
+
 }
 .modal.modal-fullscreen .modal-dialog {
     margin: 0;
     width: 100%;
+    height: 100%;
 
 
 }
@@ -264,10 +296,62 @@ hr{
 }
 .modal.modal-fullscreen.force-fullscreen {
     /* Remove the padding inside the body */
+    width: 100%;
 }
 .modal.modal-fullscreen.force-fullscreen .modal-body {
     padding: 0;
 }
+
+
+.modal-content{
+    padding-top: 0;
+    font-size: 45px;
+    padding-left: 36px;
+    padding-right: 36px;
+    margin-left: -20px;
+
+}
+.modalHr {
+    border: 1px solid black;
+    margin-left: 5px;
+    margin-right: 28px;
+    margin-top: 0;
+    bottom: -50px;
+}
+.close{
+    font-size: 60px;
+    padding-right: 40px !important;
+}
+
+.multimedia{
+    padding-top: 100px;
+}
+/*.modalTitle{*/
+    /*position: fixed;*/
+/*}*/
+.imagefooter img {
+    max-height: 50%;
+    max-width: 50%;
+    position: right;
+}
+
+.description{
+    font-family: 'freighttext_promedium';
+    font-size: 18px;
+    text-align: left;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-bottom:100px;
+}
+
+.paragraphemodale{
+
+    padding-right: 0;
+
+
+}
+
+
 
 
 
@@ -275,7 +359,12 @@ hr{
 .footer{
     width: 100%;
     font-size: 15px;
+    position: fixed;
+    bottom :0px;
+    background-color: rgb(245, 245, 245);
+
 }
+
 .footer div .row{
     padding: 5px 0;
     margin: 0;
@@ -292,10 +381,7 @@ hr{
     padding: 2px;
     margin: 0px;
 }
-.footer .row{
-    padding: 10px;
-}
-.col-lg-*{
+.footer col-lg-{
     padding: 0;
     margin: 0;
 }

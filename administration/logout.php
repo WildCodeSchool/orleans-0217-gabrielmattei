@@ -2,7 +2,6 @@
 session_start();
 
 unset ($_SESSION['logged']);
-
-header('location : login.php');
+header('location:login.php');
 
 ?>
