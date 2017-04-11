@@ -115,7 +115,7 @@
          role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog animated zoomInLeft">
             <div class="modal-content">
-                <hr>
+                <hr class="hrmodal">
                 <div class="modal-body">
                     <div class="row">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -125,7 +125,7 @@
 
 
                     <div class="row multimedia">
-                        <div class="col-lg-12">
+                        <div class="col-lg-6">
                             {% if content.linktype == 'video' %}
                                 <iframe width="900" height="700" src="{{ content.link }}" frameborder="0"
                                         allowfullscreen="true"></iframe>
@@ -134,12 +134,7 @@
                                         {#{% else content.link == 'audio' %}#}
                             {% endif %}
                         </div>
-                    </div>
-
-
-                    <div class="row">
-
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
                             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                                 aliquet nulla sed erat
                                 pulvinar,
@@ -150,12 +145,7 @@
                                 Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et bibendum
                                 orci. Maecenas
                                 fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
-                            </p>
-                        </div>
-
-
-                        <div class="col-lg-4">
-                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                                 aliquet nulla sed erat
                                 pulvinar,
                                 nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac ante
@@ -165,11 +155,17 @@
                                 Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et bibendum
                                 orci. Maecenas
                                 fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
-                            </p>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                                aliquet nulla sed erat
+                                pulvinar,
+                                nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac ante
+                                ipsum primis
+                                in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros accumsan
+                                pharetra.
+                                Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et bibendum
+                                orci. Maecenas
+                                fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                                 aliquet nulla sed erat
                                 pulvinar,
                                 nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac ante
@@ -183,7 +179,8 @@
                         </div>
 
                     </div>
-                    <hr>
+                    <hr class="hrmodal">
+
                     {#<div class="row paragraphemodale">#}
 
                         {#<div class="col-lg-2">#}
@@ -240,6 +237,7 @@
 
 
             </div>
+
             <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->

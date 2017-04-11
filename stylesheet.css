@@ -113,6 +113,14 @@ a:hover{
     text-align: right;
 }
 
+hr{
+    border: 1px solid black;
+    margin-left: 28px;
+    margin-right: 28px;
+    margin-top: 0;
+    bottom: -50px;
+}
+
 
 
 
@@ -162,16 +170,19 @@ li {
     margin-bottom: 0;
 }
 
+.fabout{
+    position: relative !important;
+}
 
 
 
 
 /********************    STYLE MODALE    ***********************/
 
-hr{
+.hrmodal{
     border: 1px solid black;
-    margin-left: 28px;
-    margin-right: 28px;
+    margin-left: 0px;
+    margin-right: 0px;
     margin-top: 0;
     bottom: -50px;
 }
@@ -259,7 +270,6 @@ hr{
 
     padding-right: 0;
 
-
 }
 
 
@@ -267,6 +277,7 @@ hr{
 
 
 /**************************    FOOTER    **********/
+
 .footer{
     width: 100%;
     font-size: 15px;
