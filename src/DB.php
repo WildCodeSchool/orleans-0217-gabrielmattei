@@ -14,7 +14,7 @@ class DB
     /**
      * @var
      */
-    private $db;
+    public $pdo;
 
     /**
      * DB constructor.
@@ -22,10 +22,10 @@ class DB
      */
     public function __construct()
     {
-        $options = array (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf');
+        $options = array (\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
         try {
 
-            $this->db = new \PDO(DSN, USER, PASS, $options);
+            $this->pdo = new \PDO(DSN, USER, PASS, $options);
         }
         catch(Exception $e){
             die('Connexion à la base de données impossible !');

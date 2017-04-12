@@ -1,8 +1,11 @@
 <?php
 
-require_once 'twigloader.php';
-
 include '../config/connect.php';
+require_once '../vendor/autoload.php';
+
+use \wcs\controller\ContentController;
+use \wcs\controller\AboutController;
+
 
 $page='home';
 if(isset($_GET['p'])) {
@@ -12,10 +15,13 @@ if(isset($_GET['p'])) {
 switch ($page) {
 
     case'home':
-        header("Location : ../src/views/ContentController.php");
+        $pagecont= new ContentController();
+        echo $pagecont->affiche();
         break;
+
     case'about':
-        header("Location : ../src/views/AboutController.php");
+        $pageabout= new AboutController();
+        echo $pageabout->affiche();
         break;
     default:
         header("Location : 404.php");
@@ -33,13 +39,7 @@ switch ($page) {
 
 
 
-$query = "SELECT * FROM content ORDER BY year desc";
-$res = $pdo->query($query);
-$resAll = $res->fetchAll(PDO::FETCH_CLASS);
 
-echo $twig->render('index.html.twig',
-    array(
-        'contents' => $resAll
-    ));
+
 
 
