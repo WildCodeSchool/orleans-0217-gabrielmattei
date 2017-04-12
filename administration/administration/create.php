@@ -23,13 +23,15 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+
+    <link href="assets/css/material-dashboard.css" rel="stylesheet"/>
 </head>
 
 <body>
 
 <div class="wrapper">
 
-    <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-1.jpg">
+    <div class="sidebar" data-color="blue" data-image="assets/img/sidebar-1.jpg">
         <!--
 Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -93,7 +95,7 @@ Tip 1: You can change the color of the sidebar using: data-color="purple | blue 
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header" data-background-color="purple">
+                            <div class="card-header" data-background-color="blue">
                                 <h4 class="title">Ajouter un projet</h4>
                             </div>
                             <div class="card-content">
@@ -196,8 +198,6 @@ Tip 1: You can change the color of the sidebar using: data-color="purple | blue 
 <!-- Material Dashboard javascript methods -->
 <script src="assets/js/material-dashboard.js"></script>
 
-<!-- Material Dashboard DEMO methods, don't include it in your project! -->
-<script src="assets/js/demo.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
