@@ -12,7 +12,6 @@
 
 require_once 'twigloader.php';
 
-echo $twig->render('about.html.twig'
-    );
+echo $twig->render('about.html.twig');
 
 
