@@ -23,6 +23,12 @@ switch ($page) {
         $pageabout= new AboutController();
         echo $pageabout->affiche();
         break;
+
+    case'admin':
+        $pagecont= new ContentController();
+        echo $pagecont->afficheAdmin();
+        break;
+
     default:
         header("Location : 404.php");
         break;

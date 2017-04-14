@@ -20,4 +20,13 @@ class ContentController extends Controller
         return $this->getTwig()->render('index.html.twig', array('contents' => $contents));
 
     }
+
+    public function afficheAdmin()
+    {
+        $contentManager = new ContentManager();
+        $resultats= $contentManager->findALL();
+
+        return $this->getTwig()->render('admin/indexAdmin.html.twig', array('resultats' => $resultats));
+
+    }
 }

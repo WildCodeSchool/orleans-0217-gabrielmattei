@@ -1,5 +1,11 @@
-{% include 'partial/header.html.twig' %}
+{% extends 'layout.html.twig' %}
+{% block css %} {% endblock %}
 
+{% block title %}
+    about
+{% endblock %}
+
+{% block content %}
 <div class="contentabout">
     <p>Chef d'orchestre et compositeur formé à Paris et à Vienne, Gabriel Mattei partage ses activités musicales entre Strasbourg,
         Paris et Bruxelles. Directeur de l'Orchestre métropolitain de Strasbourg (Orchesre m) et kammerensemble Kehl-Strasbourg,
@@ -65,9 +71,9 @@
 
     <div class="row">
         <div class="col-lg-12 imgAbout">
-    <img src="img/GabrielMattei.jpg" alt="Gabriel">
+    <img src="../../public/assets/img/GabrielMattei.jpg" alt="Gabriel">
         </div>
     </div>
 </div>
-
-{% include 'partial/footer.html.twig' %}
+{% endblock %}
+{% block script %}{% endblock %}

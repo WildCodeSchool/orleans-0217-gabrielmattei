@@ -17,7 +17,7 @@ class Controller
     {
 
 
-        $loader = new \Twig_Loader_Filesystem('../src/views');
+        $loader = new \Twig_Loader_Filesystem(array('../src/views','../src/views/admin'));
         $this->twig = new \Twig_Environment($loader, array(
             'cache' => false,));
     }

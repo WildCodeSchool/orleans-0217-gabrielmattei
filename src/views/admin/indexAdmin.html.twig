@@ -1,0 +1,50 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block content %}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="blue">
+                            <h4 class="title">Liste de vos projets</h4>
+                        </div>
+                        <div class="card-content table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                <th>Titre</th>
+                                <th>Sous-titre Projet</th>
+                                <th>Année</th>
+                                <th>Modification</th>
+                                <th>Suppression</th>
+                                </thead>
+                                <tbody>
+
+                               {% for resultat in resultats %}
+
+                                <tr>
+                                    <td>{{ resultat.title }}</td>
+                                    <td>{{ resultat.subtitle }}</td>
+                                    <td>{{ resultat.year }}</td>
+
+                                    <td><a href="update.php?id={{ resultat.id }}"><i class="material-icons">build</i> </a></td>
+                                    <td><form method="post" action="delete.php">
+                                            {#<input type="hidden" name="id" value="<?= $resultat['id'] ?>">#}
+                                            <button class="btn btn-primary" type="submit" name="delete"><i class="material-icons">delete</i> </button>
+                                        </form>
+
+                                    </td>
+
+                               {% endfor %}
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+{% endblock %}

@@ -122,6 +122,7 @@ a:hover{
     padding-top: 100px !important;
 }
 .contentabout p{
+    padding-top: 200px !important;
     font-family: 'freighttext_promedium';
     font-size: 45px;
     padding-left: 36px;
@@ -351,7 +352,7 @@ hr{
 .footer{
     width: 100%;
     font-size: 15px;
-    position: fixed;
+
     bottom :0px;
     background-color: rgb(245, 245, 245);
 
