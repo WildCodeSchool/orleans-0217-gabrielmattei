@@ -6,61 +6,71 @@
     Conductor
 {% endblock %}
 
-        {# CONTENT CONTENT CONTENT CONTENT CONTENT #}
 {% block content %}
     <div class="content">
         <p>
 
-        {% for content in contents %}
+            {% set boucle = 1 %}
+            {% for content in contents %}
 
-            {% if content.best == 1 %}
-                <span class="{{ content.category }}" data-toggle="modal" data-target="#{{ content.id }}"
-                      contenteditable="false">
+                {% if content.best == 1 %}
+                    {% if boucle != 1 %}
+                        <img src="../../public/assets/img/silence2.png" alt="silence">
+                    {% endif %}
+                    <span class="{{ content.category }} indent" data-toggle="modal" data-target="#{{ content.id }}"
+                          contenteditable="false">
                         <span class="title bests"> {{ content.title }}</span>
                         <span class="subtitle"> {{ content.subtitle }}</span>
-                    {% if content.new == 1 %}
-                        <span class="new"> new! </span>
-                    {% endif %}
-                    <img src="../../public/assets/img/silence.png" alt="silence">
-                    </span>
-            {% endif %}
-
-        {% endfor %}
-
-        {% set lastyear = '' %}
-
-        {% for content in contents %}
-
-            {% if lastyear !=  content.year %}
-                <span class="labelyear">.</span>
-                <span id="year{{ content.year }}" class="labelyear">{{ content.year }}</span>
-                {% set lastyear = content.year %}
-            {% endif %}
-
-            <span class="content{{ content.year }} {{ content.category }}" data-toggle="modal"
-                  data-target="#{{ content.id }}" contenteditable="false">
-
-
-
-                <img src="../../public/assets/img/silence.png" alt="silence">
-
-
-            <span class="content{{ content.year }}">
-                    <span class="{{ content.category }}">
-                        <span class="title"> {{ content.title }}</span>
-                        <span class="subtitle"> {{ content.subtitle }}</span>
                         {% if content.new == 1 %}
+                            <span class="virgule">,</span>
                             <span class="new"> new! </span>
                         {% endif %}
+
+                    </span>
+                {% endif %}
+                {% set boucle = boucle + 1 %}
+            {% endfor %}
+
+            {% set lastyear = '' %}
+
+            {% for content in contents %}
+
+                {% if lastyear !=  content.year %}
+                    <span class="point">.</span>
+                    <span id="year{{ content.year }}" class="labelyear">{{ content.year }}</span>
+                    {% set lastyear = content.year %}
+                    {% set boucle2 = 1 %}
+                {% endif %}
+
+                <span class="content{{ content.year }} {{ content.category }}" data-toggle="modal"
+                      data-target="#{{ content.id }}" contenteditable="false">
+
+            <span class="content{{ content.year }}">
+
+                {% if boucle2 == 1 %}
+                    <span class="point">.</span>
+                {% endif %}
+                {% if boucle2 != 1 %}
+                    <img src="../../public/assets/img/silence2.png" alt="silence">
+                {% endif %}
+                <span class="{{ content.category }}">
+
+                        <span class="title"> {{ content.title }}</span>
+                        <span class="subtitle"> {{ content.subtitle }}</span>
+                    {% if content.new == 1 %}
+                        <span class="virgule">,</span>
+                        <span class="new"> new! </span>
+                    {% endif %}
                     </span>
                 </span>
             </span>
-        {% endfor %}
+                {% set boucle2 = boucle2 + 1 %}
+            {% endfor %}
 
     </div>
 
     {% for content in contents %}
-        <div class="modal fade modal-fullscreen  footer-to-bottom" id="{{ content.id }}" tabindex="-1"
+        <div class="modal modal-fullscreen footer-to-bottom" id="{{ content.id }}" tabindex="-1"
              role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog animated zoomInLeft">
                 <div class="modal-content">
@@ -76,13 +86,15 @@
                         <div class="row multimedia">
                             <div class="col-lg-offset-4 col-lg-6">
                                 {% if content.linktype == 'video' %}
-                                    <iframe width="600" height="500" src="{{ content.link }}" frameborder="0" allowfullscreen="true"></iframe>
+                                    <iframe width="600" height="500" src="{{ content.link }}" frameborder="0"
+                                            allowfullscreen="true"></iframe>
                                 {% endif %}
                             </div>
 
                             <div class="col-lg-12">
                                 {% if content.linktype == 'image' %}
-                                    <img class="img-responsive" src="{{ content.link }}" style="width:1800px;height:1300px;">
+                                    <img class="img-responsive" src="{{ content.link }}"
+                                         style="width:1800px;height:1300px;">
                                 {% endif %}
                             </div>
 
@@ -94,71 +106,71 @@
                         </div>
 
 
-                            </div>
-                        </div>
+                    </div>
+                </div>
 
-                        <div class="row">
+                <div class="row">
 
-                            <div class="col-lg-4">
-                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                                    aliquet nulla sed erat
-                                    pulvinar,
-                                    nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac
-                                    ante
-                                    ipsum primis
-                                    in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros
-                                    accumsan
-                                    pharetra.
-                                    Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et
-                                    bibendum
-                                    orci. Maecenas
-                                    fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
-                                </p>
-                            </div>
+                    <div class="col-lg-4">
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                            aliquet nulla sed erat
+                            pulvinar,
+                            nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac
+                            ante
+                            ipsum primis
+                            in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros
+                            accumsan
+                            pharetra.
+                            Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et
+                            bibendum
+                            orci. Maecenas
+                            fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
+                        </p>
+                    </div>
 
-                            <div class="col-lg-4">
-                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                                    aliquet nulla sed erat
-                                    pulvinar,
-                                    nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac
-                                    ante
-                                    ipsum primis
-                                    in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros
-                                    accumsan
-                                    pharetra.
-                                    Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et
-                                    bibendum
-                                    orci. Maecenas
-                                    fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
-                                </p>
-                            </div>
+                    <div class="col-lg-4">
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                            aliquet nulla sed erat
+                            pulvinar,
+                            nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac
+                            ante
+                            ipsum primis
+                            in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros
+                            accumsan
+                            pharetra.
+                            Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et
+                            bibendum
+                            orci. Maecenas
+                            fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
+                        </p>
+                    </div>
 
-                            <div class="col-lg-4">
-                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                                    aliquet nulla sed erat
-                                    pulvinar,
-                                    nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac
-                                    ante
-                                    ipsum primis
-                                    in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros
-                                    accumsan
-                                    pharetra.
-                                    Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et
-                                    bibendum
-                                    orci. Maecenas
-                                    fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
-                                </p>
-                            </div>
-
-                        </div>
-                        <hr>
-
+                    <div class="col-lg-4">
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                            aliquet nulla sed erat
+                            pulvinar,
+                            nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac
+                            ante
+                            ipsum primis
+                            in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros
+                            accumsan
+                            pharetra.
+                            Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et
+                            bibendum
+                            orci. Maecenas
+                            fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
+                        </p>
                     </div>
 
                 </div>
-                <!-- /.modal-content -->
+                <hr>
+
             </div>
-            <!-- /.modal-dialog -->
+
+        </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
         </div>
 
     {% endfor %}

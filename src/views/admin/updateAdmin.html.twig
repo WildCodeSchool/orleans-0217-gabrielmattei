@@ -1,0 +1,64 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block content %}
+
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="blue">
+                                    <h4 class="title">Modifier le projet</h4>
+                                </div>
+                                <div class="card-content table-responsive">
+
+                                    <form method="post">
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group label-floating">
+                                                    <label for="title" class="control-label">Titre du projet :</label>
+                                                    <input type="text" class="form-control" name="title" id="title"
+                                                           value="{{ resultat.title }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label" for="subtitle">Sous-titre du projet
+                                                        :</label>
+                                                    <input type="text" class="form-control" name="subtitle"
+                                                           id="subtitle" value="{{ resultat.subtitle }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label" for="year">Année du projet :</label>
+                                                    <input type="text" class="form-control" name="year" id="year"
+                                                           value="{{ resultat.year }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <button type="submit" name="update" id="update" class="btn btn-primary pull-right">
+                                                Modifier
+                                            </button>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -5,6 +5,7 @@ require_once '../vendor/autoload.php';
 
 use \wcs\controller\ContentController;
 use \wcs\controller\AboutController;
+use \wcs\controller\AdminController;
 
 
 $page='home';
@@ -16,17 +17,22 @@ switch ($page) {
 
     case'home':
         $pagecont= new ContentController();
-        echo $pagecont->affiche();
+        $view = $pagecont->affiche();
         break;
 
     case'about':
         $pageabout= new AboutController();
-        echo $pageabout->affiche();
+        $view = $pageabout->affiche();
         break;
 
     case'admin':
-        $pagecont= new ContentController();
-        echo $pagecont->afficheAdmin();
+        $pagecont= new AdminController();
+        $view = $pagecont->afficheAdmin();
+        break;
+
+    case'update':
+        $pageupdate= new AdminController();
+        $view = $pageupdate->afficheOneAdmin($_GET['id']);
         break;
 
     default:
@@ -34,6 +40,7 @@ switch ($page) {
         break;
 }
 
+echo $view;
 
 
 

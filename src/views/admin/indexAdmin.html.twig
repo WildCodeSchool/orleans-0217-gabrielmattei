@@ -11,13 +11,15 @@
                         </div>
                         <div class="card-content table-responsive">
                             <table class="table">
+
                                 <thead class="text-primary">
-                                <th>Titre</th>
-                                <th>Sous-titre Projet</th>
-                                <th>Année</th>
-                                <th>Modification</th>
-                                <th>Suppression</th>
+                                    <th>Titre</th>
+                                    <th>Sous-titre Projet</th>
+                                    <th>Année</th>
+                                    <th>Modification</th>
+                                    <th>Suppression</th>
                                 </thead>
+
                                 <tbody>
 
                                {% for resultat in resultats %}
@@ -26,14 +28,13 @@
                                     <td>{{ resultat.title }}</td>
                                     <td>{{ resultat.subtitle }}</td>
                                     <td>{{ resultat.year }}</td>
-
-                                    <td><a href="update.php?id={{ resultat.id }}"><i class="material-icons">build</i> </a></td>
-                                    <td><form method="post" action="delete.php">
-                                            {#<input type="hidden" name="id" value="<?= $resultat['id'] ?>">#}
+                                    <td><a href="?p=update&id={{ resultat.id }}"><i class="material-icons">build</i> </a></td>
+                                    <td><form method="post" action="delete.php?id={{ resultat.id }}">
+                                            <input type="hidden" name="delete" id="delete" value="{{ resultat.id }}">
                                             <button class="btn btn-primary" type="submit" name="delete"><i class="material-icons">delete</i> </button>
                                         </form>
-
                                     </td>
+                                </tr>
 
                                {% endfor %}
 
@@ -44,7 +45,7 @@
                     </div>
                 </div>
 
-
             </div>
         </div>
+    </div>
 {% endblock %}
