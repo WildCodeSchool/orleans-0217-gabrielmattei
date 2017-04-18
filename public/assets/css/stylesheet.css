@@ -37,6 +37,7 @@ body a:hover{
     color: black;
 }
 .container-fluid{
+
     font-size: 30px;
     padding: 36px 36px 135px 36px !important;
 }
@@ -285,8 +286,8 @@ hr{
 
 .modal.modal-fullscreen .modal-dialog,
 .modal.modal-fullscreen .modal-content {
-    bottom: 0;
     position: relative;
+    bottom: 0;
     right: auto;
     top: 100px;
     opacity: 0.98;
@@ -350,7 +351,7 @@ hr{
 .imagefooter img {
     max-height: 50%;
     max-width: 50%;
-    position: right;
+
 }
 
 .description{
@@ -368,9 +369,10 @@ hr{
 
 /**************************    FOOTER    **********/
 .footer{
+    position:absolute;
     width: 100%;
     font-size: 15px;
-    bottom :0px;
+    bottom :0;
     background-color: rgb(245, 245, 245);
 
 }

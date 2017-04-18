@@ -18,7 +18,7 @@
                         <img src="../../public/assets/img/silence2.png" alt="silence">
                     {% endif %}
                     <span class="{{ content.category }} indent" data-toggle="modal" data-target="#{{ content.id }}"
-                          contenteditable="false">
+                          contenteditable="false" data-backdrop="false">
                         <span class="title bests"> {{ content.title }}</span>
                         <span class="subtitle"> {{ content.subtitle }}</span>
                         {% if content.new == 1 %}
@@ -43,7 +43,7 @@
                 {% endif %}
 
                 <span class="content{{ content.year }} {{ content.category }}" data-toggle="modal"
-                      data-target="#{{ content.id }}" contenteditable="false">
+                      data-target="#{{ content.id }}" contenteditable="false" data-backdrop="false">
 
             <span class="content{{ content.year }}">
 
@@ -107,7 +107,7 @@
 
 
                     </div>
-                </div>
+
 
                 <div class="row">
 
@@ -171,7 +171,6 @@
         <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
-        </div>
 
     {% endfor %}
 
