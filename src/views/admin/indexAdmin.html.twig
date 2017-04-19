@@ -29,11 +29,11 @@
                                     <td>{{ resultat.subtitle }}</td>
                                     <td>{{ resultat.year }}</td>
                                     <td><a href="?p=update&id={{ resultat.id }}"><i class="material-icons">build</i> </a></td>
-                                    <td><form method="post" action="delete.php?id={{ resultat.id }}">
-                                            <input type="hidden" name="delete" id="delete" value="{{ resultat.id }}">
-                                            <button class="btn btn-primary" type="submit" name="delete"><i class="material-icons">delete</i> </button>
+                                    <td><form method="post" >
+                                            <input type="hidden" name="id" value="{{ resultat.id }}">
+                                            <button class="btn btn-primary" type="submit" name="delete" value="delete"><i class="material-icons">delete</i> </button>
                                         </form>
-                                    </td>
+                                     </td>
                                 </tr>
 
                                {% endfor %}

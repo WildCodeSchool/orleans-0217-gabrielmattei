@@ -25,9 +25,12 @@
 
 /********************  STYLES GENERAUX ********************/
 
-html body{
-    background-color: rgb(245,245,245);
+html body a,span{
     cursor: pointer;
+}
+html body {
+    background-color: rgb(245,245,245);
+
 }
 body a{
     text-decoration: none;
@@ -47,6 +50,7 @@ body a:hover{
 }
 
 .content{
+    min-height: 700px;
     padding-left: 36px;
     padding-right: 36px;
     padding-bottom: 120px;
@@ -369,10 +373,9 @@ hr{
 
 /**************************    FOOTER    **********/
 .footer{
-    position:absolute;
     width: 100%;
     font-size: 15px;
-    bottom :0;
+    padding-bottom: 36px;
     background-color: rgb(245, 245, 245);
 
 }
