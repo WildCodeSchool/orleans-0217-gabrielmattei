@@ -60,9 +60,11 @@ switch ($page) {
         $view = $pagelogin->login();
         break;
 
+
     default:
         header("Location : 404.php");
         break;
+
 }
 
 echo $view;
