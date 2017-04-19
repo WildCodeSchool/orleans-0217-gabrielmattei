@@ -62,4 +62,6 @@ class AdminController extends Controller
         return $this->getTwig()->render('admin/profilAdmin.html.twig');
     }
 
+
+
 }
