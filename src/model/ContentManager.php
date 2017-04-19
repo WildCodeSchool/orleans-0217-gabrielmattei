@@ -20,8 +20,6 @@ class ContentManager
 
     }
 
-
-
     public function addContent()
     {
         $query ="INSERT INTO content(title, subtitle, year, description, category) VALUES(:title, :subtitle, :year, :description, :category)";
