@@ -26,6 +26,7 @@
 /********************  STYLES GENERAUX ********************/
 
 html body{
+
     background-color: rgb(245,245,245);
     cursor: pointer;
 }
@@ -37,6 +38,7 @@ body a:hover{
     color: black;
 }
 .container-fluid{
+
     font-size: 30px;
     padding: 36px 36px 135px 36px !important;
 }
@@ -46,6 +48,7 @@ body a:hover{
 }
 
 .content{
+
     padding-left: 36px;
     padding-right: 36px;
     padding-bottom: 120px;
@@ -369,8 +372,10 @@ hr{
 /**************************    FOOTER    **********/
 .footer{
     width: 100%;
+   
     font-size: 15px;
-    bottom :0px;
+    padding-bottom: 36px;
+    bottom :0;
     background-color: rgb(245, 245, 245);
 
 }
