@@ -35,6 +35,16 @@ switch ($page) {
         $view = $pageupdate->afficheOneAdmin($_GET['id']);
         break;
 
+    case 'create':
+        $pageinsert=new AdminController();
+        $view = $pageinsert->addContent();
+        break;
+
+    case 'about':
+        $pageabout=new AdminController();
+        $view = $pageabout->aboutContent();
+        break;
+
     default:
         header("Location : 404.php");
         break;

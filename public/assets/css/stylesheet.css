@@ -25,10 +25,18 @@
 
 /********************  STYLES GENERAUX ********************/
 
-html body{
 
-    background-color: rgb(245,245,245);
+html body {
+    background-color: rgb(245, 245, 245);
+}
+
+html body a,span{
     cursor: pointer;
+}
+
+html body {
+    background-color: rgb(245,245,245);
+
 }
 body a{
     text-decoration: none;
@@ -48,7 +56,7 @@ body a:hover{
 }
 
 .content{
-
+    min-height: 700px;
     padding-left: 36px;
     padding-right: 36px;
     padding-bottom: 120px;
@@ -288,8 +296,8 @@ hr{
 
 .modal.modal-fullscreen .modal-dialog,
 .modal.modal-fullscreen .modal-content {
-    bottom: 0;
     position: relative;
+    bottom: 0;
     right: auto;
     top: 100px;
     opacity: 0.98;
@@ -353,7 +361,7 @@ hr{
 .imagefooter img {
     max-height: 50%;
     max-width: 50%;
-    position: right;
+
 }
 
 .description{
@@ -372,7 +380,6 @@ hr{
 /**************************    FOOTER    **********/
 .footer{
     width: 100%;
-   
     font-size: 15px;
     padding-bottom: 36px;
     bottom :0;

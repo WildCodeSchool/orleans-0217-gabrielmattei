@@ -5,7 +5,48 @@
 {% block title %}
     Conductor
 {% endblock %}
+{% block nav %}
+<div class="container-fluid top">
+    <div class="row nav">
+        <div class="col-lg-3 col-md-3">
+            <a href="index.php">Gabriel Mattei</a>
+        </div>
+        <div class="col-lg-3 col-md-3 symf">
+            <a class="musique" id="symf">Symphonic Music</a>
 
+        </div>
+        <div class="col-lg-3 col-md-3">
+            <a class="performing" id="perfo">Performing Art</a>
+        </div>
+
+        <div class="col-lg-offset-2 col-lg-1 col-md-offset-2 col-md-1">
+            <a href="?p=about">About</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid topphone">
+    <div class="row nav">
+
+        <div class="col-xs-6">
+            <a href="index.php">Gabriel Mattei</a>
+        </div>
+
+        <div class="col-xs-offset-3 col-xs-3">
+            <a href="?p=about">About</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 symf">
+            <a class="musique" id="symf">Symphonic Music</a>
+        </div>
+        <div class="col-xs-6">
+            <a class="performing" id="perfo">Performing Art</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
 {% block content %}
     <div class="content">
         <p>
@@ -18,7 +59,7 @@
                         <img src="../../public/assets/img/silence2.png" alt="silence">
                     {% endif %}
                     <span class="{{ content.category }} indent" data-toggle="modal" data-target="#{{ content.id }}"
-                          contenteditable="false">
+                          contenteditable="false" data-backdrop="false">
                         <span class="title bests"> {{ content.title }}</span>
                         <span class="subtitle"> {{ content.subtitle }}</span>
                         {% if content.new == 1 %}
@@ -43,7 +84,7 @@
                 {% endif %}
 
                 <span class="content{{ content.year }} {{ content.category }}" data-toggle="modal"
-                      data-target="#{{ content.id }}" contenteditable="false">
+                      data-target="#{{ content.id }}" contenteditable="false" data-backdrop="false">
 
             <span class="content{{ content.year }}">
 
@@ -66,7 +107,7 @@
             </span>
                 {% set boucle2 = boucle2 + 1 %}
             {% endfor %}
-
+        </p>
     </div>
 
     {% for content in contents %}
@@ -107,7 +148,7 @@
 
 
                     </div>
-                </div>
+
 
                 <div class="row">
 
@@ -163,7 +204,7 @@
                     </div>
 
                 </div>
-                <hr>
+
                 {% include 'partial/footer.html.twig' %}
 
 
@@ -173,10 +214,9 @@
         <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
-        </div>
 
     {% endfor %}
 
-    </p>
+
 {% endblock %}
 
