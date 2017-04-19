@@ -25,9 +25,15 @@
 
 /********************  STYLES GENERAUX ********************/
 
+
+html body {
+    background-color: rgb(245, 245, 245);
+}
+
 html body a,span{
     cursor: pointer;
 }
+
 html body {
     background-color: rgb(245,245,245);
 
@@ -376,6 +382,7 @@ hr{
     width: 100%;
     font-size: 15px;
     padding-bottom: 36px;
+    bottom :0;
     background-color: rgb(245, 245, 245);
 
 }

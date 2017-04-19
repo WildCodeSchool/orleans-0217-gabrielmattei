@@ -48,4 +48,18 @@ class AdminController extends Controller
 
         return $this->getTwig()->render('admin/createAdmin.html.twig');
     }
+
+
+    public function showProfil()
+    {
+        $contentManager = new ContentManager();
+
+        if(isset($_POST['profil'])){
+            $contentManager->showprofil();
+            header('location:index.php?p=admin');
+        }
+
+        return $this->getTwig()->render('admin/profilAdmin.html.twig');
+    }
+
 }

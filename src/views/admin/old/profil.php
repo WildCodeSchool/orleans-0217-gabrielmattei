@@ -12,13 +12,13 @@
     <meta name="viewport" content="width=device-width" />
 
     <!-- Bootstrap core CSS     -->
-    <link href="../../../public/adminassets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../public/adminassets/css/bootstrap.min.css" rel="stylesheet" />
 
     <!--  Material Dashboard CSS    -->
-    <link href="../../../public/adminassets/css/material-dashboard.css" rel="stylesheet"/>
+    <link href="../public/adminassets/css/material-dashboard.css" rel="stylesheet"/>
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="../../../public/adminassets/css/demo.css" rel="stylesheet" />
+    <link href="../public/adminassets/css/demo.css" rel="stylesheet" />
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -210,18 +210,18 @@ Tip 1: You can change the color of the sidebar using: data-color="purple | blue 
 </body>
 
 <!--   Core JS Files   -->
-<script src="../../../public/adminassets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
-<script src="../../../public/adminassets/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../../../public/adminassets/js/material.min.js" type="text/javascript"></script>
+<script src="../public/adminassets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+<script src="../public/adminassets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../public/adminassets/js/material.min.js" type="text/javascript"></script>
 
 <!--  Charts Plugin -->
-<script src="../../../public/adminassets/js/chartist.min.js"></script>
+<script src="../public/adminassets/js/chartist.min.js"></script>
 
 <!--  Notifications Plugin    -->
-<script src="../../../public/adminassets/js/bootstrap-notify.js"></script>
+<script src="../public/adminassets/js/bootstrap-notify.js"></script>
 
 <!-- Material Dashboard javascript methods -->
-<script src="../../../public/adminassets/js/material-dashboard.js"></script>
+<script src="../public/adminassets/js/material-dashboard.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
