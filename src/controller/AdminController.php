@@ -17,7 +17,6 @@ class AdminController extends Controller
         }
 
         $resultats= $contentManager->findALL();
-
         return $this->getTwig()->render('admin/indexAdmin.html.twig', array('resultats' => $resultats));
 
     }
@@ -55,7 +54,7 @@ class AdminController extends Controller
 
         if(isset($_POST['profil'])){
             $contentManager->showprofil();
-            header('location:index.php?p=admin');
+            header('location:index.php/?p=admin');
         }
         return $this->getTwig()->render('admin/profilAdmin.html.twig');
     }
