@@ -8,12 +8,12 @@
     <title>Gabriel Mattei | Espace Administration </title>
 
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="../../../public/assets/img/favico.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../public/assets/img/favico.png" sizes="32x32" />
     <!-- CSS STYLE LINKS -->
 
     <!-- Bootstrap -->
-    <link href="../../../public/adminassets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../public/assets/css/stylesheet.css">
+    <link href="../public/adminassets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../public/assets/css/stylesheet.css">
 
 </head>
 <body>

@@ -48,6 +48,17 @@ switch ($page) {
     case 'profil':
         $pageprofil=new AdminController();
         $view = $pageprofil->showProfil();
+        break;
+
+    case 'logout':
+        $pagelogout=new AdminController();
+        $view = $pagelogout->logout();
+        break;
+
+    case 'login':
+        $pagelogin=new AdminController();
+        $view = $pagelogin->login();
+        break;
 
     default:
         header("Location : 404.php");
