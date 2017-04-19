@@ -59,9 +59,27 @@ class AdminController extends Controller
         return $this->getTwig()->render('admin/profilAdmin.html.twig');
     }
 
+
     public function logout()
     {
+
         unset ($_SESSION['logged']);
-        header('location: index.php');
+        {
+            header('location: index.php');
+        }
+        return $this->getTwig()->render('index.html.twig');
     }
+
+
+    public function login()
+    {
+        $contentManager = new ContentManager();
+
+        if(isset($_POST['login'])){
+            $contentManager->login();
+        }
+        return $this->getTwig()->render('admin/loginAdmin.html.twig');
+    }
+
+
 }

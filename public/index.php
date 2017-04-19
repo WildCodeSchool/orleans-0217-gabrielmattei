@@ -76,6 +76,11 @@ switch ($page) {
         header('Location : index.php/?err=NotLogged');
         break;
 
+    case 'login':
+        $pagelogin=new AdminController();
+        $view = $pagelogin->login();
+        break;
+
     default:
         header("Location : 404.php");
         break;
