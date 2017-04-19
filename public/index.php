@@ -45,6 +45,10 @@ switch ($page) {
         $view = $pageabout->aboutContent();
         break;
 
+    case 'profil':
+        $pageprofil=new AdminController();
+        $view = $pageprofil->showProfil();
+
     default:
         header("Location : 404.php");
         break;
