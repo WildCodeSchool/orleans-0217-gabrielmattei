@@ -413,20 +413,36 @@ hr{
 }
 
 .multimedia{
+    padding-bottom: 50px;
     padding-top: 100px;
 }
 
-.swiper-container{
-    height: 800px;
-    width: 1200px;
-    border-bottom: none;
+.carousel{
+    margin: 0 auto;
 
 }
+.slide{
+    height: 800px;
+    width: 1200px;
+}
 
-.swiper-slide img{
+.carousel-control.right{
+    background-image: none;
+}
+
+.carousel-control.left{
+    background-image: none;
+}
+
+.carousel-indicators li{
+    background-color: black;
+}
+.carousel-indicators {
+    bottom: -70px;
+}
+.item img{
     margin: 0 auto;
     padding-bottom: 50px;
-    height: 800px;
 }
 /*.modalTitle{*/
     /*position: fixed;*/
