@@ -87,12 +87,6 @@ class ContentManager
 
         return $_SESSION['isAuthenticated'];
     }
-
-
-
-
-
-
     public function updateProfil()
     {
         $bio = $_POST['bio'];
@@ -109,19 +103,15 @@ class ContentManager
         $tel2 = $_POST['mail2'];
         $query = ("UPDATE about SET bio = '$bio' , subbio= '$subbio' , contact1= '$contact1' , contact2= '$contact2' , image= '$image' , cvanglais= '$cvanglais',
         cvfrancais= '$cvfrancais' , cvchinois= '$cvchinois' , mail1= '$mail1' , mail2= '$mail2' , tel1= '$tel1' , tel2= '$tel2' WHERE id= 1 ");
-        var_dump($query);
+
         $this->db->pdo->exec($query);
 
     }
-
-
-
-
-        public function findProfil()
+    public function findProfil()
     {
         $query = "SELECT * FROM about";
         $res = $this->db->pdo->query($query);
         $contents = $res->fetchAll();
-        return $contents=$contents[0];
+        return $contents[0];
     }
 }

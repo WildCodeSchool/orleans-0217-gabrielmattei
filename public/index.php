@@ -12,7 +12,10 @@ $page='home';
 if(isset($_GET['p'])) {
     $page = $_GET['p'];
 }
-
+if (isset($_POST['updateProfil']))
+{
+    $page = 'updateProfil';
+}
 switch ($page) {
 
     case'home':
@@ -38,6 +41,12 @@ switch ($page) {
     case 'create':
         $pageinsert=new AdminController();
         $view = $pageinsert->addContent();
+        break;
+
+    case 'updateProfil':
+        var_dump("updateProfil");
+        $pageprofil=new AdminController();
+        $view = $pageprofil->updateProfil();
         break;
 
     case 'profil':
