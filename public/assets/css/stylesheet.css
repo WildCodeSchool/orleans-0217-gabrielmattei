@@ -514,6 +514,10 @@ hr{
 .italic-font{
     font-family: 'freighttext_promedium_italic';
 }
+.footer .row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
 
 
 

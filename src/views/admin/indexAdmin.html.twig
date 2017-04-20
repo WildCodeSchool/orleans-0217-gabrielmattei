@@ -7,13 +7,13 @@
 
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header" data-background-color="blue">
+                        <div class="card-header">
                             <h4 class="title">Liste de vos projets</h4>
                         </div>
                         <div class="card-content table-responsive">
                             <table class="table">
 
-                                <thead class="text-primary">
+                                <thead class="text">
                                     <th>Titre</th>
                                     <th>Sous-titre Projet</th>
                                     <th>Année</th>
@@ -29,10 +29,10 @@
                                     <td>{{ resultat.title }}</td>
                                     <td>{{ resultat.subtitle }}</td>
                                     <td>{{ resultat.year }}</td>
-                                    <td><a href="?p=update&id={{ resultat.id }}"><i class="material-icons">build</i> </a></td>
+                                    <td><a href="?p=update&id={{ resultat.id }}"><i class="material-icons molette">build</i> </a></td>
                                     <td><form method="post" >
                                             <input type="hidden" name="id" value="{{ resultat.id }}">
-                                            <button class="btn btn-primary" type="submit" name="delete" value="delete"><i class="material-icons">delete</i> </button>
+                                            <button class="btn" type="submit" name="delete" value="delete"><i class="material-icons">delete</i> </button>
                                         </form>
                                      </td>
                                 </tr>
