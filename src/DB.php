@@ -31,5 +31,4 @@ class DB
             die('Connexion à la base de données impossible !');
         }
     }
-
 }

@@ -20,8 +20,6 @@ class ContentManager
 
     }
 
-
-
     public function addContent()
     {
         $query ="INSERT INTO content(title, subtitle, year, description, category) VALUES(:title, :subtitle, :year, :description, :category)";
@@ -74,8 +72,8 @@ class ContentManager
         $medias = $prep->fetchAll(\PDO::FETCH_CLASS, 'wcs\model\Media');
 
         return $medias;
-    }
 
+    }
 
     public function findOne($id)
     {
@@ -84,7 +82,49 @@ class ContentManager
         $content = $res->fetchAll(\PDO::FETCH_CLASS, 'wcs\model\Content');
 
         return $content[0];
+    }
+    public function loginAction($login, $password)
+    {
+        $reqLogin = "SELECT login FROM users WHERE login = :login AND password = :pwd";
+        $stmt = $this->db->pdo->prepare($reqLogin);
+        $stmt->bindValue(':login', $login);
+        $stmt->bindValue(':pwd', sha1($password));
+        $stmt->execute();
+        $res = $stmt->fetch();
+
+        if (!empty($res)) {
+            $_SESSION['isAuthenticated'] = true;
+        } else {
+            $_SESSION['isAuthenticated'] = false;
+        }
+
+        return $_SESSION['isAuthenticated'];
+    }
+    public function updateProfil()
+    {
+        $bio = $_POST['bio'];
+        $subbio = $_POST['subbio'];
+        $contact1 = $_POST['contact1'];
+        $contact2 = $_POST['contact2'];
+        $image = $_POST['image'];
+        $cvanglais = $_POST['cvanglais'];
+        $cvfrancais = $_POST['cvfrancais'];
+        $cvchinois = $_POST['cvchinois'];
+        $mail1 = $_POST['mail1'];
+        $mail2 = $_POST['mail2'];
+        $tel1 = $_POST['mail1'];
+        $tel2 = $_POST['mail2'];
+        $query = ("UPDATE about SET bio = '$bio' , subbio= '$subbio' , contact1= '$contact1' , contact2= '$contact2' , image= '$image' , cvanglais= '$cvanglais',
+        cvfrancais= '$cvfrancais' , cvchinois= '$cvchinois' , mail1= '$mail1' , mail2= '$mail2' , tel1= '$tel1' , tel2= '$tel2' WHERE id= 1 ");
+
+        $this->db->pdo->exec($query);
 
     }
-
+    public function findProfil()
+    {
+        $query = "SELECT * FROM about";
+        $res = $this->db->pdo->query($query);
+        $contents = $res->fetchAll();
+        return $contents[0];
+    }
 }

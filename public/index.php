@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include '../config/connect.php';
 require_once '../vendor/autoload.php';
 
@@ -12,7 +12,10 @@ $page='home';
 if(isset($_GET['p'])) {
     $page = $_GET['p'];
 }
-
+if (isset($_POST['updateProfil']))
+{
+    $page = 'updateProfil';
+}
 switch ($page) {
 
     case'home':
@@ -40,14 +43,33 @@ switch ($page) {
         $view = $pageinsert->addContent();
         break;
 
-    case 'about':
-        $pageabout=new AdminController();
-        $view = $pageabout->aboutContent();
+    case 'updateProfil':
+        var_dump("updateProfil");
+        $pageprofil=new AdminController();
+        $view = $pageprofil->updateProfil();
         break;
 
-    default:
-        header("Location : 404.php");
+    case 'profil':
+        $pageprofil=new AdminController();
+        $view = $pageprofil->showProfil();
         break;
+
+    case 'logout':
+        $pagelogout=new AdminController();
+        $view = $pagelogout->logout();
+        break;
+
+    case 'login':
+        $pagelogin=new AdminController();
+        $view = $pagelogin->login();
+        break;
+
+
+    default:
+        $pageError=new AdminController();
+        $view = $pageError->afficheError('404');
+        break;
+
 }
 
 echo $view;
