@@ -17,9 +17,7 @@ class MediaManager
         $path = "assets/upload/"; // Upload directory
 
         foreach ($_FILES['files']['name'] as $f => $name) {
-            //$extension = pathinfo($name, PATHINFO_EXTENSION);
-            var_dump($_FILES['files']['name']);
-            var_dump(chmod ($_FILES['files']['name'], 0777));die();
+            $extension = pathinfo($name, PATHINFO_EXTENSION);
 
             if( ! in_array(pathinfo($name, PATHINFO_EXTENSION), $valid_formats) ){
                 $message[] = $name . "is not a valid format";

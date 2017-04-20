@@ -2,110 +2,104 @@
 
 {% block content %}
 
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="title">Ajouter un projet</h4>
-                        </div>
-                        <div class="card-content">
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="title">Ajouter un projet</h4>
+                    </div>
+                    <div class="card-content">
 
-                            <form method="post" enctype="multipart/form-data">
+                        <form method="post" enctype="multipart/form-data">
 
-                                <div clas="row">
+                            <div class="row">
 
-                                    <div class="col-md-offset-4 col-md-4">
-                                        <div class="form-group label-floating">
-                                            <input type="checkbox" name="best" id="best" value="1" checked />Best
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="form-group label-floating">
-                                            <input type="checkbox" name="new" id="new" value="1" />New
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group label-floating">
-                                            <label for="title" class="control-label">Titre du projet :</label>
-                                            <input type="text" class="form-control" name="title" id="title" >
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label"for="subtitle">Sous-titre du projet :</label>
-                                            <input type="text" class="form-control" name="subtitle" id="subtitle">
-                                        </div>
+                                <div class="col-md-offset-4 col-md-4">
+                                    <div class="form-group label-floating">
+                                        <input type="checkbox" name="best" id="best" value="1" checked />Best
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label"for="year">Année du projet :</label>
-                                            <input type="text" class="form-control" name="year" id="year">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-offset-1 col-md-2">
-                                        <div class="form-group label-floating">
-                                            <input type="radio" name="category" id="category" value="symphonicMusic" checked />Symphonic Music
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="form-group label-floating">
-                                            <input type="radio" name="category" id="category" value="performingArt" />Performing Art
-                                        </div>
+                                <div class="col-md-2">
+                                    <div class="form-group label-floating">
+                                        <input type="checkbox" name="new" id="new" value="1" />New
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
 
-                                        <div class="form-group">
-                                            <label>Crédits du projet :</label>
-                                            <div class="form-group label-floating">
-                                                <label class="control-label" for="credits"> </label>
-                                                <textarea class="form-control" rows="5" name="credits" id="credits"></textarea>
-                                            </div>
-                                        </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label for="title" class="control-label">Titre du projet :</label>
+                                        <input type="text" class="form-control" name="title" id="title" >
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Description du projet :</label>
-                                            <div class="form-group label-floating">
-                                                <label class="control-label" for="description"> </label>
-                                                <textarea class="form-control" rows="5" name="description" id="description"></textarea>
-                                            </div>
-                                        </div>
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label"for="subtitle">Sous-titre du projet :</label>
+                                        <input type="text" class="form-control" name="subtitle" id="subtitle">
                                     </div>
-                                    <div class="col-md-12">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label" for="year">Année du projet :</label>
+                                        <input type="text" class="form-control" name="year" id="year">
+                                    </div>
+                                </div>
+                                <div class="col-md-offset-1 col-md-2">
+                                    <div class="form-group label-floating">
+                                        <input type="radio" name="category" id="category" value="symphonicMusic" checked />Symphonic Music
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group label-floating">
+                                        <input type="radio" name="category" id="category" value="performingArt" />Performing Art
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="form-group">
+                                        <label>Crédits du projet :</label>
                                         <div class="form-group label-floating">
-                                            <label class="control-label" for="file" style="background-color: red">Upload media :</label>
-                                            <input class="form-control" type="file" id="file" name="files[]" multiple="multiple" accept="image/*" />
+                                            <label class="control-label" for="credits"> </label>
+                                            <textarea class="form-control" rows="5" name="credits" id="credits"></textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="button">
-                                    <button type="submit" name="insert" class="btn pull-right">Ajouter</button>
-                                    <div class="clearfix"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Description du projet :</label>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label" for="description"> </label>
+                                            <textarea class="form-control" rows="5" name="description" id="description"></textarea>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="col-md-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label" for="file" style="background-color: red">Upload media :</label>
+                                        <input class="form-control" type="file" id="file" name="files[]" multiple="multiple" accept="image/*" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button">
+                                <button type="submit" name="insert" class="btn pull-right">Ajouter</button>
+                                <div class="clearfix"></div>
+                            </div>
 
-                            </form>
-
-
-                        </div>
+                        </form>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
-
-
+</div>
 {% endblock %}
