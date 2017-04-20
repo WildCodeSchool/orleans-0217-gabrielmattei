@@ -14,6 +14,20 @@
 
                                     <form method="post">
 
+                                        <div clas="row">
+
+                                            <div class="col-md-offset-4 col-md-4">
+                                                <div class="form-group label-floating">
+                                                    <input type="checkbox" name="best" id="best" value="1"  />Best
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group label-floating">
+                                                    <input type="checkbox" name="new" id="new" value="1" />New
+                                                </div>
+                                            </div>
+
+                                        </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group label-floating">
@@ -30,11 +44,47 @@
                                                            id="subtitle" value="{{ resultat.subtitle }}">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label" for="year">Année du projet :</label>
-                                                    <input type="text" class="form-control" name="year" id="year"
-                                                           value="{{ resultat.year }}">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label"for="year">Année du projet :</label>
+                                                        <input type="text" class="form-control" name="year" id="year"
+                                                               value="{{ resultat.year }}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-offset-1 col-md-2">
+                                                    <div class="form-group label-floating">
+                                                        <input type="radio" name="category" id="category" value="symphonicMusic" checked />Symphonic Music
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group label-floating">
+                                                        <input type="radio" name="category" id="category" value="performingArt" />Performing Art
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Crédits du projet :</label>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label" for="credits"> </label>
+                                                        <textarea class="form-control" rows="5" name="credits" id="credits"> {{ resultat.credits }} </textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Description du projet :</label>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label" for="description"> </label>
+                                                        <textarea class="form-control" rows="5" name="description" id="description">{{ resultat.description }}</textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
