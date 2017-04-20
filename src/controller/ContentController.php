@@ -3,29 +3,28 @@
 
 namespace wcs\controller;
 
+use wcs\model\AboutManager;
 use wcs\model\ContentManager;
 
 class ContentController extends Controller
 {
     public function affiche()
     {
-
         $contentManager = new ContentManager();
-        $contents = $contentManager->findALL();
+        $contents = $contentManager->findAll();
+        $aboutManager = new AboutManager();
+        $abouts= $aboutManager->findAll();
 
-        return $this->getTwig()->render('index.html.twig', array('contents' => $contents));
+        foreach ($contents as $content) {
+            $idContent = $content->getId();
+            $contentsMedia[]= [
+                'medias' => $contentManager->findAllFromContent($idContent),
+                'content' => $content,
+            ];
+
+        }
+        return $this->getTwig()->render('index.html.twig', array('contentsMedia' => $contentsMedia, 'about'=>$abouts[0]));
     }
 
-
-  /*  public function deleteContent()
-    {
-
-        if(isset($_POST['delete'])) {
-
-            $content = new ContentManager();
-            $content->deleteAction($_POST['id']);
-        }
-        return $this->getTwig()->render('index.html.twig');
-    }*/
 
 }

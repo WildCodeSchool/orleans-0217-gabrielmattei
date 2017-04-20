@@ -19,7 +19,23 @@ class Content
     private $new;
     private $best;
     private $category;
+    private $credits;
 
+    /**
+     * @return mixed
+     */
+    public function getCredits()
+    {
+        return $this->credits;
+    }
+
+    /**
+     * @param mixed $credits
+     */
+    public function setCredits($credits)
+    {
+        $this->credits = $credits;
+    }
 
     /**
      * @return mixed

@@ -22,7 +22,7 @@ switch ($page) {
 
     case'about':
         $pageabout= new AboutController();
-        $view = $pageabout->affiche();
+        $view = $pageabout->listAbout();
         break;
 
     case'admin':

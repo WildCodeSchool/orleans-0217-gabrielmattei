@@ -1,3 +1,4 @@
 /vendor/
 .idea
 /config/connect.php
+!/src/views/about.html.twig

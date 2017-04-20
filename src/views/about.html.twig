@@ -1,25 +1,27 @@
 {% extends 'layout.html.twig' %}
-{% block css %} {% endblock %}
 
 {% block title %}
     about
 {% endblock %}
 
 {% block nav %}
-    <div class="container-fluid top">
-        <div class="row nav">
-            <div class="col-lg-3 col-md-3">
-                <a href="index.php">Gabriel Mattei</a>
+
+    <nav class="navbar navbar-default  navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.php">Gabriel Mattei</a>
             </div>
+            <div class="aboutnav">
+                <ul class="navbar-nav navbar-right">
+                    <li><a href="?p=about">About</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
 
-            <div class="col-lg-offset-8 col-lg-1 col-md-offset-2 col-md-1">
-                <a href="?p=about">About</a>
-            </div>
-        </div>
-    </div>
 
-
-    <div class="container-fluid topphone">
+    <div class="topphone">
         <div class="row nav">
 
             <div class="col-xs-6">
@@ -29,81 +31,50 @@
                 <a href="?p=about">About</a>
             </div>
         </div>
-
     </div>
 {% endblock %}
+
 {% block content %}
-    <div class="contentabout">
-        <p>Chef d'orchestre et compositeur formé à Paris et à Vienne, Gabriel Mattei partage ses activités musicales
-            entre Strasbourg,
-            Paris et Bruxelles. Directeur de l'Orchestre métropolitain de Strasbourg (Orchesre m) et kammerensemble
-            Kehl-Strasbourg,
-            il developpe une activité musicale exigeante et transversale alliant sa volonté d'associer différents
-            cultures à la
-            grande tradition de la musique classique et son souci de communication avec le public.</p>
 
-    </div>
-
-    <div class="container-fluid about">
-
-        <div class=" col-lg-3">
-            <ul class="aboutcontact">
-                <li>Représenté par:</li>
-                <li>AGENCE METI-JORI</li>
-                <li>TEL: 1 (514) 241-7226</li>
-                <li>info@meiti-jori-agency.com</li>
-            </ul>
-            <ul class="aboutcontact">
-                <li>Contact direct:</li>
-                <li> Port. + 33 (0)6 02 97 13 89</li>
-                <li> contact@gabielmattei.eu</li>
-                <li> facebook</li>
-
-            </ul>
-            <ul class="aboutcontact">
-                <li>CV to download</li>
-                <li><a href="#" download="#">>french</a></li>
-                <li><a href="#" download="#">>english</a></li>
-                <li><a href="#" download="#">>chinese</a></li>
-            </ul>
+        <div class="contentabout">
+            <p> {{ about.bio }}</p>
         </div>
 
-        <div class="col-lg-4">
-            <p class="aboutparagraphe">
-                Gabriel MATTEI a été directeur musical de l'Orchestre Universitaire de Strasbourg de 2002 à 2006,
-                de l'Ortenau Orchestre d'Offrenburg(Allemagne) de 2009 à 2011 et dirige le Kammerenselble
-                Kehl- Strasbourg depuis 2004.Chef de choeur, il a dirigé le choeur mulhousien << La Saltarelle>>
-                de 2004 à 2008. Co-directeur de la Compagnie l'Elan Lyrique, il dirige >>l'Histoire du Soldat>>
-                de Stravinsky et Ramuz en 2004/2005 et, en 2006, une nouvelle production de l'opéra
-                << le pauvre Matelot >>de Milhaud ainsi que << Le Gendarme incompris >> de Poulenc. En 2007,
-                Gabriel MATTEI crée un nouvel orchestreà géométrie variable l'Orchestre métropolitain (Orchestre m)
-                avec lequel il se consacre à la musique du XXème siècle,et plus particulièrement aux compositeur
-                français de cette période. Il expérimete également avec ses musiciens diverses formes de concert
-                avec des dispositifs scénographiques expérimentaux (concert à vélo, concert en piscine, concert en
-                appartement...)
-            </p>
 
-        </div>
+    <div class="row">
+        <div class="about">
+            <div class=" col-lg-3">
+                <ul class="aboutcontact">
+                    <li>Représenté par:</li>
+                    <li>{{ about.contact1 }}</li>
+                    <li>TEL: {{ about.tel1 }}</li>
+                    <li>{{ about.mail1 }}</li>
+                </ul>
+                <ul class="aboutcontact">
+                    <li>Contact direct:</li>
+                    <li> Port. {{ about.tel2 }}</li>
+                    <li> {{ about.mail2 }}</li>
+                    <li><a href="{{ about.contact2 }}" target="_blank">facebook</a></li>
 
-        <div class="col-lg-4">
-            <p class="aboutparagraphe">Après avoir développé plusieurs échanges artistiques
-                entre la France et l’Amérique du sud (Venezuela en
-                2001 et Argentine à partir de 2003) , Gabriel Mattei
-                amorce dès 2012 des collaborations musicales avec la
-                Chine continentale et Taïwan. Chef invité, il a dirigé
-                l’Orchestre Philharmonique de Monte Carlo, l’Orchestre
-                Philharmonique de Strasbourg, l’Orquestre symphonique
-                de Bahía Blanca (Argentine), L’Orchestre de la fondation
-                TECO de Taïwan, l’Orchestre Symphonique Libertador
-                San Martín de Buenos Aires, l’Ensemble du Nouveau
-                Siècle et l’Orchestre du Festival de Neuf-Brisach...
-            </p>
+                </ul>
+                <ul class="aboutcontact">
+                    <li>CV to download</li>
+                    <li><a href="{{ about.cvfrancais }}" download="#">>CV French</a></li>
+                    <li><a href="{{ about.cvanglais }}" download="#">>CV English</a></li>
+                    <li><a href="{{ about.cvchinois }}" download="#">>CV Chinese</a></li>
+                </ul>
+            </div>
 
-        </div>
+            <div class="col-lg-8">
+                <p class="aboutparagraphe">
+                    {{ about.subbio }}
+                </p>
+            </div>
 
-        <div class="row">
-            <div class="col-lg-12 imgAbout">
-                <img class="img-responsive" src="../../public/assets/img/GabrielMattei.jpg" alt="Gabriel">
+            <div class="row">
+                <div class="col-lg-12 imgAbout">
+                    <img class="img-responsive" src="../../public/assets/img/{{ about.image }}" alt="Gabriel">
+                </div>
             </div>
         </div>
     </div>

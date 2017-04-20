@@ -39,35 +39,85 @@ body a{
 body a:hover{
     color: black;
 }
-.container-fluid{
-
-    font-size: 30px;
-    padding: 36px 36px 135px 36px !important;
-}
-
-.container-fluid a{
-    text-decoration: none !important;
-}
-
-.content{
-    min-height: 700px;
-    padding-left: 36px;
-    padding-right: 36px;
-    padding-bottom: 120px;
-}
-
-.content p{
-
-    line-height: 58px;
-}
-span[class^="content"] {
-    display:none;
-}
 
 .nav{
     font-family: 'freighttext_promedium';
     line-height: 29px;
+    padding-top: 33px;
+    height:171px;
 }
+
+.navbar{
+    padding-top: 36px;
+}
+.navbar-default {
+    background-color: rgba(245,245,245,1);
+    border-bottom:0px;
+}
+
+.navbar.center .navbar-inner {
+    text-align: center;
+}
+
+.navbar.center .navbar-inner .nav {
+    float: none;
+    display:inline-block;
+    vertical-align: top;
+}
+
+.navbar-brand {
+    font-size:26px;
+    font-family: 'freighttext_promedium';
+    padding-left: 15px;
+    padding-top: 0;
+
+}
+.navbar-default .navbar-header  > a:hover{
+    color:black;
+}
+.navbar-default .navbar-brand {
+    color:black;
+}
+
+.navbar-default .navbar-nav > li a {
+    color:black;
+    font-size:26px;
+    font-family: 'freighttext_promedium';
+}
+.navbar-default .navbar-nav > li a:hover{
+    color:black;
+}
+.navbar-header {
+    margin-right: inherit;
+    margin-left: inherit;
+}
+
+.navbar-right{
+    margin-right:inherit;
+}
+
+.container-fluid{
+    padding-right: 36px !important;
+    padding-left: 36px !important;
+}
+
+.container-fluid a{
+    text-decoration: none;
+}
+
+.content{
+    min-height: 710px;
+    padding-bottom: 120px;
+}
+
+.content p{
+    line-height: 58px;
+}
+
+span[class^="content"] {
+    display:none;
+}
+
 
 span.title{
     font-family: 'freighttext_promedium_italic';
@@ -98,10 +148,12 @@ a:hover{
     opacity: 1 !important;
 }
 .top {
+    font-size: 26px;
     background-color: rgb(245,245,245);
     position: fixed;
     width: 100%;
 }
+
 @media screen and (min-width: 200px) and (max-width: 1100px) {
     .top {
         display:none;
@@ -128,9 +180,7 @@ a:hover{
     position: fixed;
     width: 100%;
 }
-.about{
-    text-align: right;
-}
+
 
 .top .symf{
     text-align: right;
@@ -143,15 +193,23 @@ a:hover{
 /********************  STYLES ABOUT ********************/
 
 .about{
-    padding-top: 72px !important;
+    padding-top: 72px ;
 }
+
+.about .col-lg-3 {
+    padding-left: inherit;
+    padding-right: inherit;
+}
+.about .col-lg-8 {
+    padding-left: inherit;
+    padding-right: inherit;
+}
+
 .contentabout p{
     padding-top: 200px !important;
     font-family: 'freighttext_promedium';
     text-indent: 90px;
     font-size: 45px;
-    padding-left: 36px;
-    padding-right: 36px;
 }
 
 .aboutcontact li{
@@ -162,12 +220,18 @@ a:hover{
 }
 
 .aboutparagraphe {
-
     font-family: 'freighttext_promedium';
     font-size: 20px;
     text-align: left;
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    padding-left: 36px;
 }
 
+.aboutnav{
+    padding-right: 30px;
+}
 
 /********************  STYLES ADMIN ********************/
 
@@ -282,8 +346,8 @@ li {
 
 hr{
     border: 1px solid black;
-    margin-left: 28px;
-    margin-right: 28px;
+    margin-left: 25px;
+    margin-right: 36px;
     margin-top: 0;
     bottom: -50px;
 }
@@ -293,8 +357,9 @@ hr{
     position: relative;
     bottom: 0;
     right: auto;
-    top: 100px;
-    opacity: 0.98;
+    top: 80px;
+    padding-left: 25px;
+    padding-right: 25px;
 
 }
 .modal.modal-fullscreen .modal-dialog {
@@ -312,7 +377,7 @@ hr{
     -moz-box-shadow: inherit;
     -o-box-shadow: inherit;
     box-shadow: inherit;
-    background-color: rgb(245,245,245);
+    background-color: rgba(245,245,245,0.98);
 
     /* change bg color below */
     /* background:#1abc9c; */
@@ -327,6 +392,7 @@ hr{
 
 
 .modal-content{
+    min-height: 800px;
     padding-top: 0;
     font-size: 45px;
     padding-left: 36px;
@@ -349,6 +415,19 @@ hr{
 .multimedia{
     padding-top: 100px;
 }
+
+.swiper-container{
+    height: 800px;
+    width: 1200px;
+    border-bottom: none;
+
+}
+
+.swiper-slide img{
+    margin: 0 auto;
+    padding-bottom: 50px;
+    height: 800px;
+}
 /*.modalTitle{*/
     /*position: fixed;*/
 /*}*/
@@ -358,13 +437,22 @@ hr{
 
 }
 
+.credits{
+    font-family: 'freighttext_promedium';
+    font-size: 17px;
+    text-align: left;
+    padding-bottom:100px;
+    width: 40%;
+
+}
 .description{
     font-family: 'freighttext_promedium';
-    font-size: 18px;
+    font-size: 17px;
     text-align: left;
-    padding-left: 36px;
-    padding-right: 36px;
     padding-bottom:100px;
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
 }
 
 .paragraphemodale{
