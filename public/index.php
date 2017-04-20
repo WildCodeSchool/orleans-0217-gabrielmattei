@@ -55,10 +55,12 @@ switch ($page) {
         $view = $pagelogin->login();
         break;
 
+
     default:
         $pageError=new AdminController();
         $view = $pageError->afficheError('404');
         break;
+
 }
 
 echo $view;
