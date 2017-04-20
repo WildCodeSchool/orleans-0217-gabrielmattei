@@ -21,7 +21,6 @@ class AboutController extends Controller
 
     }
 
-
     public function updateProfil()
     {
         $bio = $_POST['bio'];
@@ -41,14 +40,11 @@ class AboutController extends Controller
         $this->db->pdo->exec($query);
     }
 
-
-
-
     public function findProfil()
     {
         $query = "SELECT * FROM about";
         $res = $this->db->pdo->query($query);
         $contents = $res->fetchAll();
-        return $contents=$contents[0];
+        return $contents[0];
     }
 }
