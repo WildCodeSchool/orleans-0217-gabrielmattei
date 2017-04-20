@@ -1,68 +1,71 @@
 {% extends 'layout.html.twig' %}
 
 {% block css %}
+    {{ parent() }}
+    <link rel="stylesheet" href="../../public/assets/css/swiper.css">
 {% endblock %}
+
 {% block title %}
     Conductor
 {% endblock %}
 {% block nav %}
-<div class="container-fluid top">
-    <div class="row nav">
-        <div class="col-lg-3 col-md-3">
-            <a href="index.php">Gabriel Mattei</a>
-        </div>
-        <div class="col-lg-3 col-md-3 symf">
-            <a class="musique" id="symf">Symphonic Music</a>
+    <div class="container-fluid top">
+        <div class="row nav">
+            <div class="col-lg-3 col-md-3">
+                <a href="index.php">Gabriel Mattei</a>
+            </div>
+            <div class="col-lg-3 col-md-3 symf">
+                <a class="musique" id="symf">Symphonic Music</a>
 
-        </div>
-        <div class="col-lg-3 col-md-3">
-            <a class="performing" id="perfo">Performing Art</a>
-        </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <a class="performing" id="perfo">Performing Art</a>
+            </div>
 
-        <div class="col-lg-offset-2 col-lg-1 col-md-offset-2 col-md-1">
-            <a href="?p=about">About</a>
+            <div class="col-lg-offset-2 col-lg-1 col-md-offset-2 col-md-1">
+                <a href="?p=about">About</a>
+            </div>
         </div>
     </div>
-</div>
 
 
-<div class="container-fluid topphone">
-    <div class="row nav">
+    <div class="container-fluid topphone">
+        <div class="row nav">
 
-        <div class="col-xs-6">
-            <a href="index.php">Gabriel Mattei</a>
+            <div class="col-xs-6">
+                <a href="index.php">Gabriel Mattei</a>
+            </div>
+
+            <div class="col-xs-offset-3 col-xs-3">
+                <a href="?p=about">About</a>
+            </div>
         </div>
-
-        <div class="col-xs-offset-3 col-xs-3">
-            <a href="?p=about">About</a>
+        <div class="row">
+            <div class="col-xs-6 symf">
+                <a class="musique" id="symf">Symphonic Music</a>
+            </div>
+            <div class="col-xs-6">
+                <a class="performing" id="perfo">Performing Art</a>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-6 symf">
-            <a class="musique" id="symf">Symphonic Music</a>
-        </div>
-        <div class="col-xs-6">
-            <a class="performing" id="perfo">Performing Art</a>
-        </div>
-    </div>
-</div>
 {% endblock %}
 {% block content %}
     <div class="content">
         <p>
 
             {% set boucle = 1 %}
-            {% for content in contents %}
+            {% for tabContent in contentsMedia %}
 
-                {% if content.best == 1 %}
+                {% if tabContent.content.best == 1 %}
                     {% if boucle != 1 %}
                         <img src="../public/assets/img/silence2.png" alt="silence">
                     {% endif %}
-                    <span class="{{ content.category }} indent" data-toggle="modal" data-target="#{{ content.id }}"
+                    <span class="{{ tabContent.content.category }} indent" data-toggle="modal" data-target="#{{ tabContent.content.id }}"
                           contenteditable="false" data-backdrop="false">
-                        <span class="title bests"> {{ content.title }}</span>
-                        <span class="subtitle"> {{ content.subtitle }}</span>
-                        {% if content.new == 1 %}
+                        <span class="title bests"> {{ tabContent.content.title }}</span>
+                        <span class="subtitle"> {{ tabContent.content.subtitle }}</span>
+                        {% if tabContent.content.new == 1 %}
                             <span class="virgule">,</span>
                             <span class="new"> new! </span>
                         {% endif %}
@@ -74,19 +77,19 @@
 
             {% set lastyear = '' %}
 
-            {% for content in contents %}
+            {% for tabContent in contentsMedia %}
 
-                {% if lastyear !=  content.year %}
+                {% if lastyear !=  tabContent.content.year %}
                     <span class="point">.</span>
-                    <span id="year{{ content.year }}" class="labelyear">{{ content.year }}</span>
-                    {% set lastyear = content.year %}
+                    <span id="year{{ tabContent.content.year }}" class="labelyear">{{ tabContent.content.year }}</span>
+                    {% set lastyear = tabContent.content.year %}
                     {% set boucle2 = 1 %}
                 {% endif %}
 
-                <span class="content{{ content.year }} {{ content.category }}" data-toggle="modal"
-                      data-target="#{{ content.id }}" contenteditable="false" data-backdrop="false">
+                <span class="content{{ tabContent.content.year }} {{ tabContent.content.category }}" data-toggle="modal"
+                      data-target="#{{ tabContent.content.id }}" contenteditable="false" data-backdrop="false">
 
-            <span class="content{{ content.year }}">
+            <span class="content{{ tabContent.content.year }}">
 
                 {% if boucle2 == 1 %}
                     <span class="point">.</span>
@@ -94,11 +97,11 @@
                 {% if boucle2 != 1 %}
                     <img src="../public/assets/img/silence2.png" alt="silence">
                 {% endif %}
-                <span class="{{ content.category }}">
+                <span class="{{ tabContent.content.category }}">
 
-                        <span class="title"> {{ content.title }}</span>
-                        <span class="subtitle"> {{ content.subtitle }}</span>
-                    {% if content.new == 1 %}
+                        <span class="title"> {{ tabContent.content.title }}</span>
+                        <span class="subtitle"> {{ tabContent.content.subtitle }}</span>
+                    {% if tabContent.content.new == 1 %}
                         <span class="virgule">,</span>
                         <span class="new"> new! </span>
                     {% endif %}
@@ -110,8 +113,8 @@
         </p>
     </div>
 
-    {% for content in contents %}
-        <div class="modal modal-fullscreen footer-to-bottom" id="{{ content.id }}" tabindex="-1"
+    {% for tabContent in contentsMedia %}
+        <div class="modal modal-fullscreen footer-to-bottom" id="{{ tabContent.content.id }}" tabindex="-1"
              role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog animated zoomInLeft">
                 <div class="modal-content">
@@ -119,101 +122,62 @@
                     <div class="modal-body">
                         <div class="row">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <span class="title"> {{ content.title }}</span>
-                            <span class="subtitle"> {{ content.subtitle }}</span>
+                            <span class="title"> {{ tabContent.content.title }}</span>
+                            <span class="subtitle"> {{ tabContent.content.subtitle }}</span>
                         </div>
 
 
                         <div class="row multimedia">
-                            <div class="col-lg-offset-4 col-lg-6">
-                                {% if content.linktype == 'video' %}
-                                    <iframe width="600" height="500" src="{{ content.link }}" frameborder="0"
-                                            allowfullscreen="true"></iframe>
-                                {% endif %}
-                            </div>
-
-                            <div class="col-lg-12">
-                                {% if content.linktype == 'image' %}
-                                    <img class="img-responsive" src="{{ content.link }}"
-                                         style="width:1800px;height:1300px;">
-                                {% endif %}
-                            </div>
-
-                            <div>
-                                {% if content.linktype == 'audio' %}
-                                    <audio src="{{ content.link }}" controls></audio>
-                                {% endif %}
-                            </div>
+                            {% include 'media.html.twig' with {'medias':tabContent.medias } %}
                         </div>
 
 
                     </div>
 
 
-                <div class="row">
+                    <div class="row">
 
-                    <div class="col-lg-4">
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                            aliquet nulla sed erat
-                            pulvinar,
-                            nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac
-                            ante
-                            ipsum primis
-                            in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros
-                            accumsan
-                            pharetra.
-                            Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et
-                            bibendum
-                            orci. Maecenas
-                            fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
-                        </p>
+                        <div class="col-lg-4">
+                            <p class="credits">{{ tabContent.content.credits }}</p>
+                        </div>
+
+                        <div class="col-lg-8">
+                            <p class="description">{{ tabContent.content.description }}</p>
+                        </div>
+
                     </div>
 
-                    <div class="col-lg-4">
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                            aliquet nulla sed erat
-                            pulvinar,
-                            nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac
-                            ante
-                            ipsum primis
-                            in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros
-                            accumsan
-                            pharetra.
-                            Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et
-                            bibendum
-                            orci. Maecenas
-                            fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
-                        </p>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                            aliquet nulla sed erat
-                            pulvinar,
-                            nec tempor libero sagittis. Nunc vel rhoncus lorem. Interdum et malesuada fames ac
-                            ante
-                            ipsum primis
-                            in faucibus. Sed ullamcorper feugiat augue eu tincidunt. Sed vel felis id eros
-                            accumsan
-                            pharetra.
-                            Praesent bibendum mauris vitae interdum scelerisque. Sed ac blandit nisl, et
-                            bibendum
-                            orci. Maecenas
-                            fermentum venenatis diam vel ornare. Donec dictum tellus in condimentum varius.
-                        </p>
-                    </div>
 
                 </div>
-                <hr>
 
             </div>
-
-        </div>
-        <!-- /.modal-content -->
+            <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
 
     {% endfor %}
 
 {% endblock %}
+{% block script %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function () {
+            var swiper = new Swiper ('.swiper-container', {
+                // Optional parameters
 
+                direction: 'horizontal',
+                loop:true,
+
+                // If we need pagination
+                pagination: '.swiper-pagination',
+
+                // Navigation arrows
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+
+            })
+        });
+
+
+    </script>
+{% endblock %}

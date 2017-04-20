@@ -1,0 +1,51 @@
+{% set type = '' %}
+{% for media in medias %}
+    {% if media.linkType == 'image' %}
+        {% set type = 'image' %}
+    {% endif %}
+{% endfor %}
+
+{% if type=='image' %}
+    {#  creation de slider#}
+
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            {% for media in medias %}
+            <div class="swiper-slide">
+                 <img class="img-responsive" src="../public/assets/upload/{{ media.link }}">
+            </div>
+            {% endfor %}
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+{% endif %}
+
+{% for media in medias %}
+    <div class="col-lg-offset-4 col-lg-6">
+        {% if media.linkType == 'video' %}
+            <iframe width="600" height="500" src="{{ media.link }}" frameborder="0"
+                    allowfullscreen="true"></iframe>
+        {% endif %}
+    </div>
+
+    <div class="col-lg-offset-4 col-lg-6">
+        {% if media.linkType == 'audio' %}
+            <audio src="../public/assets/upload/{{ media.link }}" controls></audio>
+        {% endif %}
+    </div>
+{% endfor %}
+
+
+{% if type=='image' %}
+    {#fermeture de slider#}
+
+
+
+    </div>
+{% endif %}

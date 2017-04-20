@@ -19,7 +19,11 @@ class Controller
 
         $loader = new \Twig_Loader_Filesystem(array('../src/views','../src/views/admin'));
         $this->twig = new \Twig_Environment($loader, array(
-            'cache' => false,));
+            'cache' => false,
+            'debug' => true,
+        ));
+
+        $this->twig->addExtension(new \Twig_Extension_Debug());
     }
 
     /**

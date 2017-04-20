@@ -12,12 +12,12 @@ use wcs\model\AboutManager;
 
 class AboutController extends Controller
 {
-    public function affiche()
+    public function listAbout()
     {
         $aboutManager = new AboutManager();
-        $contents= $aboutManager->findALL();
+        $abouts= $aboutManager->findAll();
 
-        return $this->getTwig()->render('about.html.twig', array('contents' => $contents));
+        return $this->getTwig()->render('about.html.twig', array('about' => $abouts[0]));
 
     }
 }

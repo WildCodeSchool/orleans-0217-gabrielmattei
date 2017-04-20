@@ -1,19 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wilder5
- * Date: 12/04/17
- * Time: 13:53
- */
-
-namespace wcs;
 
 
-class Link
+namespace wcs\model;
+
+class Media
 {
     private $id;
     private $link;
-    private $linkType;
+    private $linktype;
+    private $idcontent;
 
     /**
      * @return mixed
@@ -25,12 +20,10 @@ class Link
 
     /**
      * @param mixed $id
-     * @return Link
      */
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
@@ -43,31 +36,42 @@ class Link
 
     /**
      * @param mixed $link
-     * @return Link
      */
     public function setLink($link)
     {
         $this->link = $link;
-        return $this;
     }
 
     /**
      * @return mixed
      */
-    public function getLinkType()
+    public function getLinktype()
     {
-        return $this->linkType;
+        return $this->linktype;
     }
 
     /**
-     * @param mixed $linkType
-     * @return Link
+     * @param mixed $linktype
      */
-    public function setLinkType($linkType)
+    public function setLinktype($linktype)
     {
-        $this->linkType = $linkType;
-        return $this;
+        $this->linktype = $linktype;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getIdcontent()
+    {
+        return $this->idcontent;
+    }
+
+    /**
+     * @param mixed $idcontent
+     */
+    public function setIdcontent($idcontent)
+    {
+        $this->idcontent = $idcontent;
+    }
 
 }

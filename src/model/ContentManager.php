@@ -55,16 +55,28 @@ class ContentManager
         return $res;
 
     }
-    public function findALL()
+    public function findAll()
     {
-        $query = "SELECT * FROM content ORDER BY year desc";
+        $query = "SELECT * FROM content  ORDER BY year desc";
         $res = $this->db->pdo->query($query);
         $contents = $res->fetchAll(\PDO::FETCH_CLASS, 'wcs\model\Content');
 
         return $contents;
 
-
     }
+
+    public function findAllFromContent($idContent)
+    {
+        $query = "SELECT * FROM media WHERE idcontent=:id";
+        $prep = $this->db->pdo->prepare($query);
+        $prep->bindValue(':id', $idContent, \PDO::PARAM_INT);
+        $prep->execute();
+        $medias = $prep->fetchAll(\PDO::FETCH_CLASS, 'wcs\model\Media');
+
+        return $medias;
+    }
+
+
     public function findOne($id)
     {
         $query = "SELECT * FROM content WHERE id= $id";
