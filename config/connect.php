@@ -1,5 +1,5 @@
 <?php
-define("DSN", "mysql:host=localhost;dbname=GabrielBD");
+define("DSN", "mysql:host=localhost;dbname=gabrielDB");
 define("USER", "root");
-define("PASS", "april");
+define("PASS", "Maximewcs45");
 

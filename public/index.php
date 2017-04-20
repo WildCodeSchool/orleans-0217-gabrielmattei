@@ -12,11 +12,7 @@ $page='home';
 if(isset($_GET['p'])) {
     $page = $_GET['p'];
 }
-$isAdmin = false;
-if (isset($_SESSION['logged']))
-{
-    $isAdmin = true;
-}
+
 switch ($page) {
 
     case'home':
@@ -31,49 +27,27 @@ switch ($page) {
 
     case'admin':
         $pagecont= new AdminController();
-        if($isAdmin)
-        {
-            $view = $pagecont->afficheAdmin();
-        }
-        header('Location : index.php/?err=NotLogged');
+        $view = $pagecont->afficheAdmin();
         break;
 
     case'update':
         $pageupdate= new AdminController();
-        if($isAdmin)
-        {
-            $view = $pageupdate->afficheOneAdmin($_GET['id']);
-        }
-        header('Location : index.php/?err=NotLogged');
+        $view = $pageupdate->afficheOneAdmin($_GET['id']);
         break;
 
     case 'create':
         $pageinsert=new AdminController();
-        if($isAdmin)
-        {
-            $view = $pageinsert->addContent();
-        }
-        header('Location : index.php/?err=NotLogged');
+        $view = $pageinsert->addContent();
         break;
 
     case 'profil':
         $pageprofil=new AdminController();
-        if($isAdmin)
-        {
-            $view = $pageprofil->showProfil();
-        }
         $view = $pageprofil->showProfil();
-        header('Location : index.php/?err=NotLogged');
         break;
 
     case 'logout':
         $pagelogout=new AdminController();
-        if($isAdmin)
-        {
-            $view = $pagelogout->logout();
-        }
         $view = $pagelogout->logout();
-        header('Location : index.php/?err=NotLogged');
         break;
 
     case 'login':
@@ -82,7 +56,8 @@ switch ($page) {
         break;
 
     default:
-        header("Location : 404.php");
+        $pageError=new AdminController();
+        $view = $pageError->afficheError('404');
         break;
 }
 

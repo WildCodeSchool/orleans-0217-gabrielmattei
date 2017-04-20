@@ -62,24 +62,38 @@ class AdminController extends Controller
 
     public function logout()
     {
-
-        unset ($_SESSION['logged']);
-        {
-            header('location: index.php');
-        }
-        return $this->getTwig()->render('index.html.twig');
+        session_unset();
+        session_destroy();
+        header('Location: index.php?p=login');
     }
 
 
     public function login()
     {
-        $contentManager = new ContentManager();
-
-        if(isset($_POST['login'])){
-            $contentManager->login();
+        if(isset($_POST['login']) and isset($_POST['password']))
+        {
+            $cont = new ContentManager();
+            $isAuth = $cont->loginAction($_POST['login'], $_POST['password']);
+            if($isAuth)  {
+                header('Location: index.php?p=admin');
+            }
         }
-        return $this->getTwig()->render('admin/loginAdmin.html.twig');
+        return $this->getTwig()->render('loginAdmin.html.twig');
     }
 
+    public function afficheError($error)
+    {
+        switch ($error)
+        {
+            case 'notlogged':
+                $rep = '<div class="alert alert-danger">Erreur d\'authentification, veuillez vous connecter </div >';
+                return $this->getTwig()->render('index.html.twig', array('reperror' => $rep));
+            break;
+
+            case '404';
+                return $this->getTwig()->render('404.html.twig');
+            break;
+        }
+    }
 
 }

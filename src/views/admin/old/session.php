@@ -35,9 +35,7 @@ if(!empty($result)){
 }
 
 else{
-
     header('Location: login.php?error=1');
-
 }
 exit();
 

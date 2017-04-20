@@ -61,7 +61,6 @@ class ContentManager
 
         return $contents;
 
-
     }
     public function findOne($id)
     {
@@ -70,7 +69,22 @@ class ContentManager
         $content = $res->fetchAll(\PDO::FETCH_CLASS, 'wcs\model\Content');
 
         return $content[0];
-
     }
+    public function loginAction($login, $password)
+    {
+        $reqLogin = "SELECT login FROM users WHERE login = :login AND password = :pwd";
+        $stmt = $this->db->pdo->prepare($reqLogin);
+        $stmt->bindValue(':login', $login);
+        $stmt->bindValue(':pwd', sha1($password));
+        $stmt->execute();
+        $res = $stmt->fetch();
 
+        if (!empty($res)) {
+            $_SESSION['isAuthenticated'] = true;
+        } else {
+            $_SESSION['isAuthenticated'] = false;
+        }
+
+        return $_SESSION['isAuthenticated'];
+    }
 }
