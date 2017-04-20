@@ -7,12 +7,27 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header" data-background-color="blue">
+                        <div class="card-header">
                             <h4 class="title">Ajouter un projet</h4>
                         </div>
                         <div class="card-content">
 
                             <form method="post" enctype="multipart/form-data">
+
+                                <div clas="row">
+
+                                    <div class="col-md-offset-4 col-md-4">
+                                        <div class="form-group label-floating">
+                                            <input type="checkbox" name="best" id="best" value="1" checked />Best
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group label-floating">
+                                            <input type="checkbox" name="new" id="new" value="1" />New
+                                        </div>
+                                    </div>
+
+                                </div>
 
                                 <div class="row">
                                     <div class="col-md-6">
@@ -48,7 +63,19 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="form-group label-floating">
+
+                                        <div class="form-group">
+                                            <label>Crédits du projet :</label>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label" for="credits"> </label>
+                                                <textarea class="form-control" rows="5" name="credits" id="credits"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
                                             <label>Description du projet :</label>
                                             <div class="form-group label-floating">
                                                 <label class="control-label" for="description"> </label>
@@ -64,7 +91,7 @@
                                     </div>
                                 </div>
                                 <div class="button">
-                                    <button type="submit" name="insert" class="btn btn-primary pull-right">Ajouter</button>
+                                    <button type="submit" name="insert" class="btn pull-right">Ajouter</button>
                                     <div class="clearfix"></div>
                                 </div>
 

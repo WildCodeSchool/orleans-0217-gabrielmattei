@@ -7,10 +7,8 @@
     <!-- FAVICON -->
     {% block css %}
         <link rel="icon" type="image/png" href="../../public/assets/img/favico.png" sizes="32x32"/>
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/stylesheet.css" rel="stylesheet">
-
-
+        <link href="../../public/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../public/assets/css/stylesheet.css" rel="stylesheet">
 
     {% endblock %}
     <title>Gabriel Mattei | {% block title %} index {% endblock %}</title>
@@ -31,34 +29,7 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
-<script src="assets/js/bootstrap.min.js"></script>
-
-{% block script %}
-
-<script src="assets/js/swiper.jquery.js"></script>
-<script src="assets/js/swiper.js"></script>
-
-<script>
-    $(document).ready(function () {
-        var swiper = new Swiper ('.swiper-container', {
-            // Optional parameters
-
-            direction: 'horizontal',
-            loop:true,
-
-            // If we need pagination
-            pagination: '.swiper-pagination',
-
-            // Navigation arrows
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-
-        })
-    });
-
-
-</script>
-{% endblock %}
+<script src="../../public/assets/js/bootstrap.min.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -75,7 +46,6 @@
             $(".performingArt").css("visibility", 'hidden');
             $(".performing").css("opacity", '0')
             $(".musique").css("opacity", '1')
-
 
         });
 

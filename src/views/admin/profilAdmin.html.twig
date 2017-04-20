@@ -9,17 +9,17 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header" data-background-color="blue">
+                    <div class="card-header">
                         <h4 class="title">Éditer la page about</h4>
 
                     </div>
                     <div class="card-content">
 
-                        <form method="post">
+                        <form method="post" action="index.php?p=updateProfil">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Bio</label>
+                                        <label>Biographie</label>
                                         <div class="form-group label-floating">
                                             <label class="control-label"></label>
                                             <textarea name="bio" class="form-control" rows="5">{{ profil.bio }}</textarea>
@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Sub bio</label>
+                                        <label>Parcours</label>
                                         <div class="form-group label-floating">
                                             <label class="control-label"></label>
                                             <textarea name="subbio" class="form-control" rows="5">{{ profil.subbio }} </textarea>
@@ -43,13 +43,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">Contact 1</label>
+                                        <label class="control-label">Contact Agence METI-JORI</label>
                                         <input type="text" name="contact1" class="form-control" value="{{ profil.contact1 }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">Contact 2</label>
+                                        <label class="control-label">Profil Facebook Gabriel Mattei</label>
                                         <input type="text" name="contact2" class="form-control" value="{{ profil.contact2 }}">
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                             <div class="row">
                                 <div class="col-md-offset-2 col-md-4">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">Upload image</label>
+                                        <label class="control-label">Image About</label>
                                         <input type="text" name="image" class="form-control" value="{{ profil.image }}">
                                     </div>
                                 </div>
@@ -67,19 +67,19 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">CV anglais</label>
+                                        <label class="control-label">CV Anglais</label>
                                         <input type="text" name="cvanglais" class="form-control" value="{{ profil.cvanglais }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">CY français</label>
+                                        <label class="control-label">CV Français</label>
                                         <input type="text" name="cvfrancais" class="form-control" value="{{ profil.cvfrancais }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">CV chinois</label>
+                                        <label class="control-label">CV Chinois</label>
                                         <input type="text" name="cvchinois" class="form-control" value="{{ profil.cvchinois }}">
                                     </div>
                                 </div>
@@ -87,30 +87,30 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">Mail 1</label>
+                                        <label class="control-label">Mail Agence METI-JORI</label>
                                         <input type="text" name="mail1" class="form-control" value="{{ profil.mail1 }}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">Mail 2</label>
+                                        <label class="control-label">Mail Gabriel Mattei</label>
                                         <input type="text" name="mail2" class="form-control" value="{{ profil.mail2 }}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">TEL 1</label>
+                                        <label class="control-label">TEL. Agence METI-JORI</label>
                                         <input type="text" name="tel1" class="form-control" value="{{ profil.tel1 }}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">TEL 2</label>
+                                        <label class="control-label">PORT. Gabriel Mattei</label>
                                         <input type="text" name="tel2" class="form-control" value="{{ profil.tel2 }}">
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" name="updateProfil" value="updateProfil" class="btn btn-primary pull-right">Modifier</button>
+                            <button type="submit" name="updateProfil" value="updateProfil" class="btn pull-right">Modifier</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>

@@ -59,7 +59,7 @@
 
                 {% if tabContent.content.best == 1 %}
                     {% if boucle != 1 %}
-                        <img src="../public/assets/img/silence2.png" alt="silence">
+                        <img src="../../public/assets/img/silence2.png" alt="silence">
                     {% endif %}
                     <span class="{{ tabContent.content.category }} indent" data-toggle="modal" data-target="#{{ tabContent.content.id }}"
                           contenteditable="false" data-backdrop="false">
@@ -95,7 +95,7 @@
                     <span class="point">.</span>
                 {% endif %}
                 {% if boucle2 != 1 %}
-                    <img src="../public/assets/img/silence2.png" alt="silence">
+                    <img src="../../public/assets/img/silence2.png" alt="silence">
                 {% endif %}
                 <span class="{{ tabContent.content.category }}">
 
@@ -157,27 +157,4 @@
 
     {% endfor %}
 
-{% endblock %}
-{% block script %}
-    {{ parent() }}
-    <script>
-        $(document).ready(function () {
-            var swiper = new Swiper ('.swiper-container', {
-                // Optional parameters
-
-                direction: 'horizontal',
-                loop:true,
-
-                // If we need pagination
-                pagination: '.swiper-pagination',
-
-                // Navigation arrows
-                nextButton: '.swiper-button-next',
-                prevButton: '.swiper-button-prev',
-
-            })
-        });
-
-
-    </script>
 {% endblock %}

@@ -33,8 +33,8 @@ class AboutController extends Controller
         $cvchinois = $_POST['cvchinois'];
         $mail1 = $_POST['mail1'];
         $mail2 = $_POST['mail2'];
-        $tel1 = $_POST['mail1'];
-        $tel2 = $_POST['mail2'];
+        $tel1 = $_POST['tel1'];
+        $tel2 = $_POST['tel2'];
         $query = ("UPDATE about SET bio = '$bio' , subbio= '$subbio' , contact1= '$contact1' , contact2= '$contact2' , image= '$image' , cvanglais= '$cvanglais',
         cvfrancais= '$cvfrancais' , cvchinois= '$cvchinois' , mail1= '$mail1' , mail2= '$mail2' , tel1= '$tel1' , tel2= '$tel2' WHERE id= 1 ");
         $this->db->pdo->exec($query);

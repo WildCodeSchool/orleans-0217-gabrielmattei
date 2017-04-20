@@ -6,24 +6,37 @@
 {% endfor %}
 
 {% if type=='image' %}
-    {#  creation de slider#}
 
-    <div class="swiper-container">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner" role="listbox">
+
             {% for media in medias %}
-            <div class="swiper-slide">
-                 <img class="img-responsive" src="assets/upload/{{ media.link }}">
-            </div>
+
+                <div class="item {% if 0 == loop.index0 %}active{% endif %}">
+                    <img src="../../public/assets/upload/{{ media.link }}">
+                </div>
+
             {% endfor %}
         </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
 
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
+    </div>
+
 {% endif %}
 
 {% for media in medias %}
@@ -41,11 +54,3 @@
     </div>
 {% endfor %}
 
-
-{% if type=='image' %}
-    {#fermeture de slider#}
-
-
-
-    </div>
-{% endif %}
