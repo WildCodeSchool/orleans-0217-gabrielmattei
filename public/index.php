@@ -44,7 +44,6 @@ switch ($page) {
         break;
 
     case 'updateProfil':
-        var_dump("updateProfil");
         $pageprofil=new AdminController();
         $view = $pageprofil->updateProfil();
         break;

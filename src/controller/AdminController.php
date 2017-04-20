@@ -4,6 +4,7 @@
 namespace wcs\controller;
 
 use wcs\model\ContentManager;
+use wcs\model\Media;
 
 
 class AdminController extends Controller
@@ -41,6 +42,8 @@ class AdminController extends Controller
         $contentManager = new ContentManager();
 
         if(isset($_POST['insert'])) {
+            $mediaManager = new MediaManager();
+            $mediaManager->upload();
             $contentManager->addContent();
             header('location:index.php?p=admin');
         }
@@ -69,14 +72,12 @@ class AdminController extends Controller
 
     }
 
-
     public function logout()
     {
         session_unset();
         session_destroy();
         header('Location: index.php?p=login');
     }
-
 
     public function login()
     {
