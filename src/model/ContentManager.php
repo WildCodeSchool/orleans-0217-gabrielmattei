@@ -127,8 +127,8 @@ class ContentManager
         $prepa-> bindValue(':cvchinois' , $_POST['cvchinois']);
         $prepa-> bindValue(':mail1' , $_POST['mail1']);
         $prepa-> bindValue(':mail2' , $_POST['mail2']);
-        $prepa-> bindValue(':tel1' , $_POST['mail1']);
-        $prepa-> bindValue(':tel2' , $_POST['mail2']);
+        $prepa-> bindValue(':tel1' , $_POST['tel1']);
+        $prepa-> bindValue(':tel2' , $_POST['tel2']);
 
         $prepa ->execute();
 //        $this->db->pdo->exec($query);
