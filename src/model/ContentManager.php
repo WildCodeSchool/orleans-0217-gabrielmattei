@@ -30,6 +30,7 @@ class ContentManager
         $prep->bindValue(':description', $_POST['description']);
         $prep->bindValue(':category', $_POST['category']);
         $res = $prep->execute();
+
         return $res;
     }
 
@@ -55,7 +56,7 @@ class ContentManager
     }
     public function findAll()
     {
-        $query = "SELECT * FROM content  ORDER BY year desc";
+        $query = "SELECT * FROM content  ORDER BY year DESC ";
         $res = $this->db->pdo->query($query);
         $contents = $res->fetchAll(\PDO::FETCH_CLASS, 'wcs\model\Content');
 
