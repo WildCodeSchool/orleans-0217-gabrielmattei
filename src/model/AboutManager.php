@@ -38,7 +38,7 @@ class AboutManager
             $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $upfil);
 
             if ($resultat) {
-                echo "Image définitivement enregistrée";
+                echo "Votre image de profil est définitivement enregistrée";
                 $image = '' . $_FILES['image']['name'];
                 $query = "UPDATE about SET image = :image WHERE id=1";
                 $prepa = $this->db->pdo->prepare($query);
@@ -58,7 +58,7 @@ class AboutManager
             $resultat = move_uploaded_file($_FILES['cvfrancais']['tmp_name'], $upfil);
 
             if ($resultat) {
-                echo "CV définitivement enregistrée";
+                echo "CV français définitivement enregistrée";
                 $cvfrancais = '' . $_FILES['cvfrancais']['name'];
                 $query = "UPDATE about SET cvfrancais = :cvfrancais WHERE id=1";
                 $prepa = $this->db->pdo->prepare($query);
@@ -69,17 +69,57 @@ class AboutManager
         }
 
 
-        $query = ("UPDATE about SET bio = :bio , subbio= :subbio , contact1= :contact1 , contact2= :contact2, cvanglais= :cvanglais,
-        cvchinois= :cvchinois , mail1= :mail1 , mail2= :mail2 , tel1= :tel1 , tel2= :tel2 WHERE id= 1 ");
+        $cvanglais = null;
+
+        if (isset($_FILES['cvanglais'])) {
+
+            $updir = 'assets/upload/';
+            $upfil = $updir . basename($_FILES['cvanglais']['name']);
+
+            $resultat = move_uploaded_file($_FILES['cvanglais']['tmp_name'], $upfil);
+
+            if ($resultat) {
+                echo "CV anglais définitivement enregistrée";
+                $cvanglais = '' . $_FILES['cvanglais']['name'];
+                $query = "UPDATE about SET cvanglais = :cvanglais WHERE id=1";
+                $prepa = $this->db->pdo->prepare($query);
+                $prepa->bindValue(':cvanglais', $cvanglais);
+                $prepa->execute();
+            }
+
+        }
+
+        $cvchinois = null;
+
+        if (isset($_FILES['cvchinois'])) {
+
+            $updir = 'assets/upload/';
+            $upfil = $updir . basename($_FILES['cvchinois']['name']);
+
+            $resultat = move_uploaded_file($_FILES['cvchinois']['tmp_name'], $upfil);
+
+            if ($resultat) {
+                echo "CV Chinois définitivement enregistrée";
+                $cvchinois = '' . $_FILES['cvchinois']['name'];
+                $query = "UPDATE about SET cvchinois = :cvchinois WHERE id=1";
+                $prepa = $this->db->pdo->prepare($query);
+                $prepa->bindValue(':cvchinois', $cvchinois);
+                $prepa->execute();
+            }
+
+        }
+
+        $query = ("UPDATE about SET bio = :bio , subbio= :subbio , contact1= :contact1 , contact2= :contact2, 
+        mail1= :mail1 , mail2= :mail2 , tel1= :tel1 , tel2= :tel2 WHERE id= 1 ");
         $prepa = $this->db->pdo->prepare($query);
         $prepa->bindValue(':bio', $_POST['bio']);
         $prepa->bindValue(':subbio', $_POST['subbio']);
         $prepa->bindValue(':contact1', $_POST['contact1']);
         $prepa->bindValue(':contact2', $_POST['contact2']);
         //$prepa-> bindValue(':image' , $_POST['image']);
-        $prepa->bindValue(':cvanglais', $_POST['cvanglais']);
+        //$prepa->bindValue(':cvanglais', $_POST['cvanglais']);
         //$prepa->bindValue(':cvfrancais', $_POST['cvfrancais']);
-        $prepa->bindValue(':cvchinois', $_POST['cvchinois']);
+        //$prepa->bindValue(':cvchinois', $_POST['cvchinois']);
         $prepa->bindValue(':mail1', $_POST['mail1']);
         $prepa->bindValue(':mail2', $_POST['mail2']);
         $prepa->bindValue(':tel1', $_POST['tel1']);
