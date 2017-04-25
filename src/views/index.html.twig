@@ -133,24 +133,38 @@
 
 
                         <div class="row multimedia">
-                            {% include 'media.html.twig' with {'medias':tabContent.medias } %}
+
+                            <div class="col-lg-3">
+
+                                <div class="row">
+                                    <p class="credits">{{ tabContent.content.credits }}</p>
+                                </div>
+
+                                <div class="row">
+                                    <p class="description">{{ tabContent.content.description }}</p>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-9 ">
+                                {% include 'media.html.twig' with {'medias':tabContent.medias } %}
+                            </div>
+
+
+
+
+
                         </div>
 
 
                     </div>
 
 
-                    <div class="row">
 
-                        <div class="col-lg-4">
-                            <p class="credits">{{ tabContent.content.credits }}</p>
-                        </div>
 
-                        <div class="col-lg-8">
-                            <p class="description">{{ tabContent.content.description }}</p>
-                        </div>
 
-                    </div>
+
+
 
 
                 </div>
