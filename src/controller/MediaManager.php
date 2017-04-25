@@ -13,7 +13,9 @@ class MediaManager
 {
     function upload($idContent)
     {
-        $valid_formats = array("png", "jpg", "gif","jpeg", "zip", "bmp", "mp3");
+
+        $valid_formats = array("png","jpeg", "jpg", "gif", "zip", "bmp", "mp3", "wav", "pdf");
+
         $valid_formats_img = array("png", "jpg", "gif", "jpeg", "pdf");
         $valid_formats_audio = array("mp3", "wav");
 
@@ -22,9 +24,12 @@ class MediaManager
         $db = new DB();
         $prep = $db->pdo->prepare("INSERT INTO media(link,linkType,idcontent) VALUE (:link, :linktype, :idcontent)");
 
+
         if ($_POST['video'] != '')  {
+
             $prep->bindValue(":link",$_POST['video']);
             $prep->bindValue(":linktype", 'video');
+                    
             $prep->bindValue(":idcontent", $idContent);
             $prep->execute();
         }
@@ -34,6 +39,7 @@ class MediaManager
 
             if( ! in_array(pathinfo($name, PATHINFO_EXTENSION), $valid_formats) ){
                 $message[] = $name . "is not a valid format";
+                var_dump($message);
                 continue; // Skip invalid file formats
             }else
             {

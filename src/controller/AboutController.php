@@ -20,4 +20,5 @@ class AboutController extends Controller
         return $this->getTwig()->render('about.html.twig', array('about' => $abouts[0]));
 
     }
+
 }
