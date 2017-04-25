@@ -64,7 +64,8 @@
                         <img src="assets/img/picto/pause.png" alt="silence">
 
                     {% endif %}
-                    <span class="{{ tabContent.content.category }} indent" data-toggle="modal" data-target="#{{ tabContent.content.id }}"
+                    <span class="{{ tabContent.content.category }} indent" data-toggle="modal"
+                          data-target="#{{ tabContent.content.id }}"
                           contenteditable="false" data-backdrop="false">
                         <span class="title bests"> {{ tabContent.content.title }}</span>
                         <span class="subtitle"> {{ tabContent.content.subtitle }}</span>
@@ -125,40 +126,37 @@
                 <div class="modal-content">
                     <hr>
                     <div class="modal-body">
-                        <div class="row">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="assets/img/croix.png" alt="croix"></button>
-                            <span class="title"> {{ tabContent.content.title }}</span>
-                            <span class="subtitle"> {{ tabContent.content.subtitle }}</span>
-                        </div>
+                        <div class="container">
+
+                            <div class="row">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img
+                                            src="assets/img/croix.png" alt="croix"></button>
+                                <span class="title"> {{ tabContent.content.title }}</span>
+                                <span class="subtitle"> {{ tabContent.content.subtitle }}</span>
+                            </div>
+                            <div class="row texte">
+                                <div class="col-lg-4">
+                                    <p class="credits">{{ tabContent.content.credits }}</p>
+
+                                    <p class="description">{{ tabContent.content.description }}</p>
+                                </div>
+
+                                <div class="col-lg-8">
+                                    {% include 'media.html.twig' with {'medias':tabContent.medias } %}
+                                </div>
+
+                            </div>
 
 
-                        <div class="row multimedia">
-                            {% include 'media.html.twig' with {'medias':tabContent.medias } %}
-                        </div>
-
+                        </div> {#<--container-->#}
 
                     </div>
-
-
-                    <div class="row">
-
-                        <div class="col-lg-4">
-                            <p class="credits">{{ tabContent.content.credits }}</p>
-                        </div>
-
-                        <div class="col-lg-8">
-                            <p class="description">{{ tabContent.content.description }}</p>
-                        </div>
-
-                    </div>
-
-
                 </div>
 
             </div>
-            <!-- /.modal-content -->
+
         </div>
-        <!-- /.modal-dialog -->
+
 
     {% endfor %}
 

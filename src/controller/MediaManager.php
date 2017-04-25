@@ -26,6 +26,7 @@ class MediaManager
         {
             $prep->bindValue(":link",$_POST['video']);
             $prep->bindValue(":linktype", 'video');
+                    
             $prep->bindValue(":idcontent", $idContent);
             $prep->execute();
         }
