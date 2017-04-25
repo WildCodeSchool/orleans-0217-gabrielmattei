@@ -21,7 +21,6 @@ class ContentController extends Controller
                 'medias' => $contentManager->findAllFromContent($idContent),
                 'content' => $content,
             ];
-
         }
         return $this->getTwig()->render('index.html.twig', array('contentsMedia' => $contentsMedia, 'about'=>$abouts[0]));
     }

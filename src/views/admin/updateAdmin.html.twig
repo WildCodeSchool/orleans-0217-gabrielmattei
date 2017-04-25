@@ -16,9 +16,9 @@
 
                                         <div clas="row">
 
-                                            <div class="col-md-offset-4 col-md-4">
+                                            <div class="col-md-offset-2 col-md-2">
                                                 <div class="form-group label-floating">
-                                                    <input type="checkbox" name="best" id="best" value="1"  />Best
+                                                    <input type="checkbox" name="best" id="best" value="1"  />Favoris
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -27,9 +27,29 @@
                                                 </div>
                                             </div>
 
+                                            <div class="col-md-offset-2 col-md-2">
+                                                <div class="form-group label-floating">
+                                                    <input type="radio" name="category" id="category" value="symphonicMusic" checked />Symphonic Music
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group label-floating">
+                                                    <input type="radio" name="category" id="category" value="performingArt" />Performing Art
+                                                </div>
+                                            </div>
+
+
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
+
+                                            <div class="col-md-2">
+                                                <div class="form-group label-floating">
+                                                    <label for="year" class="control-label">Année du projet :</label>
+                                                    <input type="text" class="form-control" name="year" id="year"
+                                                           value="{{ resultat.year }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
                                                 <div class="form-group label-floating">
                                                     <label for="title" class="control-label">Titre du projet :</label>
                                                     <input type="text" class="form-control" name="title" id="title"
@@ -44,25 +64,6 @@
                                                            id="subtitle" value="{{ resultat.subtitle }}">
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group label-floating">
-                                                        <label class="control-label"for="year">Année du projet :</label>
-                                                        <input type="text" class="form-control" name="year" id="year"
-                                                               value="{{ resultat.year }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-offset-1 col-md-2">
-                                                    <div class="form-group label-floating">
-                                                        <input type="radio" name="category" id="category" value="symphonicMusic" checked />Symphonic Music
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <div class="form-group label-floating">
-                                                        <input type="radio" name="category" id="category" value="performingArt" />Performing Art
-                                                    </div>
-                                                </div>
-                                            </div>
 
                                         </div>
 
@@ -72,7 +73,7 @@
                                                     <label>Crédits du projet :</label>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label" for="credits"> </label>
-                                                        <textarea class="form-control" rows="5" name="credits" id="credits"> {{ resultat.credits }} </textarea>
+                                                        <textarea class="form-control" rows="4" name="credits" id="credits"> {{ resultat.credits }} </textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -83,7 +84,7 @@
                                                     <label>Description du projet :</label>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label" for="description"> </label>
-                                                        <textarea class="form-control" rows="5" name="description" id="description">{{ resultat.description }}</textarea>
+                                                        <textarea class="form-control" rows="4" name="description" id="description">{{ resultat.description }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
