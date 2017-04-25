@@ -48,9 +48,9 @@ class AboutManager
 
         }
 
-    /*    $cvfrancais = null;
+        $cvfrancais = null;
 
-        if (isset($_FILES['image'])) {
+        if (isset($_FILES['cvfrancais'])) {
 
             $updir = 'assets/upload/';
             $upfil = $updir . basename($_FILES['cvfrancais']['name']);
@@ -58,7 +58,7 @@ class AboutManager
             $resultat = move_uploaded_file($_FILES['cvfrancais']['tmp_name'], $upfil);
 
             if ($resultat) {
-                echo "Image définitivement enregistrée";
+                echo "CV définitivement enregistrée";
                 $cvfrancais = '' . $_FILES['cvfrancais']['name'];
                 $query = "UPDATE about SET cvfrancais = :cvfrancais WHERE id=1";
                 $prepa = $this->db->pdo->prepare($query);
@@ -66,11 +66,11 @@ class AboutManager
                 $prepa->execute();
             }
 
-        }*/
+        }
 
 
         $query = ("UPDATE about SET bio = :bio , subbio= :subbio , contact1= :contact1 , contact2= :contact2, cvanglais= :cvanglais,
-        cvfrancais= :cvfrancais , cvchinois= :cvchinois , mail1= :mail1 , mail2= :mail2 , tel1= :tel1 , tel2= :tel2 WHERE id= 1 ");
+        cvchinois= :cvchinois , mail1= :mail1 , mail2= :mail2 , tel1= :tel1 , tel2= :tel2 WHERE id= 1 ");
         $prepa = $this->db->pdo->prepare($query);
         $prepa->bindValue(':bio', $_POST['bio']);
         $prepa->bindValue(':subbio', $_POST['subbio']);
@@ -78,7 +78,7 @@ class AboutManager
         $prepa->bindValue(':contact2', $_POST['contact2']);
         //$prepa-> bindValue(':image' , $_POST['image']);
         $prepa->bindValue(':cvanglais', $_POST['cvanglais']);
-        $prepa->bindValue(':cvfrancais', $_POST['cvfrancais']);
+        //$prepa->bindValue(':cvfrancais', $_POST['cvfrancais']);
         $prepa->bindValue(':cvchinois', $_POST['cvchinois']);
         $prepa->bindValue(':mail1', $_POST['mail1']);
         $prepa->bindValue(':mail2', $_POST['mail2']);
