@@ -27,6 +27,7 @@ class AboutManager
 
     public function updateProfil()
     {
+        // Gestion d'upload image profil - Insertion dans la BDD
         $image = null;
 
         if (isset($_FILES['image'])) {
@@ -46,6 +47,28 @@ class AboutManager
             }
 
         }
+
+    /*    $cvfrancais = null;
+
+        if (isset($_FILES['image'])) {
+
+            $updir = 'assets/upload/';
+            $upfil = $updir . basename($_FILES['cvfrancais']['name']);
+
+            $resultat = move_uploaded_file($_FILES['cvfrancais']['tmp_name'], $upfil);
+
+            if ($resultat) {
+                echo "Image définitivement enregistrée";
+                $cvfrancais = '' . $_FILES['cvfrancais']['name'];
+                $query = "UPDATE about SET cvfrancais = :cvfrancais WHERE id=1";
+                $prepa = $this->db->pdo->prepare($query);
+                $prepa->bindValue(':cvf', $cvfrancais);
+                $prepa->execute();
+            }
+
+        }*/
+
+
         $query = ("UPDATE about SET bio = :bio , subbio= :subbio , contact1= :contact1 , contact2= :contact2, cvanglais= :cvanglais,
         cvfrancais= :cvfrancais , cvchinois= :cvchinois , mail1= :mail1 , mail2= :mail2 , tel1= :tel1 , tel2= :tel2 WHERE id= 1 ");
         $prepa = $this->db->pdo->prepare($query);
