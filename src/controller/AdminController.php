@@ -46,7 +46,6 @@ class AdminController extends Controller
             $mediaManager = new MediaManager();
             $id = $contentManager->addContent();
             $mediaManager->upload($id);
-
             header('location:index.php?p=admin');
         }
 
