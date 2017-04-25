@@ -3,6 +3,7 @@
 
 namespace wcs\controller;
 
+use wcs\model\AboutManager;
 use wcs\model\ContentManager;
 use wcs\model\Media;
 
@@ -43,8 +44,9 @@ class AdminController extends Controller
 
         if(isset($_POST['insert'])) {
             $mediaManager = new MediaManager();
-            $mediaManager->upload();
-            $contentManager->addContent();
+            $id = $contentManager->addContent();
+            $mediaManager->upload($id);
+
             header('location:index.php?p=admin');
         }
 
@@ -53,7 +55,7 @@ class AdminController extends Controller
 
     public function showProfil()
     {
-        $contentManager = new ContentManager();
+        $contentManager = new AboutManager();
         $profil=$contentManager->findProfil();
 
         return $this->getTwig()->render('admin/profilAdmin.html.twig', array('profil'=>$profil));
@@ -62,7 +64,7 @@ class AdminController extends Controller
 
     public function updateProfil()
     {
-        $contentManager = new ContentManager();
+        $contentManager = new AboutManager();
         if (isset($_POST['updateProfil'])){
             $contentManager->updateProfil();
             //header('location:index.php?p=admin'); //Pas indispensable

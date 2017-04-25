@@ -2,3 +2,4 @@
 .idea
 /config/connect.php
 !/src/views/about.html.twig
+/public/assets/upload/

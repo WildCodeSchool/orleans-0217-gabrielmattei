@@ -1,7 +1,6 @@
 {% extends 'layoutAdmin.html.twig' %}
 
 {% block content %}
-
     <div class="content">
         <div class="container-fluid">
             <div class="row">
@@ -14,7 +13,7 @@
 
                             <form method="post" enctype="multipart/form-data">
 
-                                <div clas="row">
+                                <div class="row">
 
                                     <div class="col-md-offset-2 col-md-2">
                                         <div class="form-group label-floating">
@@ -87,22 +86,17 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div>
-
-                                            <!-- Nav tabs -->
                                             <ul class="nav nav-tabs nav-justified" role="tablist">
                                                 <li role="presentation" class="active"><a href="#video" aria-controls="video" role="tab" data-toggle="tab">video</a></li>
                                                 <li role="presentation"><a href="#audio" aria-controls="audio" role="tab" data-toggle="tab">audio</a></li>
                                                 <li role="presentation"><a href="#image" aria-controls="image" role="tab" data-toggle="tab">image(s)</a></li>
 
                                             </ul>
-
-                                            <!-- Tab panes -->
                                             <div class="tab-content">
                                                 <div role="tabpanel" class="tab-pane active" id="video">
                                                     <div class="col-md-6">
                                                         <div class="form-group label-floating">
-                                                            <label class="control-label"for="video">URL youtube: (veuillez copier/coller le lien youtube contenu dans l'Iframe)</label>
+                                                            <label class="control-label" for="video">URL youtube: (veuillez copier/coller le lien youtube contenu dans l'Iframe)</label>
                                                             <input type="text" class="form-control" name="video" id="video">
 
                                                         </div>
@@ -114,7 +108,9 @@
                                                             <label for="file">Téléchargez votre musique :</label>
 
                                                         </div>
+
                                                         <input type="file" id="file" name="audio" multiple="multiple" accept="image/*" />
+
                                                     </div>
                                                 </div>
                                                 <div role="tabpanel" class="tab-pane" id="image">
@@ -123,31 +119,23 @@
                                                             <label for="file">Téléchargez vos images :</label>
 
                                                         </div>
+
                                                         <input type="file" id="file" name="image" multiple="multiple" accept="image/*" />
+
                                                     </div>
                                                 </div>
-                                                </div>
                                             </div>
-
                                         </div>
-
-                                </div>
+                                    </div>
                                 <div class="button">
                                     <button type="submit" name="insert" class="btn pull-right">Ajouter</button>
                                     <div class="clearfix"></div>
                                 </div>
-
                             </form>
-
-
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
-
-
 {% endblock %}
