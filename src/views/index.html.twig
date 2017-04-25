@@ -2,7 +2,8 @@
 
 {% block css %}
     {{ parent() }}
-    <link rel="stylesheet" href="../public/assets/css/swiper.css">
+
+    <link rel="stylesheet" href="assets/css/swiper.css">
 {% endblock %}
 
 {% block title %}
@@ -59,7 +60,9 @@
 
                 {% if tabContent.content.best == 1 %}
                     {% if boucle != 1 %}
-                        <img src="../public/assets/img/silence2.png" alt="silence">
+
+                        <img src="assets/img/silence2.png" alt="silence">
+
                     {% endif %}
                     <span class="{{ tabContent.content.category }} indent" data-toggle="modal" data-target="#{{ tabContent.content.id }}"
                           contenteditable="false" data-backdrop="false">
@@ -95,7 +98,9 @@
                     <span class="point">.</span>
                 {% endif %}
                 {% if boucle2 != 1 %}
-                    <img src="../public/assets/img/silence2.png" alt="silence">
+
+                    <img src="assets/img/silence2.png" alt="silence">
+
                 {% endif %}
                 <span class="{{ tabContent.content.category }}">
 

@@ -7,7 +7,7 @@
 <div class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <h4 class="title">Éditer la page about</h4>
@@ -15,7 +15,16 @@
                     </div>
                     <div class="card-content">
 
-                        <form method="post" action="index.php?p=updateProfil">
+                        <form method="post" action="index.php?p=updateProfil" enctype="multipart/form-data">
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img class="gabrielM" src="../assets/upload/{{ profil.image }}" />
+                                    <input type="file" id="image" name="image" accept="image/*" />
+                                </div>
+                            </div>
+
+
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -54,47 +63,11 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-md-offset-2 col-md-4">
-                                    <div class="form-group label-floating">
-                                        <label class="control-label">Image About</label>
-                                        <input type="text" name="image" class="form-control" value="{{ profil.image }}">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group label-floating">
-                                        <label class="control-label">CV Anglais</label>
-                                        <input type="text" name="cvanglais" class="form-control" value="{{ profil.cvanglais }}">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group label-floating">
-                                        <label class="control-label">CV Français</label>
-                                        <input type="text" name="cvfrancais" class="form-control" value="{{ profil.cvfrancais }}">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group label-floating">
-                                        <label class="control-label">CV Chinois</label>
-                                        <input type="text" name="cvchinois" class="form-control" value="{{ profil.cvchinois }}">
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Mail Agence METI-JORI</label>
                                         <input type="text" name="mail1" class="form-control" value="{{ profil.mail1 }}">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group label-floating">
-                                        <label class="control-label">Mail Gabriel Mattei</label>
-                                        <input type="text" name="mail2" class="form-control" value="{{ profil.mail2 }}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -105,32 +78,52 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group label-floating">
+                                        <label class="control-label">Mail Gabriel Mattei</label>
+                                        <input type="text" name="mail2" class="form-control" value="{{ profil.mail2 }}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group label-floating">
                                         <label class="control-label">PORT. Gabriel Mattei</label>
                                         <input type="text" name="tel2" class="form-control" value="{{ profil.tel2 }}">
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">CV Anglais</label>
+                                        <input type="text" name="cvanglais" class="form-control" value="{{ profil.cvanglais }}">
+
+                                    </div>
+                                    <input type="file" name="cva">
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">CV Français</label>
+                                        <input type="text" name="cvfrancais" class="form-control" value="{{ profil.cvfrancais }}">
+
+                                    </div>
+                                    <input type="file" name="cvf">
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">CV Chinois</label>
+                                        <input type="text" name="cvchinois" class="form-control" value="{{ profil.cvchinois }}">
+
+                                    </div>
+                                    <input type="file" name="cvc">
+                                </div>
+                            </div>
+
                             <button type="submit" name="updateProfil" value="updateProfil" class="btn pull-right">Modifier</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card card-profile">
-                    <div class="card-avatar">
-                        <a href="#pablo">
-                            <img class="img" src="http://68.media.tumblr.com/69287be6c7794c977ddce79c06901503/tumblr_inline_n5scrxSfJA1rb4scn.jpg" />
-                        </a>
-                    </div>
 
-                    <div class="content">
-                        <h6 class="category text-gray">Gabriel Mattei</h6>
-                        <h4 class="card-title">Chef D'orchestre</h4>
-
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
