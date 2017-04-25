@@ -62,7 +62,7 @@ class AboutManager
                 $cvfrancais = '' . $_FILES['cvfrancais']['name'];
                 $query = "UPDATE about SET cvfrancais = :cvfrancais WHERE id=1";
                 $prepa = $this->db->pdo->prepare($query);
-                $prepa->bindValue(':cvf', $cvfrancais);
+                $prepa->bindValue(':cvfrancais', $cvfrancais);
                 $prepa->execute();
             }
 
