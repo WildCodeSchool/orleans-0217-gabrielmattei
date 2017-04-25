@@ -68,7 +68,6 @@ switch ($page) {
         $pageError=new AdminController();
         $view = $pageError->afficheError('404');
         break;
-
 }
 
 echo $view;

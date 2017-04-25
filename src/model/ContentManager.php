@@ -32,9 +32,10 @@ class ContentManager
         $prep->bindValue(':new', $_POST['new'] ?? 0 );
         $prep->bindValue(':best', $_POST['best'] ?? 0);
         $prep->bindValue(':credits', $_POST['credits']);
+        $prep->execute();
 
-        $res = $prep->execute();
-        return $res;
+        $id = $this->db->pdo->lastInsertId();
+        return $id;
     }
 
     public function update()
@@ -66,7 +67,7 @@ class ContentManager
     }
     public function findAll()
     {
-        $query = "SELECT * FROM content  ORDER BY year desc";
+        $query = "SELECT * FROM content  ORDER BY year DESC ";
         $res = $this->db->pdo->query($query);
         $contents = $res->fetchAll(\PDO::FETCH_CLASS, 'wcs\model\Content');
 
