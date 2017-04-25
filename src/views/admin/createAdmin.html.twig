@@ -7,15 +7,48 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header" data-background-color="blue">
+                        <div class="card-header">
                             <h4 class="title">Ajouter un projet</h4>
                         </div>
                         <div class="card-content">
 
                             <form method="post" enctype="multipart/form-data">
 
+                                <div clas="row">
+
+                                    <div class="col-md-offset-2 col-md-2">
+                                        <div class="form-group label-floating">
+                                            <input type="checkbox" name="best" id="best" value="1" />Best
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group label-floating">
+                                            <input type="checkbox" name="new" id="new" value="1" />New
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-offset-2 col-md-2">
+                                        <div class="form-group label-floating">
+                                            <input type="radio" name="category" id="category" value="symphonicMusic" checked />Symphonic Music
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group label-floating">
+                                            <input type="radio" name="category" id="category" value="performingArt" />Performing Art
+                                        </div>
+                                    </div>
+
+                                </div>
+
                                 <div class="row">
-                                    <div class="col-md-6">
+
+                                    <div class="col-md-2">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label"for="year">Année du projet :</label>
+                                            <input type="text" class="form-control" name="year" id="year">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
                                         <div class="form-group label-floating">
                                             <label for="title" class="control-label">Titre du projet :</label>
                                             <input type="text" class="form-control" name="title" id="title" >
@@ -28,43 +61,79 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label"for="year">Année du projet :</label>
-                                            <input type="text" class="form-control" name="year" id="year">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-offset-1 col-md-2">
-                                        <div class="form-group label-floating">
-                                            <input type="radio" name="category" id="category" value="symphonicMusic" checked />Symphonic Music
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="form-group label-floating">
-                                            <input type="radio" name="category" id="category" value="performingArt" />Performing Art
-                                        </div>
-                                    </div>
-                                </div>
+
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="form-group label-floating">
-                                            <label>Description du projet :</label>
+
+                                        <div class="form-group">
+                                            <label>Crédits du projet :</label>
                                             <div class="form-group label-floating">
-                                                <label class="control-label" for="description"> </label>
-                                                <textarea class="form-control" rows="5" name="description" id="description"></textarea>
+                                                <label class="control-label" for="credits"> </label>
+                                                <textarea class="form-control" rows="4" name="credits" id="credits"></textarea>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-12">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label" for="file" style="background-color: red">Upload media :</label>
-                                            <input class="form-control" type="file" id="file" name="files[]" multiple="multiple" accept="image/*" />
+                                        <div class="form-group">
+                                            <label>Description du projet :</label>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label" for="description"> </label>
+                                                <textarea class="form-control" rows="4" name="description" id="description"></textarea>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div>
+
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs nav-justified" role="tablist">
+                                                <li role="presentation" class="active"><a href="#video" aria-controls="video" role="tab" data-toggle="tab">video</a></li>
+                                                <li role="presentation"><a href="#audio" aria-controls="audio" role="tab" data-toggle="tab">audio</a></li>
+                                                <li role="presentation"><a href="#image" aria-controls="image" role="tab" data-toggle="tab">image(s)</a></li>
+
+                                            </ul>
+
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="video">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label"for="video">URL youtube: (veuillez copier/coller le lien youtube contenu dans l'Iframe)</label>
+                                                            <input type="text" class="form-control" name="video" id="video">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="audio">
+                                                    <div class="upload">
+                                                        <div class="form-group label-floating">
+                                                            <label for="file">Téléchargez votre musique :</label>
+
+                                                        </div>
+                                                        <input type="file" id="file" name="files[]" multiple="multiple" accept="audio/*" />
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="image">
+                                                    <div class="upload">
+                                                        <div class="form-group label-floating">
+                                                            <label for="file">Téléchargez vos images :</label>
+
+                                                        </div>
+                                                        <input type="file" id="file" name="files[]" multiple="multiple" accept="image/*" />
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                </div>
                                 <div class="button">
-                                    <button type="submit" name="insert" class="btn btn-primary pull-right">Ajouter</button>
+                                    <button type="submit" name="insert" class="btn pull-right">Ajouter</button>
                                     <div class="clearfix"></div>
                                 </div>
 

@@ -22,26 +22,37 @@ class ContentManager
 
     public function addContent()
     {
-        $query ="INSERT INTO content(title, subtitle, year, description, category) VALUES(:title, :subtitle, :year, :description, :category)";
+        $query ="INSERT INTO content(title, subtitle, year, description, category, new, best, credits) VALUES(:title, :subtitle, :year, :description, :category, :new, :best, :credits)";
         $prep = $this->db->pdo->prepare($query);
         $prep->bindValue(':title', $_POST['title']);
         $prep->bindValue(':subtitle', $_POST['subtitle']);
         $prep->bindValue(':year', $_POST['year']);
         $prep->bindValue(':description', $_POST['description']);
         $prep->bindValue(':category', $_POST['category']);
-        $res = $prep->execute();
+        $prep->bindValue(':new', $_POST['new'] ?? 0 );
+        $prep->bindValue(':best', $_POST['best'] ?? 0);
+        $prep->bindValue(':credits', $_POST['credits']);
+        $prep->execute();
 
-        return $res;
+        $id = $this->db->pdo->lastInsertId();
+        return $id;
     }
 
     public function update()
     {
-        $title = $_POST['title'];
-        $subtitle = $_POST['subtitle'];
-        $year = $_POST['year'];
-        $id= $_POST['id'];
-        $query=("UPDATE content SET title = '$title' , subtitle= '$subtitle' , year= '$year' WHERE id= $id ");
-        $this->db->pdo->exec($query);
+        $query = ("UPDATE content SET title = :title, subtitle =:subtitle, year = :year, description= :description, category = :category, new= :new, best = :best, credits = :credits WHERE id= :id ");
+        $prep= $this->db->pdo->prepare($query);
+        $prep->bindValue(':id', $_POST['id']);
+        $prep->bindValue(':title', $_POST['title']);
+        $prep->bindValue(':subtitle', $_POST['subtitle']);
+        $prep->bindValue(':year', $_POST['year']);
+        $prep->bindValue(':description', $_POST['description']);
+        $prep->bindValue(':category', $_POST['category']);
+        $prep->bindValue(':new', $_POST['new'] ?? 0 );
+        $prep->bindValue(':best', $_POST['best'] ?? 0);
+        $prep->bindValue(':credits', $_POST['credits']);
+
+        $prep ->execute();
 
     }
 
@@ -103,22 +114,25 @@ class ContentManager
     }
     public function updateProfil()
     {
-        $bio = $_POST['bio'];
-        $subbio = $_POST['subbio'];
-        $contact1 = $_POST['contact1'];
-        $contact2 = $_POST['contact2'];
-        $image = $_POST['image'];
-        $cvanglais = $_POST['cvanglais'];
-        $cvfrancais = $_POST['cvfrancais'];
-        $cvchinois = $_POST['cvchinois'];
-        $mail1 = $_POST['mail1'];
-        $mail2 = $_POST['mail2'];
-        $tel1 = $_POST['mail1'];
-        $tel2 = $_POST['mail2'];
-        $query = ("UPDATE about SET bio = '$bio' , subbio= '$subbio' , contact1= '$contact1' , contact2= '$contact2' , image= '$image' , cvanglais= '$cvanglais',
-        cvfrancais= '$cvfrancais' , cvchinois= '$cvchinois' , mail1= '$mail1' , mail2= '$mail2' , tel1= '$tel1' , tel2= '$tel2' WHERE id= 1 ");
 
-        $this->db->pdo->exec($query);
+        $query = ("UPDATE about SET bio = :bio , subbio= :subbio , contact1= :contact1 , contact2= :contact2 , image= :image , cvanglais= :cvanglais,
+        cvfrancais= :cvfrancais , cvchinois= :cvchinois , mail1= :mail1 , mail2= :mail2 , tel1= :tel1 , tel2= :tel2 WHERE id= 1 ");
+        $prepa= $this->db->pdo->prepare($query);
+        $prepa-> bindValue(':bio' , $_POST['bio']);
+        $prepa-> bindValue(':subbio' , $_POST['subbio']);
+        $prepa-> bindValue(':contact1', $_POST['contact1']);
+        $prepa-> bindValue(':contact2' , $_POST['contact2']);
+        $prepa-> bindValue(':image' , $_POST['image']);
+        $prepa-> bindValue(':cvanglais' , $_POST['cvanglais']);
+        $prepa-> bindValue(':cvfrancais' , $_POST['cvfrancais']);
+        $prepa-> bindValue(':cvchinois' , $_POST['cvchinois']);
+        $prepa-> bindValue(':mail1' , $_POST['mail1']);
+        $prepa-> bindValue(':mail2' , $_POST['mail2']);
+        $prepa-> bindValue(':tel1' , $_POST['tel1']);
+        $prepa-> bindValue(':tel2' , $_POST['tel2']);
+
+        $prepa ->execute();
+//        $this->db->pdo->exec($query);
 
     }
     public function findProfil()

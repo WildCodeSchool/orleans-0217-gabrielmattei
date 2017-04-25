@@ -44,7 +44,8 @@ class AdminController extends Controller
         if(isset($_POST['insert'])) {
             $mediaManager = new MediaManager();
             $id = $contentManager->addContent();
-            $mediaManager->upload();
+            $mediaManager->upload($id);
+
             header('location:index.php?p=admin');
         }
 
