@@ -27,7 +27,7 @@ class AboutController extends Controller
         $subbio = $_POST['subbio'];
         $contact1 = $_POST['contact1'];
         $contact2 = $_POST['contact2'];
-        $image = $_POST['image'];
+        $image = $_FILES['image'];
         $cvanglais = $_POST['cvanglais'];
         $cvfrancais = $_POST['cvfrancais'];
         $cvchinois = $_POST['cvchinois'];

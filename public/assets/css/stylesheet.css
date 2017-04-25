@@ -214,8 +214,9 @@ a:hover{
 .contentabout p{
     padding-top: 200px !important;
     font-family: 'freighttext_promedium';
-    text-indent: 90px;
+
     font-size: 45px;
+    line-height: 58px;
 }
 
 .aboutcontact li{
@@ -223,6 +224,9 @@ a:hover{
     font-size: 24px;
     text-align: left;
     padding-left: 21px;
+}
+.pictoabout{
+    padding-right: 70px;
 }
 
 .aboutparagraphe {
@@ -413,9 +417,13 @@ hr{
     margin-top: 0;
     bottom: -50px;
 }
-.close{
+button .close{
+    color: black;
     font-size: 60px;
-    padding-right: 40px !important;
+    padding-right: 40px ;
+}
+.close{
+    opacity: 1;
 }
 
 .multimedia{
@@ -430,6 +438,10 @@ hr{
 .slide{
     height: 800px;
     width: 1200px;
+}
+.carousel-control{
+    width: auto;
+    padding-top: 400px;
 }
 
 .carousel-control.right{

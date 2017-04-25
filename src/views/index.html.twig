@@ -52,14 +52,14 @@
 {% endblock %}
 {% block content %}
     <div class="content">
-        <p>
+        <p><img class="pictoabout" src="assets/img/picto/cle-ut.png">
 
             {% set boucle = 1 %}
             {% for tabContent in contentsMedia %}
 
                 {% if tabContent.content.best == 1 %}
                     {% if boucle != 1 %}
-                        <img src="assets/img/silence2.png" alt="silence">
+                        <img src="assets/img/picto/pause.png" alt="silence">
                     {% endif %}
                     <span class="{{ tabContent.content.category }} indent" data-toggle="modal" data-target="#{{ tabContent.content.id }}"
                           contenteditable="false" data-backdrop="false">
@@ -95,7 +95,7 @@
                     <span class="point">.</span>
                 {% endif %}
                 {% if boucle2 != 1 %}
-                    <img src="assets/img/silence2.png" alt="silence">
+                    <img src="assets/img/picto/pause.png" alt="silence">
                 {% endif %}
                 <span class="{{ tabContent.content.category }}">
 
@@ -121,7 +121,7 @@
                     <hr>
                     <div class="modal-body">
                         <div class="row">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="assets/img/croix.png" alt="croix"></button>
                             <span class="title"> {{ tabContent.content.title }}</span>
                             <span class="subtitle"> {{ tabContent.content.subtitle }}</span>
                         </div>
