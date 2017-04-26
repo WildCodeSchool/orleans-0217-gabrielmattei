@@ -53,10 +53,13 @@ body a:hover{
     height:171px;
 }
 .imgperfo{
-    visibility: hidden;
+    display:none;
+    margin: 0 0 0 50px;
 }
 .imgmusique{
-    visibility: hidden;
+    display:none;
+    margin: 0 50px 0 0;
+
 }
 .navbar{
     padding-top: 36px;
@@ -241,19 +244,12 @@ a:hover{
     font-family: 'freighttext_promedium';
     font-size: 20px;
     text-align: left;
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
-    column-count: 2;
+    padding-bottom: 80px;
     padding-left: 36px;
 }
 
 .aboutnav{
     padding-right: 30px;
-}
-.photogab{
-    height: 200px;
-    width: 300px;
-    border-radius: 50%;
 }
 
 /********************  STYLES ADMIN ********************/
@@ -343,7 +339,6 @@ a:hover{
 }
 
 .imgAbout{
-    margin-top: 30px;
     padding-bottom: 30px;
 }
 .imgAbout img{
@@ -360,7 +355,6 @@ ul {
 li {
     margin-bottom: 0;
 }
-
 
 
 /********************    STYLE MODALE    ***********************/
@@ -398,7 +392,7 @@ hr{
     -moz-box-shadow: inherit;
     -o-box-shadow: inherit;
     box-shadow: inherit;
-    background-color: rgba(245,245,245,0.98);
+    background-color: rgb(245,245,245);
 
     /* change bg color below */
     /* background:#1abc9c; */
@@ -449,7 +443,7 @@ button .close{
 
 .carousel-control{
     width: auto;
-    padding-top: 400px;
+    padding-top: 200px;
 }
 
 .carousel-control.right{
@@ -467,7 +461,7 @@ button .close{
     background-color: black;
 }
 .carousel-indicators {
-    bottom: -30px;
+    bottom: -20px;
 }
 .item img{
     margin: 0 auto;
@@ -487,6 +481,7 @@ button .close{
     font-size: 17px;
     text-align: left;
     padding-bottom:30px;
+    line-height: 21px;
 
 }
 .description{
@@ -494,6 +489,7 @@ button .close{
     font-size: 17px;
     text-align: left;
     padding-bottom:100px;
+    line-height: 21px;
 }
 
 .paragraphemodale{
@@ -506,13 +502,17 @@ button .close{
 /**************************    FOOTER    **********/
 .footer{
     width: 100%;
-    font-size: 15px;
+    font-size: 11.5px;
     padding-bottom: 36px;
     bottom :0;
     background-color: rgb(245, 245, 245);
+    line-height: 14px;
 
 }
-
+.footer a{
+    text-decoration: none;
+    color: #333;
+}
 .footer div .row{
     padding: 5px 0;
     margin: 0;

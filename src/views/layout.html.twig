@@ -45,27 +45,46 @@
     });
 
     $(document).ready(function () {
+
         $("#symf").click(function () {
+            jQuery('#perfo').hide();
+            jQuery('#symf').show();
+            jQuery('.imgperfo').show();
+            jQuery('.imgmusique').hide();
+
             $(".symphonicMusic").css("visibility", 'visible');
             $(".performingArt").css("visibility", 'hidden');
-            $(".imgperfo").css("visibility", 'visible');
-            $(".imgpmusique").css("visibility", 'hidden');
-
-            $(".performing").css("opacity", '0')
-            $(".musique").css("opacity", '1')
-
         });
 
         $("#perfo").click(function () {
+            jQuery('#symf').hide();
+            jQuery('#perfo').show();
+            jQuery('.imgmusique').show();
+            jQuery('.imgperfo').hide();
 
             $(".performingArt").css("visibility", 'visible');
             $(".symphonicMusic").css("visibility", 'hidden');
-            $(".imgmusique").css("visibility", 'visible');
-            $(".imgperfo").css("visibility", 'hidden');
-
-            $(".musique").css("opacity", '0')
-            $(".performing").css("opacity", '1')
         });
+
+//        jQuery(".imgmusique").hover(
+//            function() {
+//                jQuery(this).hide();
+//                jQuery('#symf').show();
+//            }, function() {
+//                jQuery(this).show();
+//                jQuery('#symf').hide();
+//            }
+//        );
+//
+//        jQuery(".imgperfo").hover(
+//            function() {
+//                jQuery(this).hide();
+//                jQuery('#perfo').show();
+//            }, function() {
+//                jQuery(this).show();
+//                jQuery('#perfo').hide();
+//            }
+//        );
     });
 
 </script>
