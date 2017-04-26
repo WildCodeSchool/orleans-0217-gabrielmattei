@@ -52,7 +52,12 @@ body a:hover{
     padding-top: 33px;
     height:171px;
 }
-
+.imgperfo{
+    visibility: hidden;
+}
+.imgmusique{
+    visibility: hidden;
+}
 .navbar{
     padding-top: 36px;
 }
@@ -245,6 +250,11 @@ a:hover{
 .aboutnav{
     padding-right: 30px;
 }
+.photogab{
+    height: 200px;
+    width: 300px;
+    border-radius: 50%;
+}
 
 /********************  STYLES ADMIN ********************/
 
@@ -340,8 +350,6 @@ a:hover{
     margin-right: auto;
     margin-left: auto;
     display: block;
-    width: 1800px;
-    height:1300px;
 }
 ul {
     list-style:none;
@@ -486,12 +494,6 @@ button .close{
     font-size: 17px;
     text-align: left;
     padding-bottom:100px;
-<<<<<<< HEAD
-    /*-webkit-column-count: 2; !* Chrome, Safari, Opera *!*/
-    /*-moz-column-count: 2; !* Firefox *!*/
-=======
->>>>>>> 08f2e890acd5ee27f4de79812f58aa3680f88454
-    /*column-count: 2;*/
 }
 
 .paragraphemodale{
