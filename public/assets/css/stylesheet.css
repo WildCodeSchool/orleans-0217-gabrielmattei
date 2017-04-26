@@ -369,10 +369,13 @@ hr{
     bottom: -50px;
 }
 .hr1{
-    margin-left: inherit;
-    margin-right: inherit;
-    margin-left: 308px;
-    width: 1220px;
+    /*margin-left: inherit;*/
+    /*margin-right: inherit;*/
+    /*margin-left: 150px;*/
+    /*width: 1485px;*/
+    margin-left: 165px;
+    margin-right: 162px;
+    width: auto;
 }
 
 .modal.modal-fullscreen .modal-dialog,
@@ -434,6 +437,8 @@ button .close{
     color: black;
     font-size: 60px;
     padding-right: 40px ;
+
+
 }
 .close{
     opacity: 1;
@@ -498,14 +503,14 @@ button .close{
     text-align: left;
     padding-bottom:100px;
     line-height: 21px;
->>>>>>> 995fd95dcce9a9f2245719359242e41757d6acad
+
 }
 
 .paragraphemodale{
     padding-right: 0;
 }
 .texte{
-    padding-top: 80px;
+    padding-top: 30px;
 }
 
 /**************************    FOOTER    **********/
