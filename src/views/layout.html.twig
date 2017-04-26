@@ -62,6 +62,24 @@
         });
     });
 
+    $(document).ready(function () {
+        $("#symf2").click(function () {
+            $(".symphonicMusic").css("visibility", 'visible');
+            $(".performingArt").css("visibility", 'hidden');
+            $(".performing").css("opacity", '0');
+            $(".musique").css("opacity", '1')
+
+        });
+
+        $("#perfo2").click(function () {
+
+            $(".performingArt").css("visibility", 'visible');
+            $(".symphonicMusic").css("visibility", 'hidden');
+            $(".musique").css("opacity", '0')
+            $(".performing").css("opacity", '1')
+        });
+    });
+
 </script>
 
 </body>
