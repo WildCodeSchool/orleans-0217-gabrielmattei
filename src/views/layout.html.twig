@@ -45,19 +45,47 @@
     });
 
     $(document).ready(function () {
+
         $("#symf").click(function () {
+            jQuery('#perfo').hide();
+            jQuery('#symf').show();
+            jQuery('.imgperfo').show();
+            jQuery('.imgmusique').hide();
+
             $(".symphonicMusic").css("visibility", 'visible');
             $(".performingArt").css("visibility", 'hidden');
-
-
         });
 
         $("#perfo").click(function () {
+            jQuery('#symf').hide();
+            jQuery('#perfo').show();
+            jQuery('.imgmusique').show();
+            jQuery('.imgperfo').hide();
 
             $(".performingArt").css("visibility", 'visible');
             $(".symphonicMusic").css("visibility", 'hidden');
 
         });
+
+//        jQuery(".imgmusique").hover(
+//            function() {
+//                jQuery(this).hide();
+//                jQuery('#symf').show();
+//            }, function() {
+//                jQuery(this).show();
+//                jQuery('#symf').hide();
+//            }
+//        );
+//
+//        jQuery(".imgperfo").hover(
+//            function() {
+//                jQuery(this).hide();
+//                jQuery('#perfo').show();
+//            }, function() {
+//                jQuery(this).show();
+//                jQuery('#perfo').hide();
+//            }
+//        );
     });
 
 </script>
