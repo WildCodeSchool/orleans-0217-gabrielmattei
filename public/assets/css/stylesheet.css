@@ -237,7 +237,7 @@ a:hover{
     padding-left: 21px;
 }
 .pictoabout{
-    padding-right: 70px;
+    padding-right: 50px;
 }
 
 .aboutparagraphe {
@@ -245,7 +245,7 @@ a:hover{
     font-size: 20px;
     text-align: left;
     padding-bottom: 80px;
-    padding-left: 36px;
+    padding-right: 36px;
 }
 
 .aboutnav{
@@ -451,15 +451,18 @@ button .close{
 
 .carousel-control{
     width: auto;
-    padding-top: 200px;
+    opacity: 0.1;
+
 }
 
 .carousel-control.right{
     background-image: none;
+
 }
 
 .carousel-control.left{
     background-image: none;
+
 }
 
 .carousel-indicators li{
@@ -498,7 +501,7 @@ button .close{
     text-align: left;
     padding-bottom:100px;
     line-height: 21px;
->>>>>>> 995fd95dcce9a9f2245719359242e41757d6acad
+
 }
 
 .paragraphemodale{
@@ -511,7 +514,7 @@ button .close{
 /**************************    FOOTER    **********/
 .footer{
     width: 100%;
-    font-size: 11.5px;
+    font-size: 13px;
     padding-bottom: 36px;
     bottom :0;
     background-color: rgb(245, 245, 245);

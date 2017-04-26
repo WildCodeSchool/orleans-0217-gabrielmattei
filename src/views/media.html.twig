@@ -46,12 +46,14 @@
 {% endif %}
 
 {% for media in medias %}
-    <div class="col-lg-offset-0 col-lg-6">
+
+        <div class="embed-responsive embed-responsive-16by9">
         {% if media.linkType == 'video' %}
-            <iframe width="800" height="500" src="{{ media.link }}" frameborder="0"
+            <iframe class="embed-responsive-item" src="{{ media.link }}" frameborder="0"
                     allowfullscreen="true"></iframe>
         {% endif %}
-    </div>
+        </div>
+
 
     <div class="col-lg-offset-4 col-lg-6">
         {% if media.linkType == 'audio' %}
