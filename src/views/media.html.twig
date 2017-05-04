@@ -47,18 +47,21 @@
 
 {% for media in medias %}
 
-    <div class="embed-responsive embed-responsive-16by9">
+
         {% if media.linkType == 'video' %}
+            <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="{{ media.link }}" frameborder="0" allowfullscreen="true"></iframe>
-
+            </div>
         {% endif %}
-        </div>
 
 
-    <div class="col-lg-offset-4 col-lg-6">
+
+
         {% if media.linkType == 'audio' %}
+            <div class="col-lg-offset-4 col-lg-6">
             <audio src="assets/upload/{{ media.link }}" controls></audio>
+            </div>
         {% endif %}
-    </div>
+
 {% endfor %}
 
