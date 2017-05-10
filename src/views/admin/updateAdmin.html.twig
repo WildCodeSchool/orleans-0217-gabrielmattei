@@ -2,116 +2,198 @@
 
 {% block content %}
 
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="title">Modifier le projet</h4>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="title">Modifier le projet</h4>
+                        </div>
+                        <div class="card-content table-responsive">
+
+                            <form method="post" enctype="multipart/form-data">
+
+                                <div clas="row">
+
+                                    <div class="col-md-offset-2 col-md-2">
+                                        <div class="form-group label-floating">
+                                            <input type="checkbox" name="best" id="best" value="1"/>Favoris
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group label-floating">
+                                            <input type="checkbox" name="new" id="new" value="1"/>New
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-offset-2 col-md-2">
+                                        <div class="form-group label-floating">
+                                            <input type="radio" name="category" id="category" value="symphonicMusic"
+                                                   checked/>Symphonic Music
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group label-floating">
+                                            <input type="radio" name="category" id="category" value="performingArt"/>Performing
+                                            Art
+                                        </div>
+                                    </div>
+
+
                                 </div>
-                                <div class="card-content table-responsive">
+                                <div class="row">
 
-                                    <form method="post">
-
-                                        <div clas="row">
-
-                                            <div class="col-md-offset-2 col-md-2">
-                                                <div class="form-group label-floating">
-                                                    <input type="checkbox" name="best" id="best" value="1"  />Favoris
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group label-floating">
-                                                    <input type="checkbox" name="new" id="new" value="1" />New
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-offset-2 col-md-2">
-                                                <div class="form-group label-floating">
-                                                    <input type="radio" name="category" id="category" value="symphonicMusic" checked />Symphonic Music
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group label-floating">
-                                                    <input type="radio" name="category" id="category" value="performingArt" />Performing Art
-                                                </div>
-                                            </div>
-
-
+                                    <div class="col-md-2">
+                                        <div class="form-group label-floating">
+                                            <label for="year" class="control-label">Année du projet :</label>
+                                            <input type="text" class="form-control" name="year" id="year"
+                                                   value="{{ resultat.year }}">
                                         </div>
-                                        <div class="row">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating">
+                                            <label for="title" class="control-label">Titre du projet :</label>
+                                            <input type="text" class="form-control" name="title" id="title"
+                                                   value="{{ resultat.title }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label" for="subtitle">Sous-titre du projet
+                                                :</label>
+                                            <input type="text" class="form-control" name="subtitle"
+                                                   id="subtitle" value="{{ resultat.subtitle }}">
+                                        </div>
+                                    </div>
 
-                                            <div class="col-md-2">
-                                                <div class="form-group label-floating">
-                                                    <label for="year" class="control-label">Année du projet :</label>
-                                                    <input type="text" class="form-control" name="year" id="year"
-                                                           value="{{ resultat.year }}">
-                                                </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Crédits du projet :</label>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label" for="credits"> </label>
+                                                <textarea class="form-control" rows="4" name="credits"
+                                                          id="credits"> {{ resultat.credits }} </textarea>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Description du projet :</label>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label" for="description"> </label>
+                                                <textarea class="form-control" rows="4" name="description"
+                                                          id="description">{{ resultat.description }}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {% for resMedia in resMedias %}
+                                    {% if loop.index ==1 %}
+                                        {% if resMedia.linkType == 'audio' %}
                                             <div class="col-md-4">
+
+
+                                                <p>{{ resMedia.link }}</p>
                                                 <div class="form-group label-floating">
-                                                    <label for="title" class="control-label">Titre du projet :</label>
-                                                    <input type="text" class="form-control" name="title" id="title"
-                                                           value="{{ resultat.title }}">
+                                                    <label for="file">Téléchargez votre musique :</label>
+
                                                 </div>
+
+                                                <input type="file" id="file" name="files[]"
+                                                       multiple="multiple"
+                                                       accept="audio/*"/>
+
                                             </div>
-                                            <div class="col-md-6">
+                                        {% elseif resMedia.linkType == 'image' %}
+
+                                            <div class="col-md-4">
+
+
+                                                <p>{{ resMedia.link }}</p>
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label" for="subtitle">Sous-titre du projet
-                                                        :</label>
-                                                    <input type="text" class="form-control" name="subtitle"
-                                                           id="subtitle" value="{{ resultat.subtitle }}">
+                                                    <label for="file">Téléchargez vos images :</label>
+
                                                 </div>
+
+                                                <input type="file" id="file" name="files[]"
+                                                       multiple="multiple"
+                                                       accept="image/*"/>
+
                                             </div>
 
-                                        </div>
 
+                                        {% elseif resMedia.linkType == 'video' %}
+
+                                            <label class="control-label" for="video">URL youtube: </label>
+                                            <input type="text" class="form-control" name="video" id="video"
+                                                   value="{{ resMedia.link }}">
+
+
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+
+                                <div class="button">
+                                    <input type="hidden" name="id" value="{{ resultat.id }}">
+                                    <button type="submit" name="update" id="update" class="btn pull-right"
+                                            value="update">
+                                        Modifier
+                                    </button>
+                                    <div class="clearfix"></div>
+                                </div>
+
+
+                            </form>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
                                         <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>Crédits du projet :</label>
-                                                    <div class="form-group label-floating">
-                                                        <label class="control-label" for="credits"> </label>
-                                                        <textarea class="form-control" rows="4" name="credits" id="credits"> {{ resultat.credits }} </textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
+
+                                            {% for resMedia in resMedias %}
+                                                {% if resMedia.linkType == 'image' %}
+                                                    <form action="" method="post">
+                                                        <div class="col-md-1">
+                                                            <div class="thumb">
+                                                                <img src="../assets/upload/{{ resMedia.link }}"
+                                                                     alt="img{{ resMedia.id }}">
+                                                                <br>
+                                                                <input type="hidden" name="id"
+                                                                       value="{{ resMedia.id }}">
+                                                                <button type="submit" name="delete" id="delete"
+                                                                        class="btn"
+                                                                        value="delete">
+                                                                    X
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                {% endif %}
+                                            {% endfor %}
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>Description du projet :</label>
-                                                    <div class="form-group label-floating">
-                                                        <label class="control-label" for="description"> </label>
-                                                        <textarea class="form-control" rows="4" name="description" id="description">{{ resultat.description }}</textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="button">
-                                            <input type="hidden" name="id" value="{{ resultat.id }}">
-                                            <button type="submit" name="update" id="update" class="btn pull-right" value="update">
-                                                Modifier
-                                            </button>
-                                            <div class="clearfix"></div>
-                                        </div>
-
-                                    </form>
-
-
+                                    </div>
                                 </div>
                             </div>
+
+
                         </div>
-
-
                     </div>
                 </div>
+
+
             </div>
-
-
         </div>
+    </div>
+
+
+    </div>
     </div>
 
 {% endblock %}

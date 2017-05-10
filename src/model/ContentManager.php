@@ -53,7 +53,6 @@ class ContentManager
         $prep->bindValue(':credits', $_POST['credits']);
 
         $prep ->execute();
-
     }
 
     public function deleteAction($id)
@@ -62,6 +61,20 @@ class ContentManager
         $prep = $this->db->pdo->prepare($query);
         $prep->bindValue(':id', $id, \PDO::PARAM_INT);
         $res = $prep->execute();
+        return $res;
+
+    }
+    public function deleteMediaAction($id)
+    {
+        $query = 'DELETE FROM media WHERE id= :id';
+        $prep = $this->db->pdo->prepare($query);
+        $prep->bindValue(':id', $id, \PDO::PARAM_INT);
+        $res = $prep->execute();
+//        $src = realpath(dirname(getcwd()))."../assets/upload/";
+//        if (unlink($src.$id)){
+//            return true;
+//        }
+
         return $res;
 
     }

@@ -29,12 +29,20 @@ class AdminController extends Controller
 
         if (isset($_POST['update'])){
             $contentManager->update();
-            header('location:index.php?p=admin');
+            header('location:index.php?p=update&id='.$id);
+
+            $mediaManager = new MediaManager();
+            $mediaManager->upload($id);
+        }
+        elseif (isset($_POST['delete'])){
+            $contentManager->deleteMediaAction($_POST['id']);
+            header('location:index.php?p=update&id='.$id);
         }
 
         $resultat= $contentManager->findOne($id);
+        $resMedias= $contentManager->findAllFromContent($id);
 
-        return $this->getTwig()->render('admin/updateAdmin.html.twig', array('resultat' => $resultat));
+        return $this->getTwig()->render('admin/updateAdmin.html.twig', array('resultat' => $resultat, 'resMedias' => $resMedias));
 
     }
 
