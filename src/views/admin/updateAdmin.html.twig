@@ -18,24 +18,24 @@
 
                                     <div class="col-md-offset-2 col-md-2">
                                         <div class="form-group label-floating">
-                                            <input type="checkbox" name="best" id="best" value="1"/>Favoris
+                                            <input type="checkbox" name="best" id="best" value="1" {% if resultat.best == 1 %} checked {% else %}{% endif %}/>Favoris
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group label-floating">
-                                            <input type="checkbox" name="new" id="new" value="1"/>New
+                                            <input type="checkbox" name="new" id="new" value="1" {% if resultat.new == 1 %} checked {% else %}{% endif %}/>New
                                         </div>
                                     </div>
 
                                     <div class="col-md-offset-2 col-md-2">
                                         <div class="form-group label-floating">
                                             <input type="radio" name="category" id="category" value="symphonicMusic"
-                                                   checked/>Symphonic Music
+                                                  {% if resultat.category == 'symphonicMusic' %} checked {% else %}{% endif %}/>Symphonic Music
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group label-floating">
-                                            <input type="radio" name="category" id="category" value="performingArt"/>Performing
+                                            <input type="radio" name="category" id="category" value="performingArt" {% if resultat.category == 'performingArt' %} checked {% else %}{% endif %}/>Performing
                                             Art
                                         </div>
                                     </div>
@@ -96,6 +96,7 @@
 
                                 {% for resMedia in resMedias %}
                                     {% if loop.index ==1 %}
+
                                         {% if resMedia.linkType == 'audio' %}
                                             <div class="col-md-4">
 
@@ -138,7 +139,61 @@
 
                                         {% endif %}
                                     {% endif %}
-                                {% endfor %}
+
+                                    {% else %}
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                                                        <li role="presentation" class="active"><a href="#video"
+                                                                                                  aria-controls="video" role="tab"
+                                                                                                  data-toggle="tab">video</a></li>
+                                                        <li role="presentation"><a href="#audio" aria-controls="audio" role="tab"
+                                                                                   data-toggle="tab">audio</a></li>
+                                                        <li role="presentation"><a href="#image" aria-controls="image" role="tab"
+                                                                                   data-toggle="tab">image(s)</a></li>
+
+                                                    </ul>
+                                                    <div class="tab-content">
+                                                        <div role="tabpanel" class="tab-pane active" id="video">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group label-floating">
+                                                                    <label class="control-label" for="video">URL youtube: (veuillez
+                                                                        copier/coller le lien youtube contenu dans l'Iframe)</label>
+                                                                    <input type="text" class="form-control" name="video" id="video">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div role="tabpanel" class="tab-pane" id="audio">
+                                                            <div class="upload">
+                                                                <div class="form-group label-floating">
+                                                                    <label for="file">Téléchargez votre musique :</label>
+
+                                                                </div>
+
+                                                                <input type="file" id="file" name="files[]" multiple="multiple"
+                                                                       accept="audio/*"/>
+                                                            </div>
+                                                        </div>
+                                                        <div role="tabpanel" class="tab-pane" id="image">
+                                                            <div class="upload">
+                                                                <div class="form-group label-floating">
+                                                                    <label for="file">Téléchargez vos images :</label>
+
+                                                                </div>
+
+                                                                <input type="file" id="file" name="files[]" multiple="multiple"
+                                                                       accept="image/*"/>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {% endfor %}
 
                                 <div class="button">
                                     <input type="hidden" name="id" value="{{ resultat.id }}">
