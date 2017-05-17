@@ -170,6 +170,14 @@ a:hover{
     width: 100%;
 }
 
+span.best::before {
+    content:'m';
+    font-family: freighttext_musicregular;
+}
+span.best:first-child::before {
+    content:'';
+}
+
 @media screen and (min-width: 200px) and (max-width: 1100px) {
     .top {
         display:none;
@@ -191,15 +199,16 @@ a:hover{
         font-family: freighttext_musicregular;
         font-size: 28px;
     }
+
     .content p{
-        line-height: 40px;
+        line-height: 30px;
     }
 
     .contentabout p{
         padding-top: 130px !important;
         font-family: 'freighttext_promedium';
 
-        font-size: 25px;
+        font-size: 23px;
         line-height: 38px;
     }
 }

@@ -16,11 +16,11 @@
                 <a href="index.php">Gabriel Mattei</a>
             </div>
             <div class="col-lg-3 col-md-3 symf">
-                <a class="musique" id="symf">Symphonic Music</a>
+                <a class="musique" id="symf">Symphonic music</a>
 
             </div>
             <div class="col-lg-3 col-md-3 perf">
-                <a class="performing" id="perfo">Performing Art</a>
+                <a class="performing" id="perfo">Performing art</a>
 
             </div>
 
@@ -44,28 +44,21 @@
         </div>
         <div class="row nav" style="padding-bottom: 30px;">
             <div class="col-xs-6 symf">
-                <a class="musique" id="symf2">Symphonic Music</a>
+                <a class="musique" id="symf2">Symphonic music</a>
             </div>
             <div class="col-xs-6 perf">
-                <a class="performing" id="perfo2">Performing Art</a>
+                <a class="performing" id="perfo2">Performing art</a>
             </div>
         </div>
     </div>
 {% endblock %}
 {% block content %}
     <div class="content">
-        <p><span class="silence pictoabout">B</span>
+        <p class=""><span class="silence pictoabout">B</span>
+        <span class="allbest">
 
-            {% set boucle = 1 %}
-            {% for tabContent in contentsMedia %}
-
-                {% if tabContent.content.best == 1 %}
-                    {% if boucle != 1 %}
-
-                        <span class="silence">m</span>
-
-                    {% endif %}
-                    <span class="{{ tabContent.content.category }} indent" data-toggle="modal"
+            {% for tabContent in contentsMedia if tabContent.content.best == 1 %}
+                    <span class="{{ tabContent.content.category }} indent best" data-toggle="modal"
                           data-target="#{{ tabContent.content.id }}"
                           contenteditable="false" data-backdrop="false">
                         <span class="title bests"> {{ tabContent.content.title }}</span>
@@ -74,11 +67,9 @@
 
                             <span class="new"> new! </span>
                         {% endif %}
-
                     </span>
-                {% endif %}
-                {% set boucle = boucle + 1 %}
             {% endfor %}
+    </span>
 
             {% set lastyear = '' %}
 
