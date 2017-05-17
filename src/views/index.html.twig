@@ -54,7 +54,7 @@
 {% endblock %}
 {% block content %}
     <div class="content">
-        <p><img class="pictoabout" src="assets/img/picto/cle-ut.png">
+        <p><span class="silence pictoabout">B</span>
 
             {% set boucle = 1 %}
             {% for tabContent in contentsMedia %}
@@ -62,7 +62,7 @@
                 {% if tabContent.content.best == 1 %}
                     {% if boucle != 1 %}
 
-                        <img src="assets/img/silence2.png" alt="silence">
+                        <span class="silence">m</span>
 
                     {% endif %}
                     <span class="{{ tabContent.content.category }} indent" data-toggle="modal"
@@ -101,7 +101,7 @@
                 {% endif %}
                 {% if boucle2 != 1 %}
 
-                    <img src="../assets/img/silence2.png" alt="silence">
+                    <span class="silence">m</span>
 
                 {% endif %}
                 <span class="{{ tabContent.content.category }}">

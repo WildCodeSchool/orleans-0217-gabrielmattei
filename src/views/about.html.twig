@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}
-    about
+
 {% endblock %}
 
 {% block nav %}
@@ -12,26 +12,15 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.php">Gabriel Mattei</a>
             </div>
-            <div class="aboutnav">
-                <ul class="navbar-nav navbar-right">
-                    <li><a href="?p=about">About</a></li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
+            {#<div class="aboutnav">#}
+                {#<ul class="navbar-nav navbar-right">#}
+                    {#<li><a href="?p=about">About</a></li>#}
+                {#</ul>#}
+            {#</div><!-- /.navbar-collapse -->#}
         </div><!-- /.container-fluid -->
     </nav>
 
 
-    <div class="topphone">
-        <div class="row nav">
-
-            <div class="col-xs-6">
-                <a href="index.php">Gabriel Mattei</a>
-            </div>
-            <div class="col-xs-offset-3 col-xs-3">
-                <a href="?p=about">About</a>
-            </div>
-        </div>
-    </div>
 {% endblock %}
 
 {% block content %}
@@ -39,7 +28,7 @@
 
         <div class="contentabout">
 
-            <p><img class="pictoabout" src="assets/img/picto/coda_about.png"> {{ about.bio }}</p>
+            <p><span class="silence pictoabout">O</span> {{ about.bio }}</p>
         </div>
 
 

@@ -22,7 +22,13 @@
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'freighttext_musicregular';
+    src: url('../fonts/freighttext_music-webfont.woff2') format('woff2'),
+    url('../fonts/freighttext_music-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 /********************  STYLES GENERAUX ********************/
 
 
@@ -124,10 +130,6 @@ body a:hover{
     padding-bottom: 120px;
 }
 
-.content p{
-    line-height: 58px;
-}
-
 span[class^="content"] {
     display:none;
 }
@@ -180,10 +182,25 @@ a:hover{
     }
     .content{
         font-size: 20px;
-        padding-top: 120px;
+        padding-top: 140px;
     }
     .modal-content{
         font-size: 35px;
+    }
+    .silence{
+        font-family: freighttext_musicregular;
+        font-size: 28px;
+    }
+    .content p{
+        line-height: 40px;
+    }
+
+    .contentabout p{
+        padding-top: 130px !important;
+        font-family: 'freighttext_promedium';
+
+        font-size: 25px;
+        line-height: 38px;
     }
 }
 @media screen and (min-width: 1100px){
@@ -196,6 +213,21 @@ a:hover{
     }
     .modal-content{
         font-size: 45px;
+    }
+    .silence{
+        font-family: freighttext_musicregular;
+        font-size: 48px;
+    }
+    .content p{
+        line-height: 58px;
+    }
+
+    .contentabout p{
+        padding-top: 200px !important;
+        font-family: 'freighttext_promedium';
+
+        font-size: 45px;
+        line-height: 58px;
     }
 }
 .topphone {
@@ -227,15 +259,6 @@ a:hover{
     padding-left: inherit;
     padding-right: inherit;
 }
-
-.contentabout p{
-    padding-top: 200px !important;
-    font-family: 'freighttext_promedium';
-
-    font-size: 45px;
-    line-height: 58px;
-}
-
 .aboutcontact li{
     font-family: 'freighttext_promedium';
     font-size: 24px;
@@ -355,7 +378,6 @@ a:hover{
 }
 ul {
     list-style:none;
-    list-style:none
     margin-left:0;
     padding-left:0;
     margin-bottom:40px;
@@ -366,7 +388,9 @@ li {
 
 
 /********************    STYLE MODALE    ***********************/
-
+hr {
+    margin-bottom: 0px;
+}
 .hr2{
     border: 1px solid black;
     margin-left: 25px;
@@ -522,6 +546,7 @@ button .close{
 .texte{
     padding-top: 30px;
 }
+
 
 /**************************    FOOTER    **********/
 .footer{
