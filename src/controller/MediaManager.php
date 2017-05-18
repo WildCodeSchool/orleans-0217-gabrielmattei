@@ -61,10 +61,10 @@ class MediaManager
     public function upload($idContent)
     {
 
-        $valid_formats = array("png", "jpeg", "jpg", "gif", "zip", "bmp", "mp3", "wav", "pdf");
+        $valid_formats = array("png", "jpeg", "jpg", "gif", "bmp", "mp3", "wav", "pdf","tiff", "JPG", "PNG", "JPEG", "GIF", "BMP", "MP3", "WAV", "PDF", "TIFF");
 
-        $valid_formats_img = array("png", "jpg", "gif", "jpeg", "pdf");
-        $valid_formats_audio = array("mp3", "wav");
+        $valid_formats_img = array("png", "jpg", "gif", "jpeg", "pdf","tiff", "bmp", "BMP", "JPG", "PNG", "JPEG", "GIF", "TIFF", "PDF");
+        $valid_formats_audio = array("mp3", "wav", "WAV", "MP3");
 
         if ($_POST['video']) {
             $this->uploadLink($idContent, $_POST['video'], 'video');
