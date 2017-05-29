@@ -189,8 +189,8 @@ span.best:first-child::before {
         height: 50px;
     }
     .content{
-        font-size: 20px;
-        padding-top: 140px;
+        font-size: 23px;
+        padding-top: 150px;
     }
     .modal-content{
         font-size: 35px;
@@ -201,7 +201,7 @@ span.best:first-child::before {
     }
 
     .content p{
-        line-height: 30px;
+        line-height: 31px;
     }
 
     .contentabout p{
@@ -209,7 +209,7 @@ span.best:first-child::before {
         font-family: 'freighttext_promedium';
 
         font-size: 23px;
-        line-height: 38px;
+        line-height: 31px;
     }
 }
 @media screen and (min-width: 1000px){
